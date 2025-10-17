@@ -5,7 +5,7 @@ const SEOHead = ({
   title,
   description,
   keywords,
-  image = '/og-image.jpg',
+  image = '/og-image.webp',
   type = 'website'
 }) => {
   const location = useLocation();
@@ -63,7 +63,7 @@ const SEOHead = ({
           "name": "MDMC Music Ads",
           "description": metaDescription,
           "url": "https://www.mdmcmusicads.com",
-          "logo": "https://www.mdmcmusicads.com/assets/images/logo.png",
+          "logo": "https://www.mdmcmusicads.com/assets/images/logo.webp",
           "image": `https://www.mdmcmusicads.com${image}`,
           "priceRange": "$",
           "address": {
