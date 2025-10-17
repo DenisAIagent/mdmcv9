@@ -40,7 +40,7 @@ const Header = () => {
             {/* Logo optimisé WebP avec fallback */}
             <picture>
               <source srcSet="/assets/images/logo.webp" type="image/webp" />
-              <img src="/assets/images/logo.png" alt="MDMC Logo" width="200" height="60" />
+              <img src="/assets/images/logo.png" alt="MDMC Logo" width="1384" height="456" />
             </picture>
           </Link>
         </div>
