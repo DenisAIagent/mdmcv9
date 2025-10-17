@@ -37,9 +37,9 @@ const Header = () => {
       <div className="container header-container">
         <div className="logo">
           <Link to="/" aria-label="MDMC - Retour à l'accueil">
-            {/* Logo optimisé WebP avec lien GitHub raw */}
+            {/* Logo optimisé WebP avec fallback local */}
             <picture>
-              <source srcSet="https://raw.githubusercontent.com/DenisAIagent/mdmcv9/main/public/assets/images/logo.webp" type="image/webp" />
+              <source srcSet="/assets/images/logo.webp" type="image/webp" />
               <img src="/assets/images/logo.png" alt="MDMC Logo" width="1384" height="456" />
             </picture>
           </Link>
