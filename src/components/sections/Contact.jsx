@@ -94,49 +94,65 @@ const Contact = () => {
             <div className="partners-grid">
               {/* Carte FMM */}
               <div className="partner-card">
-                <img
-                  // === Chemin CORRIGÉ ===
-                  src="/assets/images/partner/FMM_Logo_Rough_White_Horizontal.png"
-                  alt={t('contact.partners.fmm', 'Fédération des Musiques Métalliques')}
-                  loading="lazy"
-                  className="partner-logo"
-                />
+                <picture>
+                  <source srcSet="/assets/images/partner/FMM_Logo_Rough_White_Horizontal.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/partner/FMM_Logo_Rough_White_Horizontal.png"
+                    alt={t('contact.partners.fmm', 'Fédération des Musiques Métalliques')}
+                    loading="lazy"
+                    className="partner-logo"
+                    width="200"
+                    height="80"
+                  />
+                </picture>
                 <h4>{t('contact.partners.fmm')}</h4>
                 <p>{t('contact.partners.fmm_description')}</p>
               </div>
               {/* Carte Google */}
               <div className="partner-card">
-                <img
-                  // === Chemin CORRIGÉ ===
-                  src="/assets/images/partner/Partner-CMYK.jpg"
-                  alt={t('contact.partners.google', 'Google Partner')}
-                  loading="lazy"
-                  className="partner-logo"
-                />
+                <picture>
+                  <source srcSet="/assets/images/partner/Partner-CMYK.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/partner/Partner-CMYK.jpg"
+                    alt={t('contact.partners.google', 'Google Partner')}
+                    loading="lazy"
+                    className="partner-logo"
+                    width="150"
+                    height="80"
+                  />
+                </picture>
                 <h4>{t('contact.partners.google')}</h4>
                 <p>{t('contact.partners.google_description')}</p>
               </div>
               {/* Carte MHL */}
               <div className="partner-card">
-                <img
-                  // === Chemin et Nom CORRIGÉS ===
-                  src="/assets/images/partner/logo-mhl-agency.png"
-                  alt={t('contact.partners.mhl', 'MHL Agency & Co')}
-                  loading="lazy"
-                  className="partner-logo"
-                />
+                <picture>
+                  <source srcSet="/assets/images/partner/logo-mhl-agency.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/partner/logo-mhl-agency.png"
+                    alt={t('contact.partners.mhl', 'MHL Agency & Co')}
+                    loading="lazy"
+                    className="partner-logo"
+                    width="150"
+                    height="80"
+                  />
+                </picture>
                 <h4>{t('contact.partners.mhl')}</h4>
                 <p>{t('contact.partners.mhl_description')}</p>
               </div>
               {/* Carte Algorythme */}
               <div className="partner-card">
-                <img
-                  // === Chemin CORRIGÉ ===
-                  src="/assets/images/partner/logo-vertical-algorythmes.png"
-                  alt={t('contact.partners.algorythme', 'Algorythme')}
-                  loading="lazy"
-                  className="partner-logo"
-                />
+                <picture>
+                  <source srcSet="/assets/images/partner/logo-vertical-algorythmes.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/partner/logo-vertical-algorythmes.png"
+                    alt={t('contact.partners.algorythme', 'Algorythme')}
+                    loading="lazy"
+                    className="partner-logo"
+                    width="150"
+                    height="80"
+                  />
+                </picture>
                 <h4>{t('contact.partners.algorythme')}</h4>
                 <p>{t('contact.partners.algorythme_description')}</p>
               </div>

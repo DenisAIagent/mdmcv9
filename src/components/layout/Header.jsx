@@ -37,9 +37,11 @@ const Header = () => {
       <div className="container header-container">
         <div className="logo">
           <Link to="/" aria-label="MDMC - Retour à l'accueil">
-            {/* === Chemin du logo CORRIGÉ === */}
-            <img src="/assets/images/logo.png" alt="MDMC Logo" />
-            {/* ============================== */}
+            {/* Logo optimisé WebP avec fallback */}
+            <picture>
+              <source srcSet="/assets/images/logo.webp" type="image/webp" />
+              <img src="/assets/images/logo.png" alt="MDMC Logo" width="200" height="60" />
+            </picture>
           </Link>
         </div>
 

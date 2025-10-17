@@ -23,10 +23,16 @@ const About = () => {
           </div>
 
           <div className="about-image">
-            <img
-              src="/assets/images/Falling In Reverse-6 - Grande.jpeg"
-              alt="MDMC Marketing Musical"
-            />
+            <picture>
+              <source srcSet="/assets/images/Falling In Reverse-6 - Grande.webp" type="image/webp" />
+              <img
+                src="/assets/images/Falling In Reverse-6 - Grande.jpeg"
+                alt="MDMC Marketing Musical"
+                width="800"
+                height="600"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
       </div>

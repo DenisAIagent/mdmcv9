@@ -8,6 +8,18 @@
     <meta name="description" content="Agence N°1 marketing musical : +500 artistes, +50M vues. YouTube Ads, Meta Ads, TikTok. Résultats garantis. Devis gratuit" />
     <meta name="keywords" content="marketing musical, youtube ads artistes, meta ads musiciens, tiktok ads, promotion musicale, agence marketing musical, mdmc" />
 
+    <!-- Preconnect pour optimiser les polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Chargement optimisé des polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" href="/assets/images/logo.webp" as="image" type="image/webp">
+    <link rel="preload" href="/assets/images/logo.png" as="image" type="image/png">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Marketing Musical | YouTube & Meta Ads Artistes | MDMC" />
@@ -32,8 +44,8 @@
     <!-- Theme -->
     <meta name="theme-color" content="#DC143C" />
 
-    <!-- Elfsight Google Reviews -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <!-- Elfsight Google Reviews - defer pour éviter le blocage -->
+    <script src="https://elfsightcdn.com/platform.js" defer></script>
   </head>
   <body>
     <div id="root"></div>
