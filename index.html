@@ -17,8 +17,18 @@
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Chargement optimisé des polices Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" id="google-fonts">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Script pour charger les polices sans onload inline -->
+    <script>
+      const fontsLink = document.getElementById('google-fonts');
+      if (fontsLink) {
+        fontsLink.addEventListener('load', function() {
+          this.media = 'all';
+        });
+      }
+    </script>
 
     <!-- Preload des ressources critiques LCP -->
     <link rel="preload" href="/assets/images/logo.webp" as="image" type="image/webp">
@@ -60,6 +70,9 @@
 
     <!-- Theme -->
     <meta name="theme-color" content="#DC143C" />
+
+    <!-- Content Security Policy optimisée -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://elfsightcdn.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:">
 
     <!-- Elfsight Google Reviews - defer pour éviter le blocage -->
     <script src="https://elfsightcdn.com/platform.js" defer></script>
