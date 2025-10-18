@@ -245,6 +245,19 @@ const Simulator = forwardRef((props, ref) => {
         views, cpv, reach
       };
       await apiService.submitSimulatorResults(simulatorData);
+
+      // Envoyer l'événement de conversion à Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'simulator_form_complete', {
+          event_category: 'engagement',
+          event_label: formData.platform,
+          value: parseInt(formData.budget),
+          platform: formData.platform,
+          campaign_type: formData.campaignType,
+          country: formData.country,
+          artist_name: formData.artistName
+        });
+      }
     } catch (error) {
       console.error('Erreur lors de la soumission des résultats du simulateur:', error);
       // Afficher une notification d'erreur à l'utilisateur si nécessaire
