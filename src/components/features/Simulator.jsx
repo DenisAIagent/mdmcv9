@@ -253,7 +253,9 @@ const Simulator = forwardRef((props, ref) => {
           currency: 'EUR',
           platform: formData.platform,
           campaign_type: formData.campaignType,
-          country: formData.country
+          country: formData.country,
+          email: formData.email,
+          artist_name: formData.artistName
         });
       }
     } catch (error) {
@@ -279,7 +281,9 @@ const Simulator = forwardRef((props, ref) => {
         currency: 'EUR',
         platform: formData.platform,
         campaign_type: formData.campaignType,
-        country: formData.country
+        country: formData.country,
+        email: formData.email,
+        artist_name: formData.artistName
       });
     } else {
       // Si gtag n'est pas disponible, ouvrir directement le lien
