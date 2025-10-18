@@ -34,11 +34,54 @@ class ApiService {
    */
   async submitSimulatorResults(simulatorData) {
     try {
+      // Appel du webhook pour enregistrer les coordonnées et envoyer l'email
+      await this.callWebhook(simulatorData);
+
       const response = await this.axios.post('/simulator/submit', simulatorData);
       return response.data;
     } catch (error) {
       console.error('Erreur lors de la soumission des résultats du simulateur:', error);
       throw error;
+    }
+  }
+
+  /**
+   * Appelle le webhook pour enregistrer les coordonnées et envoyer un email
+   * @param {Object} simulatorData - Données du simulateur
+   * @returns {Promise} - Promesse résolue avec la réponse du webhook
+   */
+  async callWebhook(simulatorData) {
+    try {
+      const webhookData = {
+        artistName: simulatorData.artistName,
+        email: simulatorData.email,
+        platform: simulatorData.platform,
+        campaignType: simulatorData.campaignType,
+        budget: simulatorData.budget,
+        country: simulatorData.country,
+        views: simulatorData.views,
+        cpv: simulatorData.cpv,
+        reach: simulatorData.reach,
+        timestamp: new Date().toISOString()
+      };
+
+      const response = await axios.post(
+        'https://primary-production-7acf.up.railway.app/webhook/922b17bc-e23a-4df7-a2a7-6e4e23231646',
+        webhookData,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          timeout: 10000 // 10 secondes de timeout pour le webhook
+        }
+      );
+
+      console.log('Webhook appelé avec succès:', response.status);
+      return response.data;
+    } catch (error) {
+      console.error('Erreur lors de l\'appel du webhook:', error);
+      // On ne lance pas l'erreur pour ne pas bloquer le processus principal
+      // Le webhook est un service auxiliaire
     }
   }
 

@@ -22,13 +22,24 @@ app.use(helmet({
       ],
       scriptSrc: [
         "'self'",
+        "'unsafe-inline'", // Pour le script gtag inline
+        "https://www.googletagmanager.com", // Google Tag Manager
+        "https://www.google-analytics.com", // Google Analytics
         "https://elfsightcdn.com", // Elfsight Google Reviews
         "https://generativelanguage.googleapis.com" // Google Gemini API
+      ],
+      scriptSrcElem: [
+        "'self'",
+        "'unsafe-inline'", // Pour le script gtag inline
+        "https://www.googletagmanager.com", // Google Tag Manager
+        "https://www.google-analytics.com" // Google Analytics
       ],
       imgSrc: [
         "'self'",
         "data:",
         "https://www.gstatic.com", // Google services
+        "https://www.google-analytics.com", // Google Analytics
+        "https://www.googletagmanager.com", // Google Tag Manager
         "https://featurable.com", // Partenaire
         "https://github.com", // Images GitHub
         "https://blog.mdmcmusicads.com", // Images du blog WordPress
@@ -38,6 +49,9 @@ app.use(helmet({
       ],
       connectSrc: [
         "'self'",
+        "https://www.google-analytics.com", // Google Analytics
+        "https://analytics.google.com", // Google Analytics
+        "https://www.googletagmanager.com", // Google Tag Manager
         "https://blog.mdmcmusicads.com", // WordPress blog
         "https://maps.googleapis.com", // Google Maps
         "https://featurable.com", // API partenaire
