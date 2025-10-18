@@ -246,16 +246,14 @@ const Simulator = forwardRef((props, ref) => {
       };
       await apiService.submitSimulatorResults(simulatorData);
 
-      // Envoyer l'événement de conversion à Google Analytics
+      // Envoyer l'événement de conversion à Google Ads
       if (typeof gtag !== 'undefined') {
-        gtag('event', 'simulator_form_complete', {
-          event_category: 'engagement',
-          event_label: formData.platform,
+        gtag('event', 'form_submit', {
           value: parseInt(formData.budget),
+          currency: 'EUR',
           platform: formData.platform,
           campaign_type: formData.campaignType,
-          country: formData.country,
-          artist_name: formData.artistName
+          country: formData.country
         });
       }
     } catch (error) {
@@ -264,6 +262,36 @@ const Simulator = forwardRef((props, ref) => {
     } finally {
       setSubmitting(false); // Assurez-vous que submitting est remis à false même en cas d'erreur
     }
+  };
+
+  // Fonction helper pour envoyer l'événement gtag avec callback
+  const gtagSendEvent = (url) => {
+    if (typeof gtag !== 'undefined') {
+      const callback = function () {
+        if (typeof url === 'string') {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+      };
+      gtag('event', 'form_submit', {
+        'event_callback': callback,
+        'event_timeout': 2000,
+        value: parseInt(formData.budget),
+        currency: 'EUR',
+        platform: formData.platform,
+        campaign_type: formData.campaignType,
+        country: formData.country
+      });
+    } else {
+      // Si gtag n'est pas disponible, ouvrir directement le lien
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+    return false;
+  };
+
+  const handleCalendlyClick = (e) => {
+    e.preventDefault();
+    const calendlyUrl = `${CALENDLY_LINKS[formData.platform]}?name=${encodeURIComponent(formData.artistName)}&email=${encodeURIComponent(formData.email)}`;
+    gtagSendEvent(calendlyUrl);
   };
 
   const handleClickOutside = (e) => {
@@ -423,9 +451,9 @@ const Simulator = forwardRef((props, ref) => {
               <button type="button" className="btn btn-secondary" onClick={() => setCurrentStep(5)} aria-label={t('simulator.button_modify')}> {/* Retour à l'étape 5 */}
                 {t('simulator.button_modify')}
               </button>
-              <a id="calendly-link" href={`${CALENDLY_LINKS[formData.platform]}?name=${encodeURIComponent(formData.artistName)}&email=${encodeURIComponent(formData.email)}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary" aria-label={t('simulator.results_cta_expert')}>
+              <button id="calendly-link" onClick={handleCalendlyClick} className="btn btn-primary" aria-label={t('simulator.results_cta_expert')}>
                 {t('simulator.cta_expert_button')}
-              </a>
+              </button>
             </div>
           </div>
         </form>
