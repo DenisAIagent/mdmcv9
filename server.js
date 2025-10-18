@@ -40,6 +40,7 @@ app.use(helmet({
         "https://www.gstatic.com", // Google services
         "https://www.google-analytics.com", // Google Analytics
         "https://www.googletagmanager.com", // Google Tag Manager
+        "https://www.google.com", // Google CCM
         "https://featurable.com", // Partenaire
         "https://github.com", // Images GitHub
         "https://blog.mdmcmusicads.com", // Images du blog WordPress
@@ -51,7 +52,9 @@ app.use(helmet({
         "'self'",
         "https://www.google-analytics.com", // Google Analytics
         "https://analytics.google.com", // Google Analytics
+        "https://region1.google-analytics.com", // Google Analytics Regional
         "https://www.googletagmanager.com", // Google Tag Manager
+        "https://www.google.com", // Google CCM
         "https://blog.mdmcmusicads.com", // WordPress blog
         "https://maps.googleapis.com", // Google Maps
         "https://featurable.com", // API partenaire
