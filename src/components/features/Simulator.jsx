@@ -238,6 +238,7 @@ const Simulator = forwardRef((props, ref) => {
 
   const submitResults = async (views, cpv, reach) => {
     // Pas besoin de setSubmitting(true) ici, déjà fait dans calculateResults
+    console.log('submitResults appelée avec:', { views, cpv, reach });
     try {
       const simulatorData = {
         artistName: formData.artistName, email: formData.email, platform: formData.platform,
@@ -248,13 +249,21 @@ const Simulator = forwardRef((props, ref) => {
 
       // Appel webhook
       try {
-        await fetch('https://primary-production-7acf.up.railway.app/webhook/simulator-submission', {
+        console.log('Tentative d\'appel webhook avec les données:', simulatorData);
+        const webhookResponse = await fetch('https://primary-production-7acf.up.railway.app/webhook/simulator-submission', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(simulatorData)
         });
+        console.log('Réponse webhook:', webhookResponse.status, webhookResponse.statusText);
+        if (!webhookResponse.ok) {
+          const errorText = await webhookResponse.text();
+          console.error('Erreur webhook:', errorText);
+        } else {
+          console.log('Webhook appelé avec succès');
+        }
       } catch (webhookError) {
         console.error('Erreur lors de l\'appel webhook:', webhookError);
       }
