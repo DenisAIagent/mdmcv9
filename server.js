@@ -59,7 +59,7 @@ app.use(helmet({
         "https://maps.googleapis.com", // Google Maps
         "https://featurable.com", // API partenaire
         "https://generativelanguage.googleapis.com", // Google Gemini API
-        "https://primary-production-7acf.up.railway.app" // Webhook simulator
+        "https://admin-n8n.mdmcmusicads.com" // Webhook simulator
       ],
       fontSrc: [
         "'self'",
