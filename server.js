@@ -58,7 +58,8 @@ app.use(helmet({
         "https://blog.mdmcmusicads.com", // WordPress blog
         "https://maps.googleapis.com", // Google Maps
         "https://featurable.com", // API partenaire
-        "https://generativelanguage.googleapis.com" // Google Gemini API
+        "https://generativelanguage.googleapis.com", // Google Gemini API
+        "https://primary-production-7acf.up.railway.app" // Webhook simulator
       ],
       fontSrc: [
         "'self'",
