@@ -245,7 +245,8 @@ const Simulator = forwardRef((props, ref) => {
         campaignType: formData.campaignType, budget: formData.budget, country: formData.country,
         views, cpv, reach
       };
-      await apiService.submitSimulatorResults(simulatorData);
+      // ❌ LIGNE COMMENTÉE - Cette ligne plantait et empêchait le webhook n8n de fonctionner
+      // await apiService.submitSimulatorResults(simulatorData);
 
       // Appel webhook
       try {
