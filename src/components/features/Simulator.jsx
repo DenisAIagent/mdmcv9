@@ -246,6 +246,19 @@ const Simulator = forwardRef((props, ref) => {
       };
       await apiService.submitSimulatorResults(simulatorData);
 
+      // Appel webhook
+      try {
+        await fetch('https://primary-production-7acf.up.railway.app/webhook/simulator-submission', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(simulatorData)
+        });
+      } catch (webhookError) {
+        console.error('Erreur lors de l\'appel webhook:', webhookError);
+      }
+
       // Envoyer l'événement de conversion à Google Ads
       if (typeof gtag !== 'undefined') {
         gtag('event', 'form_submit', {
