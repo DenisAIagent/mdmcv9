@@ -1,0 +1,457 @@
+/* Expertise Hub Styles */
+.expertise-hub-page {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Header */
+.hub-header {
+  margin-bottom: 4rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.hub-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #E50914, #ff4757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.year-badge {
+  background: linear-gradient(135deg, #E50914, #ff4757);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hub-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.hub-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #E50914;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Expertise Areas */
+.expertise-areas {
+  margin-bottom: 4rem;
+}
+
+.expertise-areas h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.area-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+}
+
+.area-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.area-card h3 {
+  color: #E50914;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.area-card p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.area-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.area-topics span {
+  background: rgba(229, 9, 20, 0.1);
+  color: #E50914;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+}
+
+/* Guides Featured */
+.guides-featured {
+  margin-bottom: 4rem;
+}
+
+.guides-featured h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.featured-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.guide-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 15px 40px rgba(229, 9, 20, 0.2);
+}
+
+.guide-card.featured {
+  border: 2px solid #E50914;
+}
+
+.guide-image {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #E50914;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.guide-content {
+  padding: 2rem;
+}
+
+.guide-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.difficulty {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.read-time {
+  background: rgba(108, 117, 125, 0.2);
+  color: #6c757d;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+}
+
+.guide-title {
+  margin-bottom: 1rem;
+}
+
+.guide-title a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.guide-title a:hover {
+  color: #E50914;
+}
+
+.guide-description {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.guide-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-tag {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.guide-cta, .guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #E50914;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #E50914;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.guide-cta:hover, .guide-link:hover {
+  background: #E50914;
+  color: white;
+  transform: translateX(5px);
+}
+
+/* All Guides */
+.all-guides h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.guides-grid .guide-card {
+  padding: 2rem;
+}
+
+.guide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.guide-category {
+  background: rgba(229, 9, 20, 0.2);
+  color: #E50914;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+}
+
+.featured-small {
+  border: 2px solid rgba(229, 9, 20, 0.5);
+  background: rgba(229, 9, 20, 0.05);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #E50914, #ff4757);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.cta-box h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.cta-box p {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #E50914;
+  border: 2px solid #fff;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #E50914;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hub-title {
+    font-size: 2.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hub-stats {
+    gap: 2rem;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-guides {
+    grid-template-columns: 1fr;
+  }
+
+  .guides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expertise-areas h2,
+  .guides-featured h2,
+  .all-guides h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-hub-page {
+    padding: 1rem 0;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hub-title {
+    font-size: 2rem;
+  }
+
+  .area-card,
+  .guide-card {
+    padding: 1.5rem;
+  }
+
+  .cta-section {
+    padding: 2rem;
+  }
+}

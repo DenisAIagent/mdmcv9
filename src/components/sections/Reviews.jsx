@@ -1,6 +1,7 @@
 // src/components/sections/Reviews.jsx
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import featurableService from '../../services/featurable.service';
 import '../../assets/styles/reviews.css';
 
@@ -20,6 +21,8 @@ const ReviewCard = ({ review, index, delay = 0 }) => {
     <div
       className={`review-card-modern ${isVisible ? 'visible' : ''} ${review.featured ? 'featured' : ''}`}
       style={{ '--delay': `${delay + (index * 0.1)}s` }}
+      itemScope
+      itemType="https://schema.org/Review"
     >
       {/* Badge pour avis vedette */}
       {review.featured && (
@@ -40,7 +43,9 @@ const ReviewCard = ({ review, index, delay = 0 }) => {
 
         <div className="review-info-modern">
           <div className="review-name-row">
-            <h3 className="review-name-modern">{review.name}</h3>
+            <h3 className="review-name-modern" itemProp="author" itemScope itemType="https://schema.org/Person">
+              <span itemProp="name">{review.name}</span>
+            </h3>
             {review.verified && <span className="verified-icon">✓</span>}
           </div>
 
@@ -51,7 +56,10 @@ const ReviewCard = ({ review, index, delay = 0 }) => {
           )}
 
           <div className="review-rating-row">
-            <div className="review-rating-modern">
+            <div className="review-rating-modern" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+              <meta itemProp="ratingValue" content={review.rating} />
+              <meta itemProp="bestRating" content="5" />
+              <meta itemProp="worstRating" content="1" />
               {[...Array(5)].map((_, i) => (
                 <span
                   key={i}
@@ -61,7 +69,7 @@ const ReviewCard = ({ review, index, delay = 0 }) => {
                 </span>
               ))}
             </div>
-            <span className="review-time">{review.timeAgo}</span>
+            <span className="review-time" itemProp="datePublished">{review.timeAgo}</span>
           </div>
         </div>
       </div>
@@ -69,7 +77,7 @@ const ReviewCard = ({ review, index, delay = 0 }) => {
       {/* Citation avec guillemets */}
       <div className="review-content-modern">
         <div className="quote-icon">"</div>
-        <p className="review-text-modern">"{review.comment}"</p>
+        <p className="review-text-modern" itemProp="reviewBody">"{review.comment}"</p>
       </div>
 
       {/* Footer avec source et utile */}
@@ -97,6 +105,39 @@ const Reviews = () => {
   const [stats, setStats] = useState({});
 
   const reviewsPerPage = 6;
+
+  // Schema Reviews pour optimisation IA
+  const reviewsSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MDMC Music Ads",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": stats.avgRating || "5.0",
+      "reviewCount": stats.totalReviews || reviews.length,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": reviews.slice(0, 5).map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating,
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": review.comment,
+      "datePublished": review.date || new Date().toISOString().split('T')[0],
+      "publisher": {
+        "@type": "Organization",
+        "name": review.source || "Google"
+      }
+    }))
+  };
 
   // Test de connexion Featurable au montage
   useEffect(() => {
@@ -236,8 +277,15 @@ const Reviews = () => {
   }
 
   return (
-    <section id="reviews" className="reviews-section-modern">
-      <div className="container">
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(reviewsSchema)}
+        </script>
+      </Helmet>
+
+      <section id="reviews" className="reviews-section-modern" itemScope itemType="https://schema.org/Organization">
+        <div className="container">
         {/* Header avec statistiques */}
         <div className="reviews-header-modern fade-in">
           <h2 className="reviews-title-modern gradient-text">
@@ -249,7 +297,12 @@ const Reviews = () => {
           </p>
 
           {/* Statistiques des avis Google */}
-          <div className="reviews-stats-modern">
+          <div className="reviews-stats-modern" itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
+            <meta itemProp="ratingValue" content={stats.avgRating || '5.0'} />
+            <meta itemProp="reviewCount" content={stats.totalReviews || 0} />
+            <meta itemProp="bestRating" content="5" />
+            <meta itemProp="worstRating" content="1" />
+
             <div className="stat-item">
               <div className="stat-value primary-color">{stats.avgRating || '5.0'}</div>
               <div className="stat-label">Note Google</div>
@@ -335,8 +388,9 @@ const Reviews = () => {
             </a>
           )}
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 };
 
