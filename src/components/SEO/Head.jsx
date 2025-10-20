@@ -65,7 +65,7 @@ const SEOHead = ({
           "url": "https://www.mdmcmusicads.com",
           "logo": "https://www.mdmcmusicads.com/assets/images/logo.webp",
           "image": `https://www.mdmcmusicads.com${image}`,
-          "priceRange": "$",
+          "priceRange": "500-50000 EUR",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "FR"
@@ -75,11 +75,52 @@ const SEOHead = ({
             "ratingValue": "5.0",
             "reviewCount": "50"
           },
+          "knowsAbout": [
+            "Marketing Musical",
+            "YouTube Ads",
+            "Meta Ads",
+            "TikTok Ads",
+            "Promotion Artistes",
+            "Streaming Musical",
+            "Publicité Digitale Musicale"
+          ],
+          "expertise": [
+            "Campagnes YouTube pour artistes",
+            "Publicité Meta pour musiciens",
+            "Marketing viral TikTok",
+            "ROI publicitaire musical",
+            "Ciblage audience musicale",
+            "Optimisation CPV streaming"
+          ],
+          "serviceArea": {
+            "@type": "Country",
+            "name": "France"
+          },
           "sameAs": [
             "https://www.facebook.com/mdmcmusicads",
             "https://www.instagram.com/mdmcmusicads",
             "https://www.youtube.com/@mdmcmusicads"
           ]
+        })}
+      </script>
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "MDMC Music Ads",
+          "description": "Marketing musical professionnel : YouTube Ads, Meta Ads, TikTok Ads pour artistes et labels",
+          "url": "https://www.mdmcmusicads.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.mdmcmusicads.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "MDMC Music Ads",
+            "url": "https://www.mdmcmusicads.com"
+          }
         })}
       </script>
     </Helmet>
