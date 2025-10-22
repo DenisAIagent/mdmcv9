@@ -298,19 +298,19 @@ const BudgetGuideMeta = () => {
                     <div className="tip-card">
                       <h3>📈 Signaux de scaling</h3>
                       <ul>
-                        <li>CTR > 2% : Augmentez budget +50%</li>
+                        <li>CTR &gt; 2% : Augmentez budget +50%</li>
                         <li>CPM stable : Doublez le budget</li>
                         <li>CPC en baisse : Scalez agressivement</li>
-                        <li>Engagement rate > 5% : Budget +100%</li>
+                        <li>Engagement rate &gt; 5% : Budget +100%</li>
                       </ul>
                     </div>
 
                     <div className="tip-card">
                       <h3>⚠️ Signaux d'alerte</h3>
                       <ul>
-                        <li>CTR < 0,8% : Pausez et testez créatifs</li>
+                        <li>CTR &lt; 0,8% : Pausez et testez créatifs</li>
                         <li>CPM +50% : Réduisez audience ou budget</li>
-                        <li>Frequency > 3 : Changez créatifs</li>
+                        <li>Frequency &gt; 3 : Changez créatifs</li>
                         <li>CPC en hausse : Optimisez ciblage</li>
                       </ul>
                     </div>

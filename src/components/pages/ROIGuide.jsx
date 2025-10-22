@@ -65,7 +65,7 @@ const ROIGuide = () => {
       {
         "@type": "HowToStep",
         "name": "Optimiser selon les données ROI",
-        "text": "ROI >300% : Scalez le budget (+100%). ROI 150-300% : Optimisez créatifs. ROI 50-150% : Testez nouvelles audiences. ROI <50% : Pausez et analysez. Réallouez budget vers campagnes ROI >200%.",
+        "text": "ROI &gt;300% : Scalez le budget (+100%). ROI 150-300% : Optimisez créatifs. ROI 50-150% : Testez nouvelles audiences. ROI &lt;50% : Pausez et analysez. Réallouez budget vers campagnes ROI &gt;200%.",
         "image": "https://www.mdmcmusicads.com/assets/images/step5-roi-optimization.webp"
       }
     ],
@@ -414,7 +414,7 @@ const ROIGuide = () => {
                     <h4>🎯 Matrice d'Optimisation ROI</h4>
                     <div className="matrix-grid">
                       <div className="matrix-card success">
-                        <h5>🚀 ROI > 300%</h5>
+                        <h5>🚀 ROI &gt; 300%</h5>
                         <p><strong>Action :</strong> Scale agressif</p>
                         <ul>
                           <li>Doublez le budget immédiatement</li>
@@ -447,7 +447,7 @@ const ROIGuide = () => {
                       </div>
 
                       <div className="matrix-card danger">
-                        <h5>🛑 ROI < 50%</h5>
+                        <h5>🛑 ROI &lt; 50%</h5>
                         <p><strong>Action :</strong> Pause & Analyse</p>
                         <ul>
                           <li>Pausez la campagne immédiatement</li>
@@ -503,7 +503,7 @@ const ROIGuide = () => {
                     <li>Calculez la LTV de vos fans actuels comme baseline</li>
                     <li>Implémentez un dashboard ROI avec KPIs essentiels</li>
                     <li>Testez avec petit budget et mesurez précisément</li>
-                    <li>Scalez uniquement les campagnes ROI >200%</li>
+                    <li>Scalez uniquement les campagnes ROI &gt;200%</li>
                     <li>Optimisez mensuellement selon matrice ROI</li>
                   </ol>
                 </div>

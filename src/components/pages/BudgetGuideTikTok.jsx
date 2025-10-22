@@ -65,7 +65,7 @@ const BudgetGuideTikTok = () => {
       {
         "@type": "HowToStep",
         "name": "Scaler et maximiser l'impact",
-        "text": "Phase 1 : Test 1000€/7 jours. Phase 2 : Scale +200% si VTR >60%. Phase 3 : Budget illimité si viral (share rate >15%). Arrêt si CTR <1% après 48h. TikTok récompense la viralité organique.",
+        "text": "Phase 1 : Test 1000€/7 jours. Phase 2 : Scale +200% si VTR &gt;60%. Phase 3 : Budget illimité si viral (share rate &gt;15%). Arrêt si CTR &lt;1% après 48h. TikTok récompense la viralité organique.",
         "image": "https://www.mdmcmusicads.com/assets/images/step5-tiktok-scale.webp"
       }
     ],
@@ -333,7 +333,7 @@ const BudgetGuideTikTok = () => {
                     <div className="phase-cards">
                       <div className="phase-card">
                         <h5>Phase 1 : Test Viral (7 jours)</h5>
-                        <p>Budget : 1000€ | Objectif : VTR >60%</p>
+                        <p>Budget : 1000€ | Objectif : VTR &gt;60%</p>
                         <ul>
                           <li>5-8 créatifs différents</li>
                           <li>3 audiences test</li>
@@ -342,7 +342,7 @@ const BudgetGuideTikTok = () => {
                       </div>
                       <div className="phase-card">
                         <h5>Phase 2 : Scale Agressif (si viral)</h5>
-                        <p>Budget : +200% | Objectif : Share rate >15%</p>
+                        <p>Budget : +200% | Objectif : Share rate &gt;15%</p>
                         <ul>
                           <li>Dupliquer les meilleures performances</li>
                           <li>Élargir audiences similaires</li>
@@ -426,7 +426,7 @@ const BudgetGuideTikTok = () => {
                     <li>Analysez les trends actuels de votre genre musical</li>
                     <li>Créez 10+ variations créatives courtes (15-30 sec)</li>
                     <li>Lancez avec 1000€ sur 7 jours en ciblant Gen Z</li>
-                    <li>Identifiez les créatifs performants (VTR >60%)</li>
+                    <li>Identifiez les créatifs performants (VTR &gt;60%)</li>
                     <li>Scalez agressivement les gagnants (+200% budget)</li>
                     <li>Capitalisez sur la viralité avec contenu similaire</li>
                   </ol>
