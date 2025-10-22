@@ -25,6 +25,12 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import Terms from './components/pages/Terms';
 import CookiesPolicy from './components/pages/CookiesPolicy';
 import LegalNotice from './components/pages/LegalNotice';
+import BudgetGuide from './components/pages/BudgetGuide';
+import BudgetGuideMeta from './components/pages/BudgetGuideMeta';
+import BudgetGuideTikTok from './components/pages/BudgetGuideTikTok';
+import ROIGuide from './components/pages/ROIGuide';
+import KPIGuide from './components/pages/KPIGuide';
+import ExpertiseHub from './components/pages/ExpertiseHub';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 
@@ -164,6 +170,12 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<CookiesPolicy />} />
         <Route path="/legal" element={<LegalNotice />} />
+        <Route path="/guide-budget-youtube-ads" element={<BudgetGuide />} />
+        <Route path="/guide-budget-meta-ads" element={<BudgetGuideMeta />} />
+        <Route path="/guide-budget-tiktok-ads" element={<BudgetGuideTikTok />} />
+        <Route path="/roi-marketing-musical" element={<ROIGuide />} />
+        <Route path="/kpi-marketing-musical" element={<KPIGuide />} />
+        <Route path="/expertise-marketing-musical" element={<ExpertiseHub />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route 
           path="/admin/dashboard" 

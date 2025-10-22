@@ -76,6 +76,9 @@ const Header = () => {
               )}
             </li>
             <li>
+              <Link to="/expertise-marketing-musical" onClick={handleNavLinkClick}>Guides</Link>
+            </li>
+            <li>
               {isHomePage ? (
                 <a href="#contact" onClick={handleNavLinkClick}>{t('nav.contact')}</a>
               ) : (
@@ -126,6 +129,9 @@ const Header = () => {
               ) : (
                 <Link to="/#articles" onClick={handleNavLinkClick}>{t('nav.articles')}</Link>
               )}
+            </li>
+            <li>
+              <Link to="/expertise-marketing-musical" onClick={handleNavLinkClick}>Guides</Link>
             </li>
             <li>
               {isHomePage ? (

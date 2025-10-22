@@ -71,7 +71,7 @@ const FAQ = () => {
         </script>
       </Helmet>
 
-      <section id="faq" className="faq-section" itemScope itemType="https://schema.org/FAQPage">
+      <section id="faq" className="faq-section">
         <div className="container">
         <div className="faq-header">
           <h2 className="section-title">
@@ -93,9 +93,6 @@ const FAQ = () => {
               <article
                 key={index}
                 className={`faq-item ${openIndex === index ? 'active' : ''}`}
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
               >
                 <h4
                   className="faq-question"
@@ -105,7 +102,6 @@ const FAQ = () => {
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                   tabIndex={0}
-                  itemProp="name"
                 >
                   {faq.question}
                   <span className="faq-icon" aria-hidden="true">
@@ -119,11 +115,8 @@ const FAQ = () => {
                     className="faq-answer"
                     role="region"
                     aria-labelledby={`faq-question-${index}`}
-                    itemScope
-                    itemProp="acceptedAnswer"
-                    itemType="https://schema.org/Answer"
                   >
-                    <p itemProp="text">{faq.answer}</p>
+                    <p>{faq.answer}</p>
                   </div>
                 )}
               </article>

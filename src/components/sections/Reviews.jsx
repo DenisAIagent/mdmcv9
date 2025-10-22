@@ -120,6 +120,10 @@ const Reviews = () => {
     },
     "review": reviews.slice(0, 5).map(review => ({
       "@type": "Review",
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Services de Marketing Musical MDMC"
+      },
       "author": {
         "@type": "Person",
         "name": review.name
@@ -135,7 +139,8 @@ const Reviews = () => {
       "publisher": {
         "@type": "Organization",
         "name": review.source || "Google"
-      }
+      },
+      "name": `Avis de ${review.name} sur les services MDMC`
     }))
   };
 
