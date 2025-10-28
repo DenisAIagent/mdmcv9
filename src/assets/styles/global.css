@@ -180,12 +180,12 @@ section {
 }
 
 .btn-primary:hover {
-  background-color: #FF1A25; /* Rouge légèrement plus clair au survol */
+  background-color: #166FE5; /* Meta Blue légèrement plus foncé au survol */
   color: var(--color-text);
 }
 
 .btn-primary:focus-visible {
-  outline-color: #FF1A25; /* Outline assorti */
+  outline-color: #166FE5; /* Outline Meta Blue assorti */
 }
 
 /* Bouton Secondaire (contour blanc) */
