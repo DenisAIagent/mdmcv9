@@ -238,6 +238,7 @@ const MetaAdsLanding = ({ openSimulator }) => {
 
       <Header />
 
+      <div className="meta-ads-page">
       {/* Hero Section - Creative & Impactful */}
       <section className="youtube-hero-creative">
         <div className="hero-background">
@@ -700,6 +701,7 @@ const MetaAdsLanding = ({ openSimulator }) => {
           </div>
         </div>
       </section>
+      </div>
 
       <Footer />
     </>

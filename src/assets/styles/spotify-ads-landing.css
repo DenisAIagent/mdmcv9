@@ -1,16 +1,17 @@
-/* Meta Ads Landing Page - MDMC High Conversion Design */
+/* Spotify Ads Landing Page - MDMC High Conversion Design */
 
-/* MDMC Brand Colors + Meta Accents */
+/* MDMC Brand Colors + Spotify Accents */
 :root {
   --mdmc-black: #000000;
   --mdmc-white: #ffffff;
   --mdmc-red: #ff0000;
-  --meta-blue: #1877F2;
-  --meta-blue-dark: #166FE5;
+  --spotify-green: #1DB954;
+  --spotify-green-dark: #1ed760;
+  --spotify-dark: #191414;
   --mdmc-gray-dark: #111111;
   --mdmc-gray-darker: #1a1a1a;
   --gradient-red: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-  --gradient-meta: linear-gradient(135deg, #1877F2 0%, #166FE5 100%);
+  --gradient-spotify: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
   --border-radius: 8px;
   --transition: all 0.3s ease;
   --font-primary: 'Inter', sans-serif;
@@ -49,21 +50,21 @@
   z-index: 10;
 }
 
-/* META ADS PAGE ISOLATION - All titles and accents in Meta Blue */
+/* SPOTIFY ADS PAGE ISOLATION - All titles and accents in Spotify Green */
 
-/* Override ALL page titles and headings to be Meta Blue - ONLY on Meta Ads pages */
-.meta-ads-page h1,
-.meta-ads-page h2,
-.meta-ads-page h3,
-.meta-ads-page h4,
-.meta-ads-page h5,
-.meta-ads-page h6 {
-  color: var(--meta-blue) !important;
+/* Override ALL page titles and headings to be Spotify Green - ONLY on Spotify Ads pages */
+.spotify-ads-page h1,
+.spotify-ads-page h2,
+.spotify-ads-page h3,
+.spotify-ads-page h4,
+.spotify-ads-page h5,
+.spotify-ads-page h6 {
+  color: var(--spotify-green) !important;
 }
 
 /* Specific title overrides */
 .title-line-2 {
-  background: var(--gradient-meta) !important;
+  background: var(--gradient-spotify) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -78,13 +79,13 @@
   color: var(--mdmc-white) !important;
 }
 
-/* Social proof title white, subtitle blue */
+/* Social proof title white, subtitle green */
 .social-proof h2 {
   color: var(--mdmc-white) !important;
 }
 
 .social-proof .section-subtitle {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
 }
 
 /* All h3 titles in content sections */
@@ -94,13 +95,13 @@
 .trust-item h3,
 .faq-item h3,
 .form-header h3 {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
 }
 
 /* All h4 titles */
 .service-item h4,
 .additional-services h4 {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
 }
 
 /* Slogan text */
@@ -110,51 +111,51 @@
 
 /* Stat numbers */
 .stat-number {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
 }
 
 /* All accent elements that use red borders/backgrounds */
 .step {
-  border-left: 4px solid var(--meta-blue) !important;
+  border-left: 4px solid var(--spotify-green) !important;
 }
 
 .step-number {
-  background: var(--gradient-meta) !important;
+  background: var(--gradient-spotify) !important;
 }
 
 .simulator-highlight {
-  border-left: 4px solid var(--meta-blue) !important;
+  border-left: 4px solid var(--spotify-green) !important;
 }
 
 .simulator-icon,
 .trust-icon,
 .benefit-icon {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
 }
 
 /* Secondary CTA button hover */
 .cta-secondary-hero:hover {
-  border-color: var(--meta-blue) !important;
-  color: var(--meta-blue) !important;
+  border-color: var(--spotify-green) !important;
+  color: var(--spotify-green) !important;
 }
 
 /* All primary CTA buttons */
 .cta-primary {
-  background: var(--gradient-meta) !important;
+  background: var(--gradient-spotify) !important;
 }
 
 .cta-primary:hover {
-  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3) !important;
 }
 
 /* Secondary CTA buttons */
 .cta-secondary-btn {
-  color: var(--meta-blue) !important;
-  border: 2px solid var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
+  border: 2px solid var(--spotify-green) !important;
 }
 
 .cta-secondary-btn:hover {
-  background: var(--meta-blue) !important;
+  background: var(--spotify-green) !important;
   color: var(--mdmc-white) !important;
 }
 
@@ -162,7 +163,7 @@
 .cta-primary:focus,
 .cta-secondary-btn:focus,
 .lead-form input:focus {
-  outline: 3px solid rgba(24, 119, 242, 0.5) !important;
+  outline: 3px solid rgba(29, 185, 84, 0.5) !important;
   outline-offset: 2px;
 }
 
@@ -172,7 +173,7 @@
   padding: 5rem 0 !important;
 }
 
-/* Hierarchy: White titles, Blue subtitles */
+/* Hierarchy: White titles, Green subtitles */
 .results-showcase h2 {
   color: var(--mdmc-white) !important;
   font-family: var(--font-secondary);
@@ -183,7 +184,7 @@
 }
 
 .showcase-subtitle {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
   font-family: var(--font-primary);
   font-size: 1.2rem;
   font-weight: 500;
@@ -214,16 +215,15 @@
 
 .metric-card:hover {
   transform: translateY(-4px);
-  border-color: var(--meta-blue);
-  box-shadow: 0 12px 40px rgba(24, 119, 242, 0.2);
+  border-color: var(--spotify-green);
+  box-shadow: 0 12px 40px rgba(29, 185, 84, 0.2);
 }
-
 
 .metric-card .metric-number {
   display: block;
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--meta-blue);
+  color: var(--spotify-green);
   font-family: var(--font-secondary);
   margin-bottom: 0.5rem;
   line-height: 1;
@@ -244,76 +244,12 @@
 }
 
 /* Specific card highlights */
-.roi-card {
-  border-color: var(--meta-blue);
-  background: linear-gradient(135deg, var(--mdmc-black) 0%, rgba(24, 119, 242, 0.05) 100%);
+.views-card {
+  border-color: var(--spotify-green);
+  background: linear-gradient(135deg, var(--mdmc-black) 0%, rgba(29, 185, 84, 0.05) 100%);
 }
 
-/* Meta Results Cards Showcase */
-.meta-cards-showcase {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.meta-cards-showcase h3 {
-  color: var(--meta-blue) !important;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-}
-
-.meta-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.meta-card-container {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: var(--transition);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.meta-card-container:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(24, 119, 242, 0.2);
-}
-
-.meta-result-card {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
-
-.card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  padding: 2rem 1.5rem 1.5rem;
-  color: var(--mdmc-white);
-}
-
-.card-overlay h4 {
-  color: var(--meta-blue) !important;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.card-overlay p {
-  color: #ccc;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* Campaign Summary New */
+/* Campaign Performance Summary */
 .campaign-summary-new {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -327,7 +263,7 @@
 }
 
 .summary-content h4 {
-  color: var(--meta-blue) !important;
+  color: var(--spotify-green) !important;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -365,13 +301,8 @@
   align-items: center;
 }
 
-/* Responsive Meta Cards */
+/* Responsive */
 @media (max-width: 1024px) {
-  .meta-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .campaign-summary-new {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -384,10 +315,6 @@
 }
 
 @media (max-width: 768px) {
-  .meta-cards-showcase h3 {
-    font-size: 1.5rem;
-  }
-
   .campaign-summary-new {
     padding: 2rem;
   }
@@ -397,131 +324,10 @@
   }
 }
 
-/* Dashboard Central Section */
-.dashboard-central {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-  align-items: start;
-  margin-top: 3rem;
-}
-
-.dashboard-image-new {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-.testimonial-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 1.5rem;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--meta-blue);
-}
-
-.testimonial-content p {
-  color: var(--mdmc-white);
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.testimonial-author {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.testimonial-author strong {
-  color: var(--meta-blue);
-  font-size: 0.9rem;
-}
-
-.testimonial-author span {
-  color: #ccc;
-  font-size: 0.8rem;
-}
-
-/* Campaign Insights */
-.campaign-insights h3 {
-  color: var(--meta-blue) !important;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
-.insights-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.insight-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--mdmc-black);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--mdmc-gray-darker);
-}
-
-.insight-label {
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-.insight-value {
-  color: var(--mdmc-white);
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-/* Social Proof Badges */
-.social-proof-badges {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--mdmc-black);
-  border: 1px solid var(--meta-blue);
-  padding: 0.75rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-.badge-icon {
-  color: var(--meta-blue);
-  font-weight: bold;
-}
-
-.badge-text {
-  color: var(--mdmc-white);
-  font-weight: 500;
-}
-
-.meta-partner {
-  background: linear-gradient(135deg, var(--mdmc-black) 0%, rgba(24, 119, 242, 0.1) 100%);
-}
-
 /* Showcase CTA */
 .showcase-cta {
   width: 100%;
-  background: var(--gradient-meta) !important;
+  background: var(--gradient-spotify) !important;
   color: var(--mdmc-white);
   border: none;
   padding: 1.25rem 2rem;
@@ -538,7 +344,7 @@
 
 .showcase-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(24, 119, 242, 0.4);
+  box-shadow: 0 8px 30px rgba(29, 185, 84, 0.4);
 }
 
 .showcase-cta .cta-arrow {
@@ -549,225 +355,30 @@
   transform: translateX(5px);
 }
 
-/* Responsive Dashboard Central */
-@media (max-width: 1024px) {
-  .dashboard-central {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .testimonial-overlay {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    margin-top: 1rem;
-  }
-
-  .metrics-grid-top {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .metrics-grid-top {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .metric-card {
-    padding: 1.5rem;
-  }
-
-  .metric-card .metric-number {
-    font-size: 2rem;
-  }
-
-  .results-showcase h2 {
-    font-size: 2.2rem;
-  }
-
-  .campaign-insights h3 {
-    font-size: 1.5rem;
-  }
-
-  .social-proof-badges {
-    justify-content: center;
-  }
-}
-
-.dashboard-showcase {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.dashboard-image {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-.dashboard-screenshot {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
-
-.dashboard-overlay {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--meta-blue);
-}
-
-.result-highlight {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.result-number {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--meta-blue);
-  font-family: var(--font-secondary);
-  line-height: 1;
-}
-
-.result-label {
-  font-size: 0.9rem;
-  color: #ccc;
-  font-weight: 500;
-  margin-top: 0.25rem;
-}
-
-.dashboard-details h3 {
-  color: var(--meta-blue) !important;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.metric-item {
-  background: var(--mdmc-black);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid var(--mdmc-gray-darker);
-}
-
-.metric-number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--meta-blue);
-  font-family: var(--font-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.metric-label {
-  color: #ccc;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.campaign-summary {
-  background: var(--mdmc-black);
-  padding: 2rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--meta-blue);
-  margin-bottom: 2rem;
-}
-
-.campaign-summary p {
-  margin-bottom: 0.75rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.campaign-summary strong {
-  color: var(--mdmc-white);
-}
-
-/* Responsive Dashboard */
-@media (max-width: 1024px) {
-  .dashboard-showcase {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-
-  .dashboard-overlay {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 1rem auto 0;
-    display: inline-block;
-  }
-}
-
-@media (max-width: 768px) {
-  .metrics-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .dashboard-details h3 {
-    font-size: 1.5rem;
-  }
-
-  .metric-number {
-    font-size: 1.5rem;
-  }
-
-  .campaign-summary {
-    padding: 1.5rem;
-  }
-}
-
-/* Meta accent on primary button */
+/* Spotify accent on primary button */
 .cta-primary-hero {
-  background: var(--gradient-meta) !important;
-  box-shadow: 0 4px 20px rgba(24, 119, 242, 0.3) !important;
+  background: var(--gradient-spotify) !important;
+  box-shadow: 0 4px 20px rgba(29, 185, 84, 0.3) !important;
 }
 
 .cta-primary-hero:hover {
-  box-shadow: 0 8px 30px rgba(24, 119, 242, 0.4) !important;
+  box-shadow: 0 8px 30px rgba(29, 185, 84, 0.4) !important;
 }
 
-/* Meta accent on form submit button */
+/* Spotify accent on form submit button */
 .form-submit-btn {
-  background: var(--gradient-meta) !important;
+  background: var(--gradient-spotify) !important;
 }
 
 .form-submit-btn:hover {
-  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3) !important;
 }
 
-/* Meta accent on form border focus */
+/* Spotify accent on form border focus */
 .lead-form-creative input:focus {
-  border-color: var(--meta-blue) !important;
-  box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.1) !important;
+  border-color: var(--spotify-green) !important;
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.1) !important;
 }
-
 
 /* Creative Hero Section - Keep for other elements */
 .youtube-hero-creative {
@@ -811,15 +422,10 @@
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(255, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(29, 185, 84, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 185, 84, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: 2;
-}
-
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
 }
 
 /* Floating Elements */
@@ -834,7 +440,7 @@
 
 .floating-element {
   position: absolute;
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   font-weight: bold;
   opacity: 0.1;
   animation: float 6s ease-in-out infinite;
@@ -859,28 +465,28 @@
   height: 20px;
   background: linear-gradient(
     90deg,
-    var(--mdmc-red) 0%,
-    var(--mdmc-red) 20%,
+    var(--spotify-green) 0%,
+    var(--spotify-green) 20%,
     transparent 20%,
     transparent 40%,
-    var(--mdmc-red) 40%,
-    var(--mdmc-red) 60%,
+    var(--spotify-green) 40%,
+    var(--spotify-green) 60%,
     transparent 60%,
     transparent 80%,
-    var(--mdmc-red) 80%
+    var(--spotify-green) 80%
   );
   top: 30%;
   right: 20%;
   animation-delay: 4s;
 }
 
-.floating-element.meta-logo {
+.floating-element.spotify-logo {
   font-size: 2.5rem;
   font-weight: 800;
   top: 70%;
   right: 15%;
   animation-delay: 1s;
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
 }
 
 @keyframes float {
@@ -944,8 +550,8 @@
 .title-line-2 {
   display: block;
   font-size: 4rem;
-  color: var(--mdmc-red);
-  background: var(--gradient-red);
+  color: var(--spotify-green);
+  background: var(--gradient-spotify);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -980,7 +586,7 @@
 }
 
 .cta-primary-hero {
-  background: var(--gradient-red);
+  background: var(--gradient-spotify);
   color: var(--mdmc-white);
   border: none;
   padding: 1.25rem 2rem;
@@ -993,12 +599,12 @@
   align-items: center;
   gap: 0.75rem;
   font-family: var(--font-primary);
-  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(29, 185, 84, 0.3);
 }
 
 .cta-primary-hero:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 8px 30px rgba(29, 185, 84, 0.4);
 }
 
 .cta-icon {
@@ -1027,8 +633,8 @@
 }
 
 .cta-secondary-hero:hover {
-  border-color: var(--mdmc-red);
-  color: var(--mdmc-red);
+  border-color: var(--spotify-green);
+  color: var(--spotify-green);
   transform: translateY(-2px);
 }
 
@@ -1048,7 +654,7 @@
 }
 
 .trust-icon {
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   font-weight: bold;
 }
 
@@ -1077,7 +683,7 @@
   left: -1px;
   right: -1px;
   bottom: -1px;
-  background: var(--gradient-red);
+  background: var(--gradient-spotify);
   border-radius: 16px;
   z-index: -1;
   opacity: 0.1;
@@ -1132,8 +738,8 @@
 
 .lead-form-creative input:focus {
   outline: none;
-  border-color: var(--mdmc-red);
-  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+  border-color: var(--spotify-green);
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.1);
   transform: translateY(-2px);
 }
 
@@ -1145,7 +751,7 @@
 /* Submit Button */
 .form-submit-btn {
   width: 100%;
-  background: var(--gradient-red);
+  background: var(--gradient-spotify);
   color: var(--mdmc-white);
   border: none;
   padding: 1.25rem;
@@ -1161,7 +767,7 @@
 
 .form-submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3);
 }
 
 .btn-loading {
@@ -1192,7 +798,7 @@
 }
 
 .benefit-icon {
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   font-size: 1.1rem;
 }
 
@@ -1208,14 +814,14 @@
   font-family: var(--font-secondary);
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--mdmc-red);
+  color: var(--mdmc-white);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 /* CTA Buttons */
 .cta-primary {
-  background: var(--gradient-red);
+  background: var(--gradient-spotify);
   color: var(--mdmc-white);
   border: none;
   padding: 1.25rem 2.5rem;
@@ -1230,7 +836,7 @@
 
 .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3);
 }
 
 .cta-primary.large {
@@ -1240,8 +846,8 @@
 
 .cta-secondary-btn {
   background: transparent;
-  color: var(--mdmc-red);
-  border: 2px solid var(--mdmc-red);
+  color: var(--spotify-green);
+  border: 2px solid var(--spotify-green);
   padding: 1rem 2rem;
   border-radius: var(--border-radius);
   font-size: 1rem;
@@ -1252,7 +858,7 @@
 }
 
 .cta-secondary-btn:hover {
-  background: var(--mdmc-red);
+  background: var(--spotify-green);
   color: var(--mdmc-white);
 }
 
@@ -1264,12 +870,12 @@
   background: var(--mdmc-gray-darker);
   padding: 1.5rem;
   border-radius: var(--border-radius);
-  border-left: 4px solid var(--mdmc-red);
+  border-left: 4px solid var(--spotify-green);
 }
 
 .simulator-icon {
   font-size: 2rem;
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
 }
 
 .simulator-text strong {
@@ -1317,7 +923,7 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
 }
 
 .value-item p {
@@ -1378,7 +984,7 @@
   display: block;
   font-size: 3rem;
   font-weight: 800;
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   margin-bottom: 0.5rem;
   font-family: var(--font-secondary);
 }
@@ -1407,11 +1013,11 @@
   background: var(--mdmc-gray-dark);
   padding: 2.5rem;
   border-radius: var(--border-radius);
-  border-left: 4px solid var(--mdmc-red);
+  border-left: 4px solid var(--spotify-green);
 }
 
 .step-number {
-  background: var(--gradient-red);
+  background: var(--gradient-spotify);
   color: var(--mdmc-white);
   width: 50px;
   height: 50px;
@@ -1489,7 +1095,7 @@
 }
 
 .service-card h3 {
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -1513,7 +1119,7 @@
 }
 
 .service-item h4 {
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   margin-bottom: 0.5rem;
 }
 
@@ -1539,7 +1145,7 @@
 }
 
 .trust-item h3 {
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -1573,7 +1179,7 @@
 }
 
 .faq-item h3 {
-  color: var(--mdmc-red);
+  color: var(--spotify-green);
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -1595,7 +1201,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--mdmc-red);
+  color: var(--mdmc-white);
 }
 
 .final-cta p {
@@ -1608,8 +1214,7 @@
   margin-top: 2rem;
 }
 
-
-/* Original Responsive Design */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .hero-content-split {
     grid-template-columns: 1fr;
@@ -1637,6 +1242,10 @@
 
   .hero-trust-line {
     justify-content: center;
+  }
+
+  .metrics-grid-top {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1727,6 +1336,23 @@
   .final-cta {
     padding: 3rem 0;
   }
+
+  .metrics-grid-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .metric-card {
+    padding: 1.5rem;
+  }
+
+  .metric-card .metric-number {
+    font-size: 2rem;
+  }
+
+  .results-showcase h2 {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1778,7 +1404,7 @@
 .cta-primary:focus,
 .cta-secondary-btn:focus,
 .lead-form input:focus {
-  outline: 3px solid rgba(255, 0, 0, 0.5);
+  outline: 3px solid rgba(29, 185, 84, 0.5);
   outline-offset: 2px;
 }
 

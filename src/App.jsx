@@ -33,6 +33,7 @@ import KPIGuide from './components/pages/KPIGuide';
 import ExpertiseHub from './components/pages/ExpertiseHub';
 import YouTubeAdsLanding from './components/pages/YouTubeAdsLanding';
 import MetaAdsLanding from './components/pages/MetaAdsLanding';
+import SpotifyAdsLanding from './components/pages/SpotifyAdsLanding';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 
@@ -180,6 +181,7 @@ function App() {
         <Route path="/expertise-marketing-musical" element={<ExpertiseHub />} />
         <Route path="/youtube-ads" element={<YouTubeAdsLanding openSimulator={openSimulator} />} />
         <Route path="/meta-ads" element={<MetaAdsLanding openSimulator={openSimulator} />} />
+        <Route path="/spotify-ads" element={<SpotifyAdsLanding openSimulator={openSimulator} />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route 
           path="/admin/dashboard" 
