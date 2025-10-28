@@ -147,20 +147,20 @@ const MetaAdsLanding = ({ openSimulator }) => {
 
   const faqItems = [
     {
-      question: "Combien investir pour la sortie d'un clip ?",
-      answer: "Le budget optimal dépend de votre genre, audience cible et objectifs. Notre simulateur vous donne une estimation personnalisée en 30 secondes. En général, comptez 500€-2000€ pour un lancement efficace."
+      question: "Combien investir pour promouvoir ma musique sur Meta ?",
+      answer: "Le budget optimal dépend de votre genre, audience cible et objectifs. Notre simulateur vous donne une estimation personnalisée en 30 secondes. Le minimum recommandé est de 500€ sur une période de 30 jours pour un lancement efficace sur Facebook et Instagram."
     },
     {
-      question: "Est-ce que j'aurai des abonnés réels ?",
-      answer: "Absolument. Nous ciblons uniquement des fans authentiques de votre genre musical. Aucun bot, aucune vue artificielle. Nos campagnes génèrent un engagement organique durable."
+      question: "Est-ce que j'aurai des followers réels sur Instagram ?",
+      answer: "Absolument. Nous ciblons uniquement des fans authentiques de votre genre musical sur Facebook et Instagram. Aucun bot, aucun faux compte. Nos campagnes génèrent un engagement organique durable sur les deux plateformes."
     },
     {
-      question: "Est-ce que la vidéo doit être déjà optimisée ?",
-      answer: "Pas nécessairement. Nous optimisons titre, description, miniature et métadonnées pour maximiser les performances. Votre créativité + notre expertise technique = succès garanti."
+      question: "Mes contenus doivent-ils être optimisés pour Meta ?",
+      answer: "Pas nécessairement. Nous optimisons vos créatives, ciblages, et formats publicitaires pour maximiser les performances sur Facebook et Instagram. Votre créativité + notre expertise Meta = succès garanti."
     },
     {
       question: "Combien de temps pour voir les premiers résultats ?",
-      answer: "Les premières vues arrivent en 24-48h. Les résultats significatifs (abonnés, engagement) se manifestent généralement sous 7-14 jours selon votre budget et ciblage."
+      answer: "Les premières interactions arrivent en 24-48h sur Facebook et Instagram. Les résultats significatifs (followers, streams, engagement) se manifestent généralement sous 5-10 jours selon votre budget et ciblage Meta."
     }
   ];
 
