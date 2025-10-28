@@ -62,13 +62,17 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text !important;
 }
 
-/* All section titles */
+/* All section titles - Override specific ones to white */
 .value-proposition h2,
 .how-it-works h2,
-.social-proof h2,
 .services-section h2,
 .faq-section h2,
 .final-cta h2 {
+  color: var(--mdmc-white) !important;
+}
+
+/* Keep some titles in blue */
+.social-proof h2 {
   color: var(--meta-blue) !important;
 }
 
@@ -90,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Slogan text */
 .slogan-text {
-  color: var(--meta-blue) !important;
+  color: var(--mdmc-white) !important;
 }
 
 /* Stat numbers */
