@@ -31,6 +31,7 @@ import BudgetGuideTikTok from './components/pages/BudgetGuideTikTok';
 import ROIGuide from './components/pages/ROIGuide';
 import KPIGuide from './components/pages/KPIGuide';
 import ExpertiseHub from './components/pages/ExpertiseHub';
+import YouTubeAdsLanding from './components/pages/YouTubeAdsLanding';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 
@@ -176,6 +177,7 @@ function App() {
         <Route path="/roi-marketing-musical" element={<ROIGuide />} />
         <Route path="/kpi-marketing-musical" element={<KPIGuide />} />
         <Route path="/expertise-marketing-musical" element={<ExpertiseHub />} />
+        <Route path="/youtube-ads" element={<YouTubeAdsLanding />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route 
           path="/admin/dashboard" 
