@@ -27,7 +27,8 @@
       "Bash(git pull:*)",
       "Bash(magick:*)",
       "Bash(sort:*)",
-      "Bash(identify:*)"
+      "Bash(identify:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
