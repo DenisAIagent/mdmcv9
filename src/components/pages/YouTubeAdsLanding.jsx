@@ -1,24 +1,26 @@
-import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import '../../assets/styles/youtube-ads-landing.css';
 
-const YouTubeAdsLanding = () => {
-  const { t } = useTranslation();
+const YouTubeAdsLanding = ({ openSimulator }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    videoUrl: ''
+  });
+
   const [stats, setStats] = useState({
     views: 0,
     campaigns: 0,
-    roi: 0,
     artists: 0
   });
 
   const targetStats = {
-    views: 250,
-    campaigns: 150,
-    roi: 400,
-    artists: 80
+    views: 150,
+    campaigns: 80,
+    artists: 50
   };
 
   const statsRef = useRef(null);
@@ -57,7 +59,6 @@ const YouTubeAdsLanding = () => {
       setStats({
         views: Math.floor(targetStats.views * progress),
         campaigns: Math.floor(targetStats.campaigns * progress),
-        roi: Math.floor(targetStats.roi * progress),
         artists: Math.floor(targetStats.artists * progress)
       });
 
@@ -68,56 +69,136 @@ const YouTubeAdsLanding = () => {
     }, frameDuration);
   };
 
-  const features = [
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (openSimulator) {
+      openSimulator();
+    }
+  };
+
+  const testimonials = [
     {
-      icon: "🎯",
-      title: "Ciblage Précis",
-      description: "Atteignez votre audience musicale idéale grâce aux données démographiques et comportementales avancées de YouTube"
+      name: "Alex M.",
+      genre: "Hip-Hop",
+      quote: "15K vues organiques en 2 semaines. MDMC a ciblé exactement mon audience.",
+      result: "+350% d'abonnés"
     },
     {
-      icon: "📊",
-      title: "Analytics Avancés",
-      description: "Suivez en temps réel les performances de vos campagnes avec des métriques détaillées et actionnables"
+      name: "Luna S.",
+      genre: "Pop",
+      quote: "Mon clip a enfin trouvé son public. ROI à 400% dès le premier mois.",
+      result: "2.3M vues"
     },
     {
-      icon: "🚀",
-      title: "Optimisation Continue",
-      description: "Nos algorithmes d'IA optimisent automatiquement vos campagnes pour maximiser votre ROI"
+      name: "The Neon",
+      genre: "Électro",
+      quote: "Fini les vues fantômes. Que des fans réels qui stream nos tracks.",
+      result: "+180% streams"
     },
     {
-      icon: "🎵",
-      title: "Expertise Musicale",
-      description: "Une équipe spécialisée dans le marketing musical qui comprend les enjeux de votre industrie"
+      name: "Marcus J.",
+      genre: "R&B",
+      quote: "MDMC maîtrise YouTube Ads pour la musique. Résultats immédiats.",
+      result: "25K abonnés"
     }
   ];
 
-  const benefits = [
+  const faqItems = [
     {
-      number: "01",
-      title: "Visibilité Maximale",
-      description: "Positionnez votre musique devant millions d'auditeurs potentiels sur la plateforme de streaming la plus populaire au monde"
+      question: "Combien investir pour la sortie d'un clip ?",
+      answer: "Le budget optimal dépend de votre genre, audience cible et objectifs. Notre simulateur vous donne une estimation personnalisée en 30 secondes. En général, comptez 500€-2000€ pour un lancement efficace."
     },
     {
-      number: "02",
-      title: "ROI Optimisé",
-      description: "Nos stratégies éprouvées garantissent un retour sur investissement supérieur à la moyenne du marché"
+      question: "Est-ce que j'aurai des abonnés réels ?",
+      answer: "Absolument. Nous ciblons uniquement des fans authentiques de votre genre musical. Aucun bot, aucune vue artificielle. Nos campagnes génèrent un engagement organique durable."
     },
     {
-      number: "03",
-      title: "Croissance Durable",
-      description: "Construisez une fanbase fidèle et engagée qui soutiendra votre carrière musicale sur le long terme"
+      question: "Est-ce que la vidéo doit être déjà optimisée ?",
+      answer: "Pas nécessairement. Nous optimisons titre, description, miniature et métadonnées pour maximiser les performances. Votre créativité + notre expertise technique = succès garanti."
+    },
+    {
+      question: "Combien de temps pour voir les premiers résultats ?",
+      answer: "Les premières vues arrivent en 24-48h. Les résultats significatifs (abonnés, engagement) se manifestent généralement sous 7-14 jours selon votre budget et ciblage."
+    }
+  ];
+
+  const services = [
+    {
+      title: "Campagnes TrueView",
+      description: "Formats skippables optimisés pour la découverte musicale et l'engagement longue durée"
+    },
+    {
+      title: "YouTube Shorts Ads",
+      description: "Promotion sur le format viral de YouTube pour maximiser la portée organique"
+    },
+    {
+      title: "In-Feed Music Ads",
+      description: "Ciblage précis dans les recommandations et résultats de recherche musicale"
+    },
+    {
+      title: "Remarketing Avancé",
+      description: "Reconversion des visiteurs pour booster streams et abonnements"
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>YouTube Ads pour Artistes | MDMC - Boostez Votre Musique</title>
-        <meta name="description" content="Propulsez votre carrière musicale avec nos campagnes YouTube Ads sur-mesure. ROI prouvé, ciblage précis, expertise musicale. Démarrez dès aujourd'hui !" />
-        <meta property="og:title" content="YouTube Ads pour Artistes | MDMC - Boostez Votre Musique" />
-        <meta property="og:description" content="Propulsez votre carrière musicale avec nos campagnes YouTube Ads sur-mesure. ROI prouvé, ciblage précis, expertise musicale." />
+        <title>YouTube Ads pour Artistes | MDMC Music Ads</title>
+        <meta name="description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
+        <meta name="keywords" content="YouTube Ads artistes, promotion musicale YouTube, marketing musical, campagne YouTube musique, simulateur YouTube Ads, MDMC" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="YouTube Ads pour Artistes | MDMC Music Ads" />
+        <meta property="og:description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mdmcads.com/youtube-ads" />
+        <meta property="og:image" content="https://mdmcads.com/og-youtube-ads.jpg" />
+        <meta property="og:site_name" content="MDMC Music Ads" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="YouTube Ads pour Artistes | MDMC Music Ads" />
+        <meta name="twitter:description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
+        <meta name="twitter:image" content="https://mdmcads.com/og-youtube-ads.jpg" />
+
+        {/* Canonical */}
         <link rel="canonical" href="https://mdmcads.com/youtube-ads" />
+
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "YouTube Ads pour Artistes",
+            "description": "Service de promotion musicale YouTube Ads spécialisé pour artistes indépendants",
+            "provider": {
+              "@type": "Organization",
+              "name": "MDMC Music Ads",
+              "url": "https://mdmcads.com",
+              "logo": "https://mdmcads.com/logo.png"
+            },
+            "areaServed": "Worldwide",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Musicians, Independent Artists, Music Labels"
+            },
+            "offers": {
+              "@type": "Offer",
+              "name": "Simulateur YouTube Ads",
+              "description": "Outil gratuit pour estimer budget et résultats d'une campagne YouTube Ads musicale",
+              "price": "0",
+              "priceCurrency": "EUR"
+            }
+          })}
+        </script>
       </Helmet>
 
       <Header />
@@ -126,75 +207,109 @@ const YouTubeAdsLanding = () => {
       <section className="youtube-hero">
         <div className="youtube-hero-container">
           <div className="youtube-hero-content">
-            <span className="youtube-hero-badge">
-              #1 Agence YouTube Ads Musique
-            </span>
-            <h1 className="youtube-hero-title">
-              Transformez vos <span className="gradient-text">vues YouTube</span> en succès musical
-            </h1>
-            <p className="youtube-hero-description">
-              Découvrez comment nos campagnes YouTube Ads sur-mesure propulsent les carrières d'artistes indépendants vers de nouveaux sommets. Résultats garantis ou remboursé.
-            </p>
-            <div className="youtube-cta-container">
-              <button className="youtube-btn-primary">
-                Démarrer ma campagne
-                <span className="btn-arrow">→</span>
-              </button>
-              <button className="youtube-btn-secondary">
-                Voir nos résultats
-              </button>
+            <h1>YouTube Ads pour Artistes</h1>
+            <div className="hero-promise">
+              Place ton clip devant ton public. Pas devant n'importe qui.
             </div>
-            <div className="youtube-trust-indicators">
-              <span>✓ 30 jours satisfait ou remboursé</span>
-              <span>✓ Support 7j/7</span>
-              <span>✓ ROI garanti</span>
-            </div>
-          </div>
-          <div className="youtube-hero-visual">
-            <div className="youtube-mockup">
-              <div className="youtube-player">
-                <div className="youtube-play-btn">▶</div>
-                <div className="youtube-stats-overlay">
-                  <div className="stat">
-                    <span className="stat-number">2.5M</span>
-                    <span className="stat-label">Vues</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-number">45K</span>
-                    <span className="stat-label">J'aime</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-number">1.2K</span>
-                    <span className="stat-label">Commentaires</span>
-                  </div>
+
+            <div className="hero-form-container">
+              <form onSubmit={handleSubmit} className="lead-form">
+                <div className="form-row">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Ton nom d'artiste"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <input
+                  type="url"
+                  name="videoUrl"
+                  placeholder="Lien de ton clip YouTube"
+                  value={formData.videoUrl}
+                  onChange={handleInputChange}
+                  className="full-width"
+                />
+                <button type="submit" className="cta-primary">
+                  Simuler ma campagne YouTube
+                </button>
+              </form>
+
+              <div className="simulator-highlight">
+                <div className="simulator-icon">⚡</div>
+                <div className="simulator-text">
+                  <strong>Estime ton budget, résultats et timeline en 30 secondes</strong>
+                  <p>Gratuit • Rapide • Projection chiffrée • Recommandation stratégique</p>
                 </div>
               </div>
+            </div>
+
+            <div className="reassurance">
+              Optimisation experte YouTube Ads pour artistes
             </div>
           </div>
         </div>
       </section>
 
+      {/* Value Proposition */}
+      <section className="value-proposition">
+        <div className="container">
+          <h2>Toucher les bons fans, pas du trafic aléatoire</h2>
+          <div className="value-grid">
+            <div className="value-item">
+              <h3>Watch Time Optimisé</h3>
+              <p>Audiences engagées qui regardent tes clips jusqu'au bout</p>
+            </div>
+            <div className="value-item">
+              <h3>Vues Certifiées</h3>
+              <p>Aucun bot. Que des fans réels de ton genre musical</p>
+            </div>
+            <div className="value-item">
+              <h3>Abonnés Qualifiés</h3>
+              <p>Followers authentiques qui streamont tes prochaines sorties</p>
+            </div>
+          </div>
+
+          <div className="strategy-types">
+            <h3>Stratégies adaptées à tes objectifs</h3>
+            <div className="strategy-list">
+              <div className="strategy">Sortie de clip</div>
+              <div className="strategy">Lancement single</div>
+              <div className="strategy">Promotion tournée</div>
+            </div>
+          </div>
+
+          <div className="simulator-cta">
+            <button onClick={openSimulator} className="cta-primary">
+              Simuler ma campagne YouTube
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
-      <section className="youtube-stats" ref={statsRef}>
-        <div className="youtube-stats-container">
+      <section className="stats-section" ref={statsRef}>
+        <div className="container">
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-icon">📈</div>
               <div className="stat-number">{stats.views}M+</div>
               <div className="stat-label">Vues générées</div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">🎯</div>
               <div className="stat-number">{stats.campaigns}+</div>
-              <div className="stat-label">Campagnes réussies</div>
+              <div className="stat-label">Campagnes lancées</div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">💰</div>
-              <div className="stat-number">{stats.roi}%</div>
-              <div className="stat-label">ROI moyen</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">🎤</div>
               <div className="stat-number">{stats.artists}+</div>
               <div className="stat-label">Artistes accompagnés</div>
             </div>
@@ -202,128 +317,126 @@ const YouTubeAdsLanding = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="youtube-features">
-        <div className="youtube-features-container">
-          <div className="section-header">
-            <h2>Pourquoi choisir nos services YouTube Ads ?</h2>
-            <p>Une approche data-driven et une expertise musicale unique pour maximiser votre impact</p>
+      {/* How It Works */}
+      <section className="how-it-works">
+        <div className="container">
+          <h2>Comment ça marche</h2>
+          <div className="steps-grid">
+            <div className="step">
+              <div className="step-number">1</div>
+              <h3>Analyse artistique + ciblage audience musique</h3>
+              <p>Identification précise de ton public cible et analyse concurrentielle</p>
+            </div>
+            <div className="step">
+              <div className="step-number">2</div>
+              <h3>Setup campagne + tracking conversion</h3>
+              <p>Configuration optimale et mise en place du suivi des performances</p>
+            </div>
+            <div className="step">
+              <div className="step-number">3</div>
+              <h3>Optimisations quotidiennes + reporting clair</h3>
+              <p>Ajustements en temps réel et rapports transparents sur tes résultats</p>
+            </div>
           </div>
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <div key={index} className="feature-card">
-                <div className="feature-icon">{feature.icon}</div>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="social-proof">
+        <div className="container">
+          <h2>Ils nous font confiance</h2>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial">
+                <div className="testimonial-content">
+                  <p>"{testimonial.quote}"</p>
+                  <div className="testimonial-author">
+                    <strong>{testimonial.name}</strong>
+                    <span>{testimonial.genre}</span>
+                  </div>
+                  <div className="testimonial-result">
+                    {testimonial.result}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="youtube-benefits">
-        <div className="youtube-benefits-container">
-          <div className="benefits-content">
-            <div className="benefits-text">
-              <h2>Propulsez votre carrière musicale</h2>
-              <p>Nos stratégies YouTube Ads transforment votre passion en succès mesurable</p>
-            </div>
-            <div className="benefits-list">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="benefit-item">
-                  <div className="benefit-number">{benefit.number}</div>
-                  <div className="benefit-content">
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* Services */}
+      <section className="services-section">
+        <div className="container">
+          <h2>Services YouTube Ads Music</h2>
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <div key={index} className="service-card">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
           </div>
-          <div className="benefits-visual">
-            <div className="growth-chart">
-              <div className="chart-bars">
-                <div className="bar" style={{height: '30%'}}></div>
-                <div className="bar" style={{height: '50%'}}></div>
-                <div className="bar" style={{height: '75%'}}></div>
-                <div className="bar" style={{height: '100%'}}></div>
-              </div>
-              <div className="chart-labels">
-                <span>Mois 1</span>
-                <span>Mois 2</span>
-                <span>Mois 3</span>
-                <span>Mois 6</span>
-              </div>
+
+          <div className="additional-services">
+            <div className="service-item">
+              <h4>Remarketing / Algorithme YouTube</h4>
+              <p>Reciblage intelligent pour maximiser l'engagement</p>
+            </div>
+            <div className="service-item">
+              <h4>Optimisation titre / miniature / métadonnées</h4>
+              <p>SEO YouTube pour booster la découvrabilité organique</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="youtube-process">
-        <div className="youtube-process-container">
-          <div className="section-header">
-            <h2>Notre processus en 4 étapes</h2>
-            <p>Une méthodologie éprouvée pour garantir le succès de vos campagnes</p>
-          </div>
-          <div className="process-steps">
-            <div className="step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <h3>Analyse</h3>
-                <p>Audit complet de votre présence YouTube et identification des opportunités</p>
-              </div>
+      {/* Trust & Security */}
+      <section className="trust-section">
+        <div className="container">
+          <div className="trust-grid">
+            <div className="trust-item">
+              <h3>Aucun achat de vues</h3>
+              <p>100% trafic organique et authentique</p>
             </div>
-            <div className="step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <h3>Stratégie</h3>
-                <p>Définition du ciblage optimal et création de campagnes personnalisées</p>
-              </div>
+            <div className="trust-item">
+              <h3>Pas de robots. Pas de fans fantômes</h3>
+              <p>Engagement réel et durable</p>
             </div>
-            <div className="step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <h3>Lancement</h3>
-                <p>Déploiement des campagnes avec monitoring en temps réel</p>
-              </div>
-            </div>
-            <div className="step">
-              <div className="step-number">4</div>
-              <div className="step-content">
-                <h3>Optimisation</h3>
-                <p>Ajustements continus basés sur les performances pour maximiser le ROI</p>
-              </div>
+            <div className="trust-item">
+              <h3>RGPD et données protégées</h3>
+              <p>Conformité totale aux réglementations européennes</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="youtube-cta">
-        <div className="youtube-cta-container">
-          <div className="cta-content">
-            <h2>Prêt à faire exploser vos vues YouTube ?</h2>
-            <p>Rejoignez les centaines d'artistes qui nous font confiance pour développer leur carrière musicale</p>
-            <div className="cta-buttons">
-              <button className="youtube-btn-primary large">
-                Démarrer ma campagne YouTube Ads
-                <span className="btn-arrow">→</span>
-              </button>
-              <div className="cta-note">
-                <span>🎁 Consultation gratuite de 30 minutes incluse</span>
+      {/* FAQ */}
+      <section className="faq-section">
+        <div className="container">
+          <h2>Questions fréquentes</h2>
+          <div className="faq-grid">
+            {faqItems.map((item, index) => (
+              <div key={index} className="faq-item">
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
               </div>
-            </div>
+            ))}
           </div>
-          <div className="cta-guarantee">
-            <div className="guarantee-badge">
-              <span className="guarantee-icon">🛡️</span>
-              <div className="guarantee-text">
-                <strong>Garantie résultats</strong>
-                <span>30 jours satisfait ou remboursé</span>
-              </div>
-            </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="final-cta">
+        <div className="container">
+          <h2>Push. Play. Blow Up.</h2>
+          <p>Place ton clip devant les fans qui comptent</p>
+          <button onClick={openSimulator} className="cta-primary large">
+            Simuler ma campagne YouTube
+          </button>
+          <div className="cta-secondary">
+            <button className="cta-secondary-btn">
+              Lancer ma promo YouTube
+            </button>
           </div>
         </div>
       </section>

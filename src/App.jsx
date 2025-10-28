@@ -177,7 +177,7 @@ function App() {
         <Route path="/roi-marketing-musical" element={<ROIGuide />} />
         <Route path="/kpi-marketing-musical" element={<KPIGuide />} />
         <Route path="/expertise-marketing-musical" element={<ExpertiseHub />} />
-        <Route path="/youtube-ads" element={<YouTubeAdsLanding />} />
+        <Route path="/youtube-ads" element={<YouTubeAdsLanding openSimulator={openSimulator} />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route 
           path="/admin/dashboard" 
