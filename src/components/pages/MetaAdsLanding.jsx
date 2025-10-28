@@ -458,86 +458,110 @@ const MetaAdsLanding = ({ openSimulator }) => {
           {/* Metrics Grid - Top Priority */}
           <div className="metrics-grid-top">
             <div className="metric-card roi-card">
-              <div className="metric-icon">📈</div>
               <span className="metric-number">340%</span>
               <span className="metric-label">ROI</span>
               <span className="metric-detail">vs 89% moyenne secteur</span>
             </div>
             <div className="metric-card impressions-card">
-              <div className="metric-icon">👥</div>
               <span className="metric-number">2.4M</span>
               <span className="metric-label">Impressions</span>
               <span className="metric-detail">Portée qualifiée</span>
             </div>
             <div className="metric-card ctr-card">
-              <div className="metric-icon">🎯</div>
               <span className="metric-number">1.96%</span>
               <span className="metric-label">CTR</span>
               <span className="metric-detail">+847% engagement</span>
             </div>
             <div className="metric-card cpc-card">
-              <div className="metric-icon">💰</div>
               <span className="metric-number">€0.23</span>
               <span className="metric-label">Coût/Clic</span>
               <span className="metric-detail">Optimisé Meta</span>
             </div>
           </div>
 
-          {/* Dashboard Central with Testimonial */}
-          <div className="dashboard-central">
-            <div className="dashboard-image-new">
-              <img
-                src="/assets/images/exemple-metaads.png"
-                alt="Dashboard Meta Ads - Résultats campagne musique"
-                className="dashboard-screenshot"
-              />
-              <div className="testimonial-overlay">
-                <div className="testimonial-content">
-                  <p>"En 30 jours, j'ai gagné +12K followers Instagram authentiques et mes streams ont explosé. MDMC a transformé ma carrière."</p>
-                  <div className="testimonial-author">
-                    <strong>MC FlowBeats</strong>
-                    <span>Artiste Hip-Hop</span>
-                  </div>
+          {/* Meta Results Cards Showcase */}
+          <div className="meta-cards-showcase">
+            <h3>Résultats détaillés par plateforme</h3>
+
+            <div className="meta-cards-grid">
+              <div className="meta-card-container">
+                <img
+                  src="/assets/images/interactions-meta.png"
+                  alt="Résultats interactions Meta Ads"
+                  className="meta-result-card"
+                />
+                <div className="card-overlay">
+                  <h4>Interactions</h4>
+                  <p>Engagement authentique sur Facebook & Instagram</p>
+                </div>
+              </div>
+
+              <div className="meta-card-container">
+                <img
+                  src="/assets/images/spectateur-meta.png"
+                  alt="Résultats spectateurs Meta Ads"
+                  className="meta-result-card"
+                />
+                <div className="card-overlay">
+                  <h4>Spectateurs</h4>
+                  <p>Audience qualifiée et fans potentiels</p>
+                </div>
+              </div>
+
+              <div className="meta-card-container">
+                <img
+                  src="/assets/images/vues-meta.png"
+                  alt="Résultats vues Meta Ads"
+                  className="meta-result-card"
+                />
+                <div className="card-overlay">
+                  <h4>Vues</h4>
+                  <p>Portée maximisée sur les réseaux Meta</p>
                 </div>
               </div>
             </div>
 
-            <div className="campaign-insights">
-              <h3>Détails de la campagne</h3>
-              <div className="insights-grid">
-                <div className="insight-item">
-                  <span className="insight-label">Budget investi</span>
-                  <span className="insight-value">800€ / 30 jours</span>
-                </div>
-                <div className="insight-item">
-                  <span className="insight-label">Nouveaux followers</span>
-                  <span className="insight-value">+12,847 Instagram</span>
-                </div>
-                <div className="insight-item">
-                  <span className="insight-label">Streams générés</span>
-                  <span className="insight-value">+89,340 écoutes</span>
-                </div>
-                <div className="insight-item">
-                  <span className="insight-label">CA généré</span>
-                  <span className="insight-value">2,720€</span>
-                </div>
-              </div>
-
-              <div className="social-proof-badges">
-                <div className="badge meta-partner">
-                  <span className="badge-icon">✓</span>
-                  <span className="badge-text">Meta Business Partner</span>
-                </div>
-                <div className="badge blueprint-certified">
-                  <span className="badge-icon">🎓</span>
-                  <span className="badge-text">Meta Blueprint Certified</span>
+            {/* Campaign Summary */}
+            <div className="campaign-summary-new">
+              <div className="summary-content">
+                <h4>Campagne complète - Artiste Hip-Hop</h4>
+                <div className="summary-metrics">
+                  <div className="summary-item">
+                    <span className="summary-label">Budget :</span>
+                    <span className="summary-value">800€ / 30 jours</span>
+                  </div>
+                  <div className="summary-item">
+                    <span className="summary-label">ROI :</span>
+                    <span className="summary-value">340% retour</span>
+                  </div>
+                  <div className="summary-item">
+                    <span className="summary-label">Nouveaux followers :</span>
+                    <span className="summary-value">+12,847 Instagram</span>
+                  </div>
+                  <div className="summary-item">
+                    <span className="summary-label">CA généré :</span>
+                    <span className="summary-value">2,720€</span>
+                  </div>
                 </div>
               </div>
 
-              <button onClick={openSimulator} className="cta-primary showcase-cta">
-                Obtenir ces résultats pour mon projet
-                <span className="cta-arrow">→</span>
-              </button>
+              <div className="summary-cta">
+                <div className="social-proof-badges">
+                  <div className="badge meta-partner">
+                    <span className="badge-icon">✓</span>
+                    <span className="badge-text">Meta Business Partner</span>
+                  </div>
+                  <div className="badge blueprint-certified">
+                    <span className="badge-icon">🎓</span>
+                    <span className="badge-text">Meta Blueprint Certified</span>
+                  </div>
+                </div>
+
+                <button onClick={openSimulator} className="cta-primary showcase-cta">
+                  Obtenir ces résultats pour mon projet
+                  <span className="cta-arrow">→</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
