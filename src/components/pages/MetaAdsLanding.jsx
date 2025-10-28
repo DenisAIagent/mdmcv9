@@ -453,29 +453,29 @@ const MetaAdsLanding = ({ openSimulator }) => {
       <section className="results-showcase">
         <div className="container">
           <h2>Résultats concrets de nos campagnes Meta</h2>
-          <h3 className="showcase-subtitle">Exemple réel d'une campagne Facebook & Instagram Ads pour un artiste Hip-Hop</h3>
+          <h3 className="showcase-subtitle">Performance réelle d'une campagne Facebook & Instagram Ads</h3>
 
-          {/* Metrics Grid - Top Priority */}
+          {/* Metrics Grid - Real Performance */}
           <div className="metrics-grid-top">
-            <div className="metric-card roi-card">
-              <span className="metric-number">340%</span>
-              <span className="metric-label">ROI</span>
-              <span className="metric-detail">vs 89% moyenne secteur</span>
+            <div className="metric-card views-card">
+              <span className="metric-number">2,876</span>
+              <span className="metric-label">Vues</span>
+              <span className="metric-detail">Exposition totale</span>
             </div>
-            <div className="metric-card impressions-card">
-              <span className="metric-number">2.4M</span>
-              <span className="metric-label">Impressions</span>
-              <span className="metric-detail">Portée qualifiée</span>
+            <div className="metric-card reach-card">
+              <span className="metric-number">2,232</span>
+              <span className="metric-label">Spectateurs</span>
+              <span className="metric-detail">77.6% reach unique</span>
             </div>
-            <div className="metric-card ctr-card">
-              <span className="metric-number">1.96%</span>
-              <span className="metric-label">CTR</span>
-              <span className="metric-detail">+847% engagement</span>
+            <div className="metric-card engagement-card">
+              <span className="metric-number">582</span>
+              <span className="metric-label">Interactions</span>
+              <span className="metric-detail">26% taux d'engagement</span>
             </div>
-            <div className="metric-card cpc-card">
-              <span className="metric-number">€0.23</span>
-              <span className="metric-label">Coût/Clic</span>
-              <span className="metric-detail">Optimisé Meta</span>
+            <div className="metric-card growth-card">
+              <span className="metric-number">+100%</span>
+              <span className="metric-label">Progression</span>
+              <span className="metric-detail">7 derniers jours</span>
             </div>
           </div>
 
@@ -521,26 +521,26 @@ const MetaAdsLanding = ({ openSimulator }) => {
               </div>
             </div>
 
-            {/* Campaign Summary */}
+            {/* Campaign Performance Summary */}
             <div className="campaign-summary-new">
               <div className="summary-content">
-                <h4>Campagne complète - Artiste Hip-Hop</h4>
+                <h4>Analyse de performance réelle</h4>
                 <div className="summary-metrics">
                   <div className="summary-item">
-                    <span className="summary-label">Budget :</span>
-                    <span className="summary-value">800€ / 30 jours</span>
+                    <span className="summary-label">Entonnoir de conversion :</span>
+                    <span className="summary-value">2,876 → 2,232 → 582</span>
                   </div>
                   <div className="summary-item">
-                    <span className="summary-label">ROI :</span>
-                    <span className="summary-value">340% retour</span>
+                    <span className="summary-label">Taux d'engagement :</span>
+                    <span className="summary-value">26% (vs 1-3% moyenne)</span>
                   </div>
                   <div className="summary-item">
-                    <span className="summary-label">Nouveaux followers :</span>
-                    <span className="summary-value">+12,847 Instagram</span>
+                    <span className="summary-label">Progression :</span>
+                    <span className="summary-value">+100% sur 7 jours</span>
                   </div>
                   <div className="summary-item">
-                    <span className="summary-label">CA généré :</span>
-                    <span className="summary-value">2,720€</span>
+                    <span className="summary-label">Qualité audience :</span>
+                    <span className="summary-value">77.6% reach unique</span>
                   </div>
                 </div>
               </div>

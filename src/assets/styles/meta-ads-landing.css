@@ -807,7 +807,6 @@ h1, h2, h3, h4, h5, h6 {
     linear-gradient(rgba(255, 0, 0, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
-  animation: gridMove 20s linear infinite;
   z-index: 2;
 }
 
