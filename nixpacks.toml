@@ -49,5 +49,8 @@ cmds = ["npm ci"]
 [phases.build]
 cmds = ["npm run build"]
 
+[variables]
+NODE_ENV = "production"
+
 [start]
 cmd = "npm start"
