@@ -449,6 +449,60 @@ const MetaAdsLanding = ({ openSimulator }) => {
         </div>
       </section>
 
+      {/* Results Showcase - Dashboard Screenshot */}
+      <section className="results-showcase">
+        <div className="container">
+          <h2>Résultats concrets de nos campagnes Meta</h2>
+          <p className="section-subtitle">Exemple réel d'une campagne Facebook & Instagram Ads pour un artiste indépendant</p>
+
+          <div className="dashboard-showcase">
+            <div className="dashboard-image">
+              <img
+                src="/assets/images/exemple-metaads.png"
+                alt="Dashboard Meta Ads - Résultats campagne musique"
+                className="dashboard-screenshot"
+              />
+              <div className="dashboard-overlay">
+                <div className="result-highlight">
+                  <span className="result-number">+847%</span>
+                  <span className="result-label">Engagement Rate</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="dashboard-details">
+              <h3>Campagne Meta Ads - Artiste Hip-Hop</h3>
+              <div className="metrics-grid">
+                <div className="metric-item">
+                  <span className="metric-number">2.4M</span>
+                  <span className="metric-label">Impressions</span>
+                </div>
+                <div className="metric-item">
+                  <span className="metric-number">47K</span>
+                  <span className="metric-label">Clics</span>
+                </div>
+                <div className="metric-item">
+                  <span className="metric-number">1.96%</span>
+                  <span className="metric-label">CTR</span>
+                </div>
+                <div className="metric-item">
+                  <span className="metric-number">€0.23</span>
+                  <span className="metric-label">Coût par clic</span>
+                </div>
+              </div>
+              <div className="campaign-summary">
+                <p><strong>Budget :</strong> 800€ sur 30 jours</p>
+                <p><strong>Résultat :</strong> +12K nouveaux followers Instagram authentiques</p>
+                <p><strong>ROI :</strong> 340% (calculé sur les streams générés)</p>
+              </div>
+              <button onClick={openSimulator} className="cta-primary">
+                Simuler mes résultats Meta
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof - Reviews similaires au composant Reviews */}
       <section className="social-proof">
         <div className="container">
