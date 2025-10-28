@@ -24,9 +24,6 @@ const Footer = ({ openSimulator }) => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <Link to="/" aria-label="MDMC - Retour à l'accueil">
-            <h3>MDMC</h3>
-          </Link>
           <p>{t('footer.logo_p')}</p>
           <div className="google-partner">
             <a 
