@@ -774,7 +774,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Background */
 .hero-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -784,6 +784,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .hero-background::after {
@@ -798,7 +799,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-grid-pattern {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
