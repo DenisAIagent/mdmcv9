@@ -47,12 +47,108 @@
   padding: 4rem 0;
 }
 
-/* Subtle Meta Accents - Override red with blue for specific elements on Meta page */
+/* META ADS PAGE ISOLATION - All titles and accents in Meta Blue */
+
+/* Override ALL page titles and headings to be Meta Blue */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--meta-blue) !important;
+}
+
+/* Specific title overrides */
 .title-line-2 {
   background: var(--gradient-meta) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
+}
+
+/* All section titles */
+.value-proposition h2,
+.how-it-works h2,
+.social-proof h2,
+.services-section h2,
+.faq-section h2,
+.final-cta h2 {
+  color: var(--meta-blue) !important;
+}
+
+/* All h3 titles in content sections */
+.value-item h3,
+.step h3,
+.service-card h3,
+.trust-item h3,
+.faq-item h3,
+.form-header h3 {
+  color: var(--meta-blue) !important;
+}
+
+/* All h4 titles */
+.service-item h4,
+.additional-services h4 {
+  color: var(--meta-blue) !important;
+}
+
+/* Slogan text */
+.slogan-text {
+  color: var(--meta-blue) !important;
+}
+
+/* Stat numbers */
+.stat-number {
+  color: var(--meta-blue) !important;
+}
+
+/* All accent elements that use red borders/backgrounds */
+.step {
+  border-left: 4px solid var(--meta-blue) !important;
+}
+
+.step-number {
+  background: var(--gradient-meta) !important;
+}
+
+.simulator-highlight {
+  border-left: 4px solid var(--meta-blue) !important;
+}
+
+.simulator-icon,
+.trust-icon,
+.benefit-icon {
+  color: var(--meta-blue) !important;
+}
+
+/* Secondary CTA button hover */
+.cta-secondary-hero:hover {
+  border-color: var(--meta-blue) !important;
+  color: var(--meta-blue) !important;
+}
+
+/* All primary CTA buttons */
+.cta-primary {
+  background: var(--gradient-meta) !important;
+}
+
+.cta-primary:hover {
+  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3) !important;
+}
+
+/* Secondary CTA buttons */
+.cta-secondary-btn {
+  color: var(--meta-blue) !important;
+  border: 2px solid var(--meta-blue) !important;
+}
+
+.cta-secondary-btn:hover {
+  background: var(--meta-blue) !important;
+  color: var(--mdmc-white) !important;
+}
+
+/* Focus states */
+.cta-primary:focus,
+.cta-secondary-btn:focus,
+.lead-form input:focus {
+  outline: 3px solid rgba(24, 119, 242, 0.5) !important;
+  outline-offset: 2px;
 }
 
 /* Meta accent on primary button */
