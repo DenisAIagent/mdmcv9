@@ -255,7 +255,7 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
             {/* Left: Main Content */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="badge-text">MDMC OÜ — MDMC Music Ads</span>
+                <span className="badge-text">MDMC Music Ads</span>
               </div>
 
               <h1 className="hero-title-creative">
@@ -274,7 +274,6 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
 
               <div className="hero-cta-buttons">
                 <button onClick={openSimulator} className="cta-primary-hero">
-                  <span className="cta-icon">🎯</span>
                   Simuler ma campagne YouTube
                   <span className="cta-arrow">→</span>
                 </button>
@@ -285,15 +284,12 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
 
               <div className="hero-trust-line">
                 <div className="trust-item">
-                  <span className="trust-icon">✓</span>
                   <span>Aucun achat de vues</span>
                 </div>
                 <div className="trust-item">
-                  <span className="trust-icon">✓</span>
                   <span>Fans réels uniquement</span>
                 </div>
                 <div className="trust-item">
-                  <span className="trust-icon">✓</span>
                   <span>ROI garanti</span>
                 </div>
               </div>
@@ -351,15 +347,12 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
 
                 <div className="form-benefits">
                   <div className="benefit-item">
-                    <span className="benefit-icon">⚡</span>
                     <span>Estimation budget personnalisée</span>
                   </div>
                   <div className="benefit-item">
-                    <span className="benefit-icon">📊</span>
                     <span>Projection vues & abonnés</span>
                   </div>
                   <div className="benefit-item">
-                    <span className="benefit-icon">🎯</span>
                     <span>Stratégie ciblage optimale</span>
                   </div>
                 </div>
@@ -467,7 +460,7 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
                   <div className="testimonial-author">
                     <strong>{testimonial.name}</strong>
                     <span>{testimonial.genre}</span>
-                    {testimonial.verified && <span className="verified-badge">✓ Vérifié</span>}
+                    {testimonial.verified && <span className="verified-badge">Vérifié</span>}
                   </div>
                   <div className="testimonial-result">
                     {testimonial.result}
