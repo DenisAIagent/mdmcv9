@@ -4,6 +4,7 @@ import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import featurableService from '../../services/featurable.service';
 import '../../assets/styles/youtube-ads-landing.css';
+import '../../assets/styles/reviews.css';
 
 const YouTubeAdsLanding = ({ openSimulator }) => {
   const [formData, setFormData] = useState({
@@ -448,23 +449,65 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
         </div>
       </section>
 
-      {/* Social Proof */}
+      {/* Social Proof - Reviews similaires au composant Reviews */}
       <section className="social-proof">
         <div className="container">
           <h2>Ils nous font confiance</h2>
-          <div className="testimonials-grid">
+          <p className="section-subtitle">Témoignages authentiques de nos clients sur Google My Business</p>
+
+          <div className="reviews-grid-modern">
             {getTestimonials().map((testimonial, index) => (
-              <div key={index} className="testimonial">
-                <div className="testimonial-content">
-                  <p>"{testimonial.quote}"</p>
-                  <div className="testimonial-author">
-                    <strong>{testimonial.name}</strong>
-                    <span>{testimonial.genre}</span>
-                    {testimonial.verified && <span className="verified-badge">Vérifié</span>}
+              <div
+                key={index}
+                className="review-card-modern visible"
+                itemScope
+                itemType="https://schema.org/Review"
+              >
+                {/* Header avec avatar et infos client */}
+                <div className="review-header-modern">
+                  <div className="review-avatar-modern">
+                    <span className="review-initials">
+                      {testimonial.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                    </span>
                   </div>
-                  <div className="testimonial-result">
-                    {testimonial.result}
-                    {testimonial.source && <span className="source"> via {testimonial.source}</span>}
+
+                  <div className="review-info-modern">
+                    <div className="review-name-row">
+                      <h3 className="review-name-modern" itemProp="author" itemScope itemType="https://schema.org/Person">
+                        <span itemProp="name">{testimonial.name}</span>
+                      </h3>
+                      {testimonial.verified && <span className="verified-icon">✓</span>}
+                    </div>
+
+                    <div className="review-company">
+                      {testimonial.genre}
+                    </div>
+
+                    <div className="review-rating-row">
+                      <div className="review-rating-modern" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                        <meta itemProp="ratingValue" content="5" />
+                        <meta itemProp="bestRating" content="5" />
+                        <meta itemProp="worstRating" content="1" />
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="star filled">★</span>
+                        ))}
+                      </div>
+                      <span className="review-time">Récemment</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Citation avec guillemets */}
+                <div className="review-content-modern">
+                  <div className="quote-icon">"</div>
+                  <p className="review-text-modern" itemProp="reviewBody">"{testimonial.quote}"</p>
+                </div>
+
+                {/* Footer avec source et rating */}
+                <div className="review-footer-modern">
+                  <span className="review-rating-chip">{testimonial.result}</span>
+                  <div className="review-meta">
+                    {testimonial.source && <span className="review-source">via {testimonial.source}</span>}
                   </div>
                 </div>
               </div>

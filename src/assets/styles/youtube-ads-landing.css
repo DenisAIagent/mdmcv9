@@ -710,73 +710,34 @@
   line-height: 1.6;
 }
 
-/* Social Proof */
+/* Social Proof - Using Reviews Component Style */
 .social-proof h2 {
   font-family: var(--font-secondary);
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial {
-  background: var(--mdmc-gray-dark);
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--mdmc-gray-darker);
-}
-
-.testimonial-content p {
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.testimonial-author {
   margin-bottom: 1rem;
 }
 
-.testimonial-author strong {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.testimonial-author span {
+.social-proof .section-subtitle {
+  text-align: center;
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
 }
 
-.testimonial-result {
-  background: var(--mdmc-red);
-  color: var(--mdmc-white);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: inline-block;
+/* Override for reviews in landing page context */
+.social-proof .reviews-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-.verified-badge {
-  background: #00aa00;
-  color: var(--mdmc-white);
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-left: 0.5rem;
-}
-
-.source {
-  color: #999;
-  font-size: 0.8rem;
-  font-style: italic;
+/* Ensure reviews cards inherit the main theme */
+.social-proof .review-card-modern {
+  background: var(--mdmc-gray-dark) !important;
+  border: 1px solid var(--mdmc-gray-darker) !important;
 }
 
 /* Services */
@@ -1014,7 +975,7 @@
   .value-grid,
   .stats-grid,
   .steps-grid,
-  .testimonials-grid,
+  .social-proof .reviews-grid-modern,
   .services-grid,
   .trust-grid,
   .faq-grid {
@@ -1053,7 +1014,6 @@
   }
 
   .step,
-  .testimonial,
   .service-card,
   .faq-item {
     padding: 1.5rem;
@@ -1099,7 +1059,6 @@
 /* Hover Effects */
 .value-item:hover,
 .step:hover,
-.testimonial:hover,
 .service-card:hover,
 .faq-item:hover {
   transform: translateY(-4px);
