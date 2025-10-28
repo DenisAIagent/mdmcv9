@@ -239,132 +239,109 @@ const MetaAdsLanding = ({ openSimulator }) => {
       <Header />
 
       {/* Hero Section - Creative & Impactful */}
-      <section className="youtube-hero-creative">
-        <div className="hero-background">
-          <div className="hero-grid-pattern"></div>
-          <div className="hero-floating-elements">
-            <div className="floating-element play-button">▶</div>
-            <div className="floating-element music-note">♪</div>
-            <div className="floating-element soundwave"></div>
-            <div className="floating-element meta-logo">f</div>
+      <section className="meta-hero-centered">
+        <div className="meta-hero-background">
+          <div className="meta-gradient-overlay"></div>
+          <div className="meta-floating-icons">
+            <div className="meta-icon facebook">f</div>
+            <div className="meta-icon instagram">📷</div>
+            <div className="meta-icon heart">❤️</div>
+            <div className="meta-icon music">🎵</div>
           </div>
         </div>
 
-        <div className="hero-container">
-          <div className="hero-content-split">
+        <div className="meta-hero-container">
+          <div className="meta-hero-content">
 
-            {/* Left: Main Content */}
-            <div className="hero-left">
-              <div className="hero-badge">
-                <span className="badge-text">MDMC Music Ads</span>
-              </div>
-
-              <h1 className="hero-title-creative">
-                <span className="title-line-1">Meta Ads</span>
-                <span className="title-line-2">pour Artistes</span>
-              </h1>
-
-              <div className="hero-promise-creative">
-                <div className="promise-main">
-                  Place ta musique devant ton public.
-                </div>
-                <div className="promise-sub">
-                  Pas devant n'importe qui.
-                </div>
-              </div>
-
-              <div className="hero-cta-buttons">
-                <button onClick={openSimulator} className="cta-primary-hero">
-                  Simuler ma campagne Meta
-                  <span className="cta-arrow">→</span>
-                </button>
-                <button className="cta-secondary-hero">
-                  Lancer ma promo Meta
-                </button>
-              </div>
-
-              <div className="hero-trust-line">
-                <div className="trust-item">
-                  <span>Aucun achat de vues</span>
-                </div>
-                <div className="trust-item">
-                  <span>Fans réels uniquement</span>
-                </div>
-                <div className="trust-item">
-                  <span>ROI garanti</span>
-                </div>
-              </div>
+            <div className="meta-badge">
+              MDMC Music Ads
             </div>
 
-            {/* Right: Interactive Form */}
-            <div className="hero-right">
-              <div className="hero-form-creative">
-                <div className="form-header">
-                  <h3>Estime ton potentiel YouTube</h3>
-                  <p>Gratuit • 30 secondes • Projection chiffrée</p>
-                </div>
+            <h1 className="meta-hero-title">
+              <span className="meta-title-main">Fais exploser</span>
+              <span className="meta-title-sub">ta communauté</span>
+              <span className="meta-platforms">sur Facebook & Instagram</span>
+            </h1>
 
-                <form onSubmit={handleSubmit} className="lead-form-creative">
-                  <div className="input-group">
-                    <label>Nom d'artiste</label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Ex: MC Flow"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
+            <div className="meta-hero-description">
+              <p>Transforme tes fans en communauté engagée. Nous plaçons ta musique devant les bonnes personnes sur les plateformes où elles passent le plus de temps.</p>
+            </div>
 
-                  <div className="input-group">
-                    <label>Email pro</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="ton@email.com"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
+            <div className="meta-cta-group">
+              <button onClick={openSimulator} className="meta-cta-primary">
+                <span className="cta-icon">📊</span>
+                Simuler ma campagne Meta
+              </button>
+              <button className="meta-cta-secondary">
+                Voir nos résultats
+              </button>
+            </div>
 
-                  <div className="input-group">
-                    <label>Lien vidéo (optionnel)</label>
-                    <input
-                      type="url"
-                      name="videoUrl"
-                      placeholder="https://instagram.com/reel/... ou https://youtube.com/watch?v=..."
-                      value={formData.videoUrl}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-
-                  <button type="submit" className="form-submit-btn">
-                    <span className="btn-text">Simuler maintenant</span>
-                    <span className="btn-loading">Analyse en cours...</span>
-                  </button>
-                </form>
-
-                <div className="form-benefits">
-                  <div className="benefit-item">
-                    <span>Estimation budget personnalisée</span>
-                  </div>
-                  <div className="benefit-item">
-                    <span>Projection vues & abonnés</span>
-                  </div>
-                  <div className="benefit-item">
-                    <span>Stratégie ciblage optimale</span>
-                  </div>
-                </div>
+            <div className="meta-social-proof">
+              <div className="proof-item">
+                <span className="proof-number">2.8B+</span>
+                <span className="proof-label">Utilisateurs Facebook</span>
+              </div>
+              <div className="proof-item">
+                <span className="proof-number">2B+</span>
+                <span className="proof-label">Utilisateurs Instagram</span>
+              </div>
+              <div className="proof-item">
+                <span className="proof-number">98%</span>
+                <span className="proof-label">Précision ciblage</span>
               </div>
             </div>
 
           </div>
 
-          {/* Bottom: Slogan */}
-          <div className="hero-slogan">
-            <span className="slogan-text">Push. Play. Blow Up.</span>
+          {/* Form en dessous sur Meta */}
+          <div className="meta-form-section">
+            <div className="meta-form-card">
+              <div className="form-header-meta">
+                <h3>🎯 Test gratuit - Potentiel Meta</h3>
+                <p>Découvre combien ta musique peut toucher de fans</p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="meta-form">
+                <div className="meta-input-row">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Nom d'artiste"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email professionnel"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+
+                <input
+                  type="url"
+                  name="videoUrl"
+                  placeholder="Lien Instagram/Facebook (optionnel)"
+                  value={formData.videoUrl}
+                  onChange={handleInputChange}
+                  className="meta-input-full"
+                />
+
+                <button type="submit" className="meta-submit-btn">
+                  🚀 Obtenir mon estimation Meta
+                </button>
+              </form>
+
+              <div className="meta-form-trust">
+                <span>✓ Gratuit</span>
+                <span>✓ Sans engagement</span>
+                <span>✓ Résultats en 30s</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
