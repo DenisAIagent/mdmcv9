@@ -71,8 +71,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--mdmc-white) !important;
 }
 
-/* Keep some titles in blue */
+/* Social proof title white, subtitle blue */
 .social-proof h2 {
+  color: var(--mdmc-white) !important;
+}
+
+.social-proof .section-subtitle {
   color: var(--meta-blue) !important;
 }
 

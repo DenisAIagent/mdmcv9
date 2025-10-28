@@ -546,16 +546,6 @@ const MetaAdsLanding = ({ openSimulator }) => {
               </div>
 
               <div className="summary-cta">
-                <div className="social-proof-badges">
-                  <div className="badge meta-partner">
-                    <span className="badge-icon">✓</span>
-                    <span className="badge-text">Meta Business Partner</span>
-                  </div>
-                  <div className="badge blueprint-certified">
-                    <span className="badge-icon">🎓</span>
-                    <span className="badge-text">Meta Blueprint Certified</span>
-                  </div>
-                </div>
 
                 <button onClick={openSimulator} className="cta-primary showcase-cta">
                   Obtenir ces résultats pour mon projet
