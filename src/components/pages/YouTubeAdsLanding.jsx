@@ -218,7 +218,7 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
               "@type": "Organization",
               "name": "MDMC Music Ads",
               "url": "https://mdmcads.com",
-              "logo": "https://mdmcads.com/logo.png"
+              "logo": "https://www.mdmcmusicads.com/logo.png"
             },
             "areaServed": "Worldwide",
             "audience": {
