@@ -376,14 +376,16 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <meta property="og:title" content="Spotify Ads pour Artistes - MDMC" />
         <meta property="og:description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées (Audio & Video)." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.mdmc-music-ads.com/spotify-ads" />
-        <meta property="og:image" content="/assets/images/opengraph-spotifyads.png" />
+        <meta property="og:url" content="https://www.mdmcmusicads.com/spotify-ads" />
+        <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
+        <meta property="og:image:alt" content="Campagnes Spotify Ads pour artistes - MDMC" />
+        <meta property="og:updated_time" content={String(Math.floor(Date.now()/1000))} />
         <meta property="og:site_name" content="MDMC Music Ads" />
         <meta property="og:locale" content="fr_FR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Spotify Ads pour Artistes - MDMC" />
         <meta name="twitter:description" content="Ciblage musical précis, Audio Ads, Video Takeover. Parlons-en." />
-        <meta name="twitter:image" content="/assets/images/opengraph-spotifyads.png" />
+        <meta name="twitter:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
         <script type="application/ld+json">{`
           ${JSON.stringify({
             '@context': 'https://schema.org',
