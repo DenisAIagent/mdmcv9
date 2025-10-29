@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
+import SpotifyReleasePlanner from '../tools/SpotifyReleasePlanner';
 import featurableService from '../../services/featurable.service';
 import '../../assets/styles/spotify-ads-landing.css';
 import '../../assets/styles/reviews.css';
@@ -21,6 +22,15 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
 
   const [reviews, setReviews] = useState([]);
   const [reviewsLoading, setReviewsLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Modal state for image preview
+  const [modalImage, setModalImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  // Release Planner state
+  const [showReleasePlanner, setShowReleasePlanner] = useState(false);
 
   const targetStats = {
     views: 150,
@@ -112,6 +122,153 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
       openSimulator(formData);
     }
   };
+
+  const loadCalendlyScript = () => new Promise((resolve, reject) => {
+    if (window.Calendly) return resolve();
+    const existing = document.querySelector('script[data-calendly]');
+    if (existing) {
+      existing.addEventListener('load', () => resolve());
+      existing.addEventListener('error', () => reject());
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    s.setAttribute('data-calendly', 'true');
+    s.onload = () => resolve();
+    s.onerror = () => reject();
+    document.body.appendChild(s);
+  });
+
+  const handleCalendlyBooking = async () => {
+    // Validation des champs requis
+    if (!formData.name || !formData.email) {
+      alert('Veuillez remplir votre nom et email avant de réserver un appel.');
+      return;
+    }
+
+    // Validation email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Veuillez entrer un email valide.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      // Inscription newsletter via votre webhook existant qui gère Brevo
+      const webhookData = {
+        artistName: formData.name,
+        email: formData.email,
+        platform: 'spotify_ads',
+        budget: 'consultation',
+        campaignType: 'consultation_booking',
+        country: 'unknown',
+        source: 'spotify_ads_landing',
+        spotify_url: formData.videoUrl || '',
+        newsletter: true,
+        utm_source: 'spotify_ads_landing',
+        utm_medium: 'website',
+        utm_campaign: 'spotify_ads_booking',
+        utm_content: 'hero_form'
+      };
+      // Utiliser le webhook fourni pour l'inscription/lead avec timeout via AbortController
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 10000);
+      const response = await fetch('https://primary-production-7acf.up.railway.app/webhook/f688fb36-73e6-47ad-b265-cd0e8e00d60a', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData),
+        signal: controller.signal
+      }).catch((err) => {
+        console.error('Webhook error/timeout:', err);
+        return null;
+      });
+      clearTimeout(timer);
+
+      if (response.ok) {
+        console.log('Inscription newsletter réussie');
+      }
+
+      // Ouverture Calendly avec les données pré-remplies + UTM
+      const calendlyBaseUrl = `https://calendly.com/mdmc-yt/meeting?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}`;
+      const calendlyUrl = addUtmToUrl(calendlyBaseUrl, 'spotify_ads_landing', 'website', 'spotify_ads_booking', 'hero_form');
+      try {
+        await loadCalendlyScript();
+        if (window.Calendly) {
+          window.Calendly.initPopupWidget({ url: calendlyUrl });
+        } else {
+          window.open(calendlyUrl, '_blank');
+        }
+      } catch {
+        window.open(calendlyUrl, '_blank');
+      }
+
+    } catch (error) {
+      console.error('Erreur inscription newsletter:', error);
+      // Ouvrir Calendly même en cas d'erreur newsletter
+      const fallbackCalendlyUrl = addUtmToUrl('https://calendly.com/mdmc-yt/meeting', 'spotify_ads_landing', 'website', 'spotify_ads_booking', 'hero_form_fallback');
+      try {
+        await loadCalendlyScript();
+        if (window.Calendly) {
+          window.Calendly.initPopupWidget({ url: fallbackCalendlyUrl });
+        } else {
+          window.open(fallbackCalendlyUrl, '_blank');
+        }
+      } catch {
+        window.open(fallbackCalendlyUrl, '_blank');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Modal functions
+  const openModal = (imageSrc, title, description) => {
+    setModalImage({ src: imageSrc, title, description });
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImage(null);
+    document.body.style.overflow = 'unset'; // Restore scroll
+  };
+
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(prev => (prev === index ? null : index));
+  };
+
+  // Helper function pour ajouter UTM aux liens
+  const addUtmToUrl = (url, source = 'spotify_ads_landing', medium = 'website', campaign = 'spotify_ads', content = '') => {
+    try {
+      const urlObj = new URL(url);
+      urlObj.searchParams.set('utm_source', source);
+      urlObj.searchParams.set('utm_medium', medium);
+      urlObj.searchParams.set('utm_campaign', campaign);
+      if (content) urlObj.searchParams.set('utm_content', content);
+      return urlObj.toString();
+    } catch {
+      // Si ce n'est pas une URL absolue, on ajoute quand même les paramètres
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}${content ? `&utm_content=${encodeURIComponent(content)}` : ''}`;
+    }
+  };
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isModalOpen]);
 
   // Services Spotify Ads spécifiques
   const services = [
@@ -216,6 +373,45 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <title>Spotify Ads pour Artistes | Campagnes Audio & Video - MDMC</title>
         <meta name="description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées. Audio Ads, Video Takeover, Sponsored Playlists. Ciblage précis par genre musical. ROI garanti." />
         <meta name="keywords" content="spotify ads, publicité spotify, audio ads, campagne spotify, streaming, promotion musicale, artiste indépendant" />
+        <meta property="og:title" content="Spotify Ads pour Artistes - MDMC" />
+        <meta property="og:description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées (Audio & Video)." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.mdmc-music-ads.com/spotify-ads" />
+        <meta property="og:image" content="/assets/images/opengraph-spotifyads.png" />
+        <meta property="og:site_name" content="MDMC Music Ads" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Spotify Ads pour Artistes - MDMC" />
+        <meta name="twitter:description" content="Ciblage musical précis, Audio Ads, Video Takeover. Parlons-en." />
+        <meta name="twitter:image" content="/assets/images/opengraph-spotifyads.png" />
+        <script type="application/ld+json">{`
+          ${JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              ...[{
+                question: "Combien coûte une campagne Spotify Ads ?",
+                answer: "Les budgets Spotify Ads commencent à partir de 250€. Nous recommandons un minimum de 500€ sur 30 jours pour optimiser les performances et toucher suffisamment d'auditeurs qualifiés."
+              }, {
+                question: "Quelle est la différence entre Audio Ads et Video Ads ?",
+                answer: "Les Audio Ads sont diffusées entre les morceaux sur Spotify gratuit (30 secondes max). Les Video Ads apparaissent en plein écran avec un impact visuel fort."
+              }, {
+                question: "Peut-on cibler par genre musical sur Spotify ?",
+                answer: "Oui, Spotify offre un ciblage très précis par genres, artistes similaires, et comportements d'écoute."
+              }, {
+                question: "Combien de temps pour voir les premiers résultats ?",
+                answer: "Les premières données arrivent dès 24-48h. Les optimisations prennent effet après 7-10 jours."
+              }, {
+                question: "Les campagnes Spotify aident-elles le streaming organique ?",
+                answer: "Absolument. Spotify Ads introduit votre musique à de nouveaux auditeurs qui deviennent des fans réguliers."
+              }].map(q => ({
+                '@type': 'Question',
+                name: q.question,
+                acceptedAnswer: { '@type': 'Answer', text: q.answer }
+              }))
+            ]
+          })}
+        `}</script>
       </Helmet>
 
       <Header />
@@ -227,13 +423,6 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <div className="hero-background"></div>
         <div className="hero-grid-pattern"></div>
 
-        {/* Floating Elements */}
-        <div className="hero-floating-elements">
-          <div className="floating-element play-button">▶</div>
-          <div className="floating-element music-note">♪</div>
-          <div className="floating-element soundwave"></div>
-          <div className="floating-element spotify-logo">♫</div>
-        </div>
 
         <div className="hero-container">
           <div className="hero-content-split">
@@ -255,9 +444,8 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
               </div>
 
               <div className="hero-cta-buttons">
-                <button onClick={openSimulator} className="cta-primary-hero">
-                  <span className="cta-icon">🎯</span>
-                  Simuler ma campagne Spotify
+                <button onClick={() => setShowReleasePlanner(true)} className="cta-primary-hero">
+                  Release Planner Spotify
                   <span className="cta-arrow">→</span>
                 </button>
                 <button className="cta-secondary-hero">
@@ -285,8 +473,8 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             <div className="hero-right">
               <div className="hero-form-creative">
                 <div className="form-header">
-                  <h3>Estime ton potentiel Spotify</h3>
-                  <p>Gratuit • 30 secondes • Projection streams</p>
+                  <h3>Consultation Spotify Ads Gratuite</h3>
+                  <p>Gratuit • 15 minutes • Stratégie personnalisée</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="lead-form-creative">
@@ -325,21 +513,20 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
                     />
                   </div>
 
-                  <button type="submit" className="form-submit-btn">
-                    <span className="btn-text">Simuler maintenant</span>
-                    <span className="btn-loading">Analyse en cours...</span>
-                  </button>
+                <button type="button" onClick={handleCalendlyBooking} className="form-submit-btn" disabled={isSubmitting} aria-busy={isSubmitting}>
+                  <span className="btn-text">{isSubmitting ? 'Envoi…' : 'Réserver un appel'}</span>
+                </button>
                 </form>
 
                 <div className="form-benefits">
                   <div className="benefit-item">
-                    <span>Estimation streams personnalisée</span>
+                    <span>Audit gratuit de votre profil Spotify</span>
                   </div>
                   <div className="benefit-item">
-                    <span>Projection followers Spotify</span>
+                    <span>Stratégie personnalisée Audio + Video Ads</span>
                   </div>
                   <div className="benefit-item">
-                    <span>Stratégie Audio + Video Ads</span>
+                    <span>Plan d'action et budget recommandé</span>
                   </div>
                 </div>
               </div>
@@ -379,13 +566,11 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
               <div className="strategy">Audio Ads</div>
               <div className="strategy">Video Takeover</div>
               <div className="strategy">Sponsored Playlists</div>
+              <button onClick={() => setShowReleasePlanner(true)} className="strategy-cta">
+                Release Planner Spotify
+                <span className="cta-arrow">→</span>
+              </button>
             </div>
-          </div>
-
-          <div className="simulator-cta">
-            <button onClick={openSimulator} className="cta-primary">
-              Simuler ma campagne Spotify
-            </button>
           </div>
         </div>
       </section>
@@ -434,6 +619,113 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         </div>
       </section>
 
+      {/* Spotify Ads Examples */}
+      <section className="spotify-examples">
+        <div className="container">
+          <h2>Exemples de publicités Spotify for Artists</h2>
+          <p className="section-subtitle">Découvrez les formats publicitaires que nous utilisons pour promouvoir votre musique</p>
+
+          <div className="examples-grid">
+            <div className="example-item desktop-example">
+              <div className="example-header">
+                <h3>Version Desktop</h3>
+                <span className="format-badge">Audio + Display Ads</span>
+              </div>
+              <div
+                className="example-image clickable"
+                onClick={() => openModal(
+                  "/assets/images/pub-desktop-spotify.png",
+                  "Campagne Spotify Desktop",
+                  "Interface desktop avec publicités display et audio ads optimisées pour la découverte musicale"
+                )}
+              >
+                <img
+                  src="/assets/images/pub-desktop-spotify.png"
+                  alt="Exemple de publicité Spotify for Artists version desktop"
+                  loading="lazy"
+                  width="320"
+                  height="240"
+                />
+                <div className="image-overlay">
+                  <div className="zoom-icon">🔍</div>
+                  <span className="overlay-text">Cliquer pour agrandir</span>
+                </div>
+              </div>
+              <div className="example-description">
+                <p>Interface desktop avec publicités display et audio ads optimisées pour la découverte musicale</p>
+              </div>
+            </div>
+
+            <div className="example-item mobile-example">
+              <div className="example-header">
+                <h3>Version Mobile</h3>
+                <span className="format-badge">Video Takeover</span>
+              </div>
+              <div
+                className="example-image clickable"
+                onClick={() => openModal(
+                  "/assets/images/pub-mobile-spotify.png",
+                  "Campagne Spotify Mobile",
+                  "Expérience mobile immersive avec video takeover et intégration native dans l'app Spotify"
+                )}
+              >
+                <img
+                  src="/assets/images/pub-mobile-spotify.png"
+                  alt="Exemple de publicité Spotify for Artists version mobile"
+                  loading="lazy"
+                  width="320"
+                  height="240"
+                />
+                <div className="image-overlay">
+                  <div className="zoom-icon">🔍</div>
+                  <span className="overlay-text">Cliquer pour agrandir</span>
+                </div>
+              </div>
+              <div className="example-description">
+                <p>Expérience mobile immersive avec video takeover et intégration native dans l'app Spotify</p>
+              </div>
+            </div>
+
+            <div className="example-item smartlink-example">
+              <div className="example-header">
+                <h3>Smartlink by MDMC Music Ads</h3>
+                <span className="format-badge">Service Exclusif</span>
+              </div>
+              <div
+                className="example-image clickable"
+                onClick={() => openModal(
+                  "/assets/images/smartlink-spotify.png",
+                  "Smartlink by MDMC Music Ads - Service Exclusif",
+                  "Smartlink propriétaire permettant un tracking avancé et une flexibilité complète sur vos campagnes Spotify"
+                )}
+              >
+                <img
+                  src="/assets/images/smartlink-spotify.png"
+                  alt="Smartlink MDMC Music Ads - Tracking avancé et flexibilité complète"
+                  loading="lazy"
+                  width="320"
+                  height="240"
+                />
+                <div className="image-overlay">
+                  <div className="zoom-icon">🔍</div>
+                  <span className="overlay-text">Cliquer pour agrandir</span>
+                </div>
+              </div>
+              <div className="example-description">
+                <p><strong>Service offert :</strong> Smartlink propriétaire permettant un tracking avancé et une flexibilité complète sur vos campagnes</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="examples-cta">
+            <button onClick={() => setShowReleasePlanner(true)} className="cta-primary">
+              Planifier ma sortie optimale
+              <span className="cta-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Results Showcase */}
       <section className="results-showcase">
         <div className="container">
@@ -457,40 +749,54 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
               <span className="metric-label">Saves/Followers</span>
               <span className="metric-detail">Engagement authentique</span>
             </div>
-            <div className="metric-card growth-card">
-              <span className="metric-number">+287%</span>
-              <span className="metric-label">Croissance</span>
-              <span className="metric-detail">Streams mensuels</span>
-            </div>
           </div>
 
           {/* Campaign Performance Summary */}
           <div className="campaign-summary-new">
             <div className="summary-content">
-              <h4>Analyse de performance Spotify Ads</h4>
-              <div className="summary-metrics">
-                <div className="summary-item">
-                  <span className="summary-label">Taux de completion Audio :</span>
-                  <span className="summary-value">89% (vs 65% moyenne)</span>
+              <h4>Résultats Spotify Ads - Performance Exceptionnelle</h4>
+              <div className="performance-grid">
+                <div className="performance-card highlight">
+                  <div className="perf-header">
+                    <span className="perf-title">Audio Ads</span>
+                  </div>
+                  <div className="perf-value">89%</div>
+                  <div className="perf-comparison">+37% vs moyenne</div>
+                  <div className="perf-label">Taux de completion</div>
                 </div>
-                <div className="summary-item">
-                  <span className="summary-label">CTR Video Ads :</span>
-                  <span className="summary-value">12.4% (vs 3% moyenne)</span>
+
+                <div className="performance-card highlight">
+                  <div className="perf-header">
+                    <span className="perf-title">Video Ads</span>
+                  </div>
+                  <div className="perf-value">12.4%</div>
+                  <div className="perf-comparison">+314% vs moyenne</div>
+                  <div className="perf-label">CTR (Click-Through Rate)</div>
                 </div>
-                <div className="summary-item">
-                  <span className="summary-label">Coût par stream :</span>
-                  <span className="summary-value">€0.08 (optimisé)</span>
+
+                <div className="performance-card">
+                  <div className="perf-header">
+                    <span className="perf-title">Coût optimisé</span>
+                  </div>
+                  <div className="perf-value">€0.08</div>
+                  <div className="perf-comparison">par stream</div>
+                  <div className="perf-label">Efficacité budgétaire</div>
                 </div>
-                <div className="summary-item">
-                  <span className="summary-label">Playlists organiques :</span>
-                  <span className="summary-value">5 nouvelles inclusions</span>
+
+                <div className="performance-card">
+                  <div className="perf-header">
+                    <span className="perf-title">Impact organique</span>
+                  </div>
+                  <div className="perf-value">5</div>
+                  <div className="perf-comparison">nouvelles playlists</div>
+                  <div className="perf-label">Inclusions organiques</div>
                 </div>
               </div>
             </div>
 
             <div className="summary-cta">
-              <button onClick={openSimulator} className="cta-primary showcase-cta">
-                Obtenir ces résultats pour ma musique
+              <button onClick={() => setShowReleasePlanner(true)} className="cta-primary showcase-cta">
+                Planifier ma sortie Spotify
                 <span className="cta-arrow">→</span>
               </button>
             </div>
@@ -573,7 +879,7 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             {services.map((service, index) => (
               <div key={index} className="service-card">
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <p className="service-desc">{service.description}</p>
               </div>
             ))}
           </div>
@@ -586,6 +892,10 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             <div className="service-item">
               <h4>Playlist Pitching / Découvrabilité organique</h4>
               <p>Optimisation pour maximiser tes chances d'intégrer des playlists organiques</p>
+            </div>
+            <div className="service-item">
+              <h4>Smartlink & Tracking avancé</h4>
+              <p>Smartlink propriétaire pour suivi multi-plateformes et conversions mesurables</p>
             </div>
           </div>
         </div>
@@ -617,9 +927,23 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
           <h2>Questions fréquentes</h2>
           <div className="faq-grid">
             {faqItems.map((item, index) => (
-              <div key={index} className="faq-item">
-                <h3>{item.question}</h3>
-                <p>{item.answer}</p>
+              <div key={index} className={`faq-item ${openFaqIndex === index ? 'open' : ''}`}>
+                <h3>
+                  <button
+                    type="button"
+                    className="faq-question-btn"
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={openFaqIndex === index}
+                    aria-controls={`faq-answer-${index}`}
+                  >
+                    {item.question}
+                  </button>
+                </h3>
+                {openFaqIndex === index && (
+                  <div id={`faq-answer-${index}`} className="faq-answer">
+                    <p>{item.answer}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -631,19 +955,51 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <div className="container">
           <h2>Push. Play. Stream Up.</h2>
           <p>Propulse ta musique devant des millions d'auditeurs Spotify</p>
-          <button onClick={openSimulator} className="cta-primary large">
-            Simuler ma campagne Spotify
+          <button onClick={() => setShowReleasePlanner(true)} className="cta-primary large">
+            Release Planner Spotify
           </button>
-          <div className="cta-secondary">
-            <button className="cta-secondary-btn">
-              Lancer ma promo Spotify
-            </button>
-          </div>
         </div>
       </section>
       </div>
 
       <Footer />
+
+      {/* Modal Lightbox - Outside wrapper for proper z-index */}
+      {isModalOpen && modalImage && (
+        <div className="spotify-modal-overlay" onClick={closeModal}>
+          <div
+            className="spotify-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="spotifyModalTitle"
+            aria-describedby="spotifyModalDesc"
+            onClick={(e) => e.stopPropagation()}
+            tabIndex="-1"
+          >
+            <button className="spotify-modal-close" onClick={closeModal} aria-label="Fermer la prévisualisation">×</button>
+            <div className="spotify-modal-header">
+              <h3 id="spotifyModalTitle">{modalImage.title}</h3>
+              <p id="spotifyModalDesc">{modalImage.description}</p>
+            </div>
+            <div className="spotify-modal-image-container">
+              <img src={modalImage.src} alt={modalImage.title} />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Spotify Release Planner */}
+      {showReleasePlanner && (
+        <SpotifyReleasePlanner 
+          onClose={() => setShowReleasePlanner(false)}
+          utmSource="spotify_ads_landing"
+          utmMedium="website"
+          utmCampaign="spotify_ads"
+          utmContent="release_planner"
+        />
+      )}
+
+      {/* FAQ Modal supprimée - accordéon inline */}
     </>
   );
 };

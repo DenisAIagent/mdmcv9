@@ -13,10 +13,15 @@ const PORT = 8080;
 const routes = [
   '/',
   '/services',
+  // Legacy services paths (garder pour compat)
   '/services/youtube-ads',
   '/services/meta-ads',
   '/services/tiktok-ads',
   '/services/smartlinks',
+  // Landing pages actuelles
+  '/youtube-ads',
+  '/meta-ads',
+  '/spotify-ads',
   '/faq',
   '/contact'
 ];

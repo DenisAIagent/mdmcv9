@@ -38,6 +38,8 @@
 .spotify-ads-page .value-proposition,
 .spotify-ads-page .stats-section,
 .spotify-ads-page .how-it-works,
+.spotify-ads-page .spotify-examples,
+.spotify-ads-page .results-showcase,
 .spotify-ads-page .social-proof,
 .spotify-ads-page .services-section,
 .spotify-ads-page .trust-section,
@@ -49,6 +51,13 @@
   padding: 4rem 0;
   position: relative;
   z-index: 10;
+}
+
+/* Réduction du padding horizontal uniquement pour Services/Trust */
+.spotify-ads-page .services-section .container,
+.spotify-ads-page .trust-section .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* SPOTIFY ADS PAGE ISOLATION - All titles and accents in Spotify Green */
@@ -750,6 +759,38 @@
   border: 1px solid var(--mdmc-gray-darker);
 }
 
+.spotify-ads-page .strategy-cta {
+  background: linear-gradient(135deg, #1DB954, #1ed760);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgba(29, 185, 84, 0.3);
+}
+
+.spotify-ads-page .strategy-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+  background: linear-gradient(135deg, #1ed760, #1DB954);
+}
+
+.spotify-ads-page .strategy-cta .cta-arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.spotify-ads-page .strategy-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
 .spotify-ads-page .simulator-cta {
   text-align: center;
 }
@@ -875,50 +916,142 @@
 
 .spotify-ads-page .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .spotify-ads-page .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .spotify-ads-page .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .spotify-ads-page .service-card {
-  background: var(--mdmc-gray-dark);
-  padding: 2rem;
-  border-radius: var(--border-radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
   border: 1px solid var(--mdmc-gray-darker);
+  position: relative;
+  transition: var(--transition);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.spotify-ads-page .service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.spotify-ads-page .service-card-header.small {
+  margin-bottom: 0.25rem;
+}
+
+.spotify-ads-page .service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(29, 185, 84, 0.15);
+  font-size: 18px;
+}
+
+.spotify-ads-page .service-desc {
+  margin: 0;
 }
 
 .spotify-ads-page .service-card h3 {
   color: var(--spotify-green);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
 .spotify-ads-page .service-card p {
   color: #ccc;
-  line-height: 1.6;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Accent stripe + subtle hover for services */
+.spotify-ads-page .service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-spotify);
+  opacity: 0.9;
+}
+
+.spotify-ads-page .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(29, 185, 84, 0.12);
+  border-color: #2a2a2a;
 }
 
 .spotify-ads-page .additional-services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .spotify-ads-page .additional-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .spotify-ads-page .additional-services {
+    grid-template-columns: 1fr;
+  }
 }
 
 .spotify-ads-page .service-item {
-  background: var(--mdmc-gray-darker);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 100%);
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--mdmc-gray-darker);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .spotify-ads-page .service-item h4 {
   color: var(--spotify-green);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .spotify-ads-page .service-item p {
   color: #ccc;
   font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.spotify-ads-page .service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(29, 185, 84, 0.1);
+  border-color: #2a2a2a;
 }
 
 /* Trust Section */
@@ -928,25 +1061,64 @@
 
 .spotify-ads-page .trust-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: stretch;
 }
 
 .spotify-ads-page .trust-item {
-  text-align: center;
-  padding: 2rem;
+  text-align: left;
+  padding: 1.5rem 1.5rem 1.5rem 64px;
+  background: var(--mdmc-black);
+  border: 1px solid var(--mdmc-gray-darker);
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .spotify-ads-page .trust-item h3 {
   color: var(--spotify-green);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.15rem;
 }
 
 .spotify-ads-page .trust-item p {
   color: #ccc;
   line-height: 1.6;
+  margin: 0;
+}
+
+/* Trust icon circle */
+.spotify-ads-page .trust-item::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(29, 185, 84, 0.15);
+  color: var(--spotify-green);
+  font-weight: 800;
+  font-size: 20px;
+  position: absolute;
+  left: 16px;
+  top: 18px;
+}
+
+@media (max-width: 1024px) {
+  .spotify-ads-page .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .spotify-ads-page .trust-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* FAQ */
@@ -971,6 +1143,10 @@
   border: 1px solid var(--mdmc-gray-darker);
 }
 
+.spotify-ads-page .faq-item.open {
+  border-color: var(--spotify-green);
+}
+
 .spotify-ads-page .faq-item h3 {
   color: var(--spotify-green);
   font-size: 1.2rem;
@@ -981,6 +1157,37 @@
 .spotify-ads-page .faq-item p {
   color: #ccc;
   line-height: 1.6;
+}
+
+.spotify-ads-page .faq-answer {
+  margin-top: 1rem;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Modern FAQ question buttons (accessibles daltoniens) */
+.spotify-ads-page .faq-question-btn {
+  width: 100%;
+  text-align: left;
+  background: var(--mdmc-gray-dark);
+  color: var(--mdmc-white);
+  border: 1px solid var(--mdmc-gray-darker);
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.spotify-ads-page .faq-question-btn:hover {
+  border-color: var(--spotify-green);
+  box-shadow: 0 6px 18px rgba(29, 185, 84, 0.15);
+  transform: translateY(-2px);
+}
+
+.spotify-ads-page .faq-question-btn:focus {
+  outline: 3px solid rgba(29, 185, 84, 0.5);
+  outline-offset: 2px;
 }
 
 /* Final CTA */
@@ -1170,4 +1377,432 @@
 .spotify-ads-page .faq-item:hover {
   transform: translateY(-4px);
   transition: var(--transition);
+}
+
+/* === SPOTIFY EXAMPLES SECTION === */
+.spotify-ads-page .spotify-examples {
+  background: var(--mdmc-black);
+  padding: 5rem 0;
+}
+
+.spotify-ads-page .spotify-examples h2 {
+  color: var(--mdmc-white) !important;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.spotify-ads-page .spotify-examples .section-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spotify-ads-page .examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: start;
+}
+
+.spotify-ads-page .example-item {
+  background: var(--mdmc-gray-darker);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid #333;
+  align-self: start;
+  margin-top: 20px;
+}
+
+.spotify-ads-page .example-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--spotify-green);
+  box-shadow: 0 10px 30px rgba(29, 185, 84, 0.1);
+}
+
+.spotify-ads-page .example-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.spotify-ads-page .example-header h3 {
+  color: var(--mdmc-white) !important;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.spotify-ads-page .format-badge {
+  background: var(--gradient-spotify);
+  color: var(--mdmc-white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.spotify-ads-page .smartlink-example .format-badge {
+  background: var(--gradient-red);
+}
+
+.spotify-ads-page .example-image {
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: #222;
+  position: relative;
+  cursor: pointer;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spotify-ads-page .example-image.clickable {
+  transition: var(--transition);
+}
+
+.spotify-ads-page .example-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: var(--transition);
+  max-height: 240px;
+  object-fit: contain;
+}
+
+.spotify-ads-page .example-item:hover .example-image img {
+  transform: scale(1.05);
+}
+
+/* Image Overlay */
+.spotify-ads-page .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+  color: var(--mdmc-white);
+}
+
+.spotify-ads-page .example-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.spotify-ads-page .zoom-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.spotify-ads-page .overlay-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.spotify-ads-page .example-description {
+  text-align: left;
+}
+
+.spotify-ads-page .example-description p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.spotify-ads-page .example-description strong {
+  color: var(--mdmc-white);
+  font-weight: 600;
+}
+
+.spotify-ads-page .smartlink-example .example-description strong {
+  color: var(--mdmc-red);
+}
+
+.spotify-ads-page .examples-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.spotify-ads-page .examples-cta .cta-primary {
+  background: var(--gradient-spotify);
+  color: var(--mdmc-white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spotify-ads-page .examples-cta .cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
+}
+
+.spotify-ads-page .examples-cta .cta-arrow {
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.spotify-ads-page .examples-cta .cta-primary:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Performance Cards */
+.spotify-ads-page .performance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.spotify-ads-page .performance-card {
+  background: var(--mdmc-gray-darker);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.spotify-ads-page .performance-card.highlight {
+  border-color: var(--spotify-green);
+  box-shadow: 0 4px 20px rgba(29, 185, 84, 0.1);
+}
+
+.spotify-ads-page .performance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.spotify-ads-page .perf-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.spotify-ads-page .perf-icon {
+  font-size: 1.5rem;
+}
+
+.spotify-ads-page .perf-title {
+  font-weight: 600;
+  color: var(--mdmc-white);
+  font-size: 14px;
+}
+
+.spotify-ads-page .perf-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--spotify-green);
+  margin-bottom: 0.5rem;
+}
+
+.spotify-ads-page .perf-comparison {
+  font-size: 14px;
+  color: var(--spotify-green);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.spotify-ads-page .performance-card.highlight .perf-comparison {
+  background: rgba(29, 185, 84, 0.1);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.spotify-ads-page .perf-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === MODAL LIGHTBOX - GLOBAL (outside scoping) === */
+.spotify-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+  font-family: 'Inter', sans-serif;
+}
+
+.spotify-modal-content {
+  background: #1a1a1a;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+}
+
+.spotify-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.spotify-modal-close:hover {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+.spotify-modal-header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.spotify-modal-header h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.spotify-modal-header p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.spotify-modal-image-container {
+  padding: 1rem;
+  text-align: center;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.spotify-modal-image-container img {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  display: block;
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive pour la section exemples */
+@media (max-width: 768px) {
+  .spotify-ads-page .examples-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .spotify-ads-page .example-header {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .spotify-ads-page .spotify-examples h2 {
+    font-size: 2rem;
+  }
+
+  .spotify-ads-page .spotify-examples .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .spotify-ads-page .example-image {
+    max-width: 280px;
+  }
+
+  .spotify-modal-overlay {
+    padding: 1rem;
+  }
+
+  .spotify-modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .spotify-modal-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .spotify-modal-image-container {
+    padding: 0.5rem;
+  }
+
+  .spotify-modal-image-container img {
+    max-height: 60vh;
+  }
 }
