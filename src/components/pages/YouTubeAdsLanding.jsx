@@ -186,26 +186,26 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
   return (
     <>
       <Helmet>
-        <title>YouTube Ads pour Artistes | MDMC Music Ads</title>
-        <meta name="description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
-        <meta name="keywords" content="YouTube Ads artistes, promotion musicale YouTube, marketing musical, campagne YouTube musique, simulateur YouTube Ads, MDMC" />
+        <title>YouTube Ads pour Artistes | Vues Réelles & Abonnés Qualifiés - MDMC</title>
+        <meta name="description" content="Propulsez votre clip avec nos campagnes YouTube Ads. Touchez une audience qualifiée, obtenez des vues réelles et des abonnés engagés. Stratégie sur-mesure pour artistes." />
+        <meta name="keywords" content="YouTube Ads artistes, promotion musicale YouTube, marketing musical, campagne YouTube musique, vues réelles youtube, abonnés qualifiés youtube, MDMC" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="YouTube Ads pour Artistes | MDMC Music Ads" />
-        <meta property="og:description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
+        <meta property="og:title" content="YouTube Ads pour Artistes | Vues Réelles & Abonnés Qualifiés - MDMC" />
+        <meta property="og:description" content="Propulsez votre clip avec nos campagnes YouTube Ads. Touchez une audience qualifiée, obtenez des vues réelles et des abonnés engagés. Stratégie sur-mesure pour artistes." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mdmcads.com/youtube-ads" />
-        <meta property="og:image" content="https://mdmcads.com/og-youtube-ads.jpg" />
+        <meta property="og:url" content="https://www.mdmcmusicads.com/youtube-ads" />
+        <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-youtube-ads.png" />
         <meta property="og:site_name" content="MDMC Music Ads" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="YouTube Ads pour Artistes | MDMC Music Ads" />
-        <meta name="twitter:description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
-        <meta name="twitter:image" content="/assets/images/opengraph-youtube-ads.png" />
+        <meta name="twitter:title" content="YouTube Ads pour Artistes | Vues Réelles & Abonnés Qualifiés - MDMC" />
+        <meta name="twitter:description" content="Propulsez votre clip avec nos campagnes YouTube Ads. Touchez une audience qualifiée, obtenez des vues réelles et des abonnés engagés. Stratégie sur-mesure pour artistes." />
+        <meta name="twitter:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-youtube-ads.png" />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://mdmcads.com/youtube-ads" />
+        <link rel="canonical" href="https://www.mdmcmusicads.com/youtube-ads" />
 
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">

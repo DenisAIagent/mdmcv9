@@ -370,11 +370,11 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
   return (
     <>
       <Helmet>
-        <title>Spotify Ads pour Artistes | Campagnes Audio & Video - MDMC</title>
-        <meta name="description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées. Audio Ads, Video Takeover, Sponsored Playlists. Ciblage précis par genre musical. ROI garanti." />
-        <meta name="keywords" content="spotify ads, publicité spotify, audio ads, campagne spotify, streaming, promotion musicale, artiste indépendant" />
-        <meta property="og:title" content="Spotify Ads pour Artistes - MDMC" />
-        <meta property="og:description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées (Audio & Video)." />
+        <title>Spotify Ads pour Artistes | Boostez vos Streams - MDMC</title>
+        <meta name="description" content="Découvrez comment nos campagnes Spotify Ads (Audio & Vidéo) peuvent propulser votre musique. Ciblage précis, ROI garanti et streams authentiques pour artistes et labels." />
+        <meta name="keywords" content="spotify ads, publicité spotify, audio ads, campagne spotify, streaming, promotion musicale, artiste indépendant, booster streams spotify" />
+        <meta property="og:title" content="Spotify Ads pour Artistes | Boostez vos Streams - MDMC" />
+        <meta property="og:description" content="Découvrez comment nos campagnes Spotify Ads (Audio & Vidéo) peuvent propulser votre musique. Ciblage précis, ROI garanti et streams authentiques pour artistes et labels." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mdmcmusicads.com/spotify-ads/" />
         <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
