@@ -376,7 +376,7 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <meta property="og:title" content="Spotify Ads pour Artistes - MDMC" />
         <meta property="og:description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées (Audio & Video)." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.mdmcmusicads.com/spotify-ads" />
+        <meta property="og:url" content="https://www.mdmcmusicads.com/spotify-ads/" />
         <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
