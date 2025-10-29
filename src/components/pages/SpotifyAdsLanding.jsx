@@ -387,7 +387,7 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Spotify Ads pour Artistes - MDMC" />
         <meta name="twitter:description" content="Ciblage musical précis, Audio Ads, Video Takeover. Parlons-en." />
-        <meta name="twitter:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
+        <meta name="twitter:image" content="/assets/images/opengraph-spotifyads.png" />
         <script type="application/ld+json">{`
           ${JSON.stringify({
             '@context': 'https://schema.org',

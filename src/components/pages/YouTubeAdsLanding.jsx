@@ -202,7 +202,7 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="YouTube Ads pour Artistes | MDMC Music Ads" />
         <meta name="twitter:description" content="Simule ta promotion YouTube et touche les fans qui comptent vraiment. MDMC optimise tes campagnes YouTube Ads pour artistes avec des résultats prouvés." />
-        <meta name="twitter:image" content="https://mdmcads.com/og-youtube-ads.jpg" />
+        <meta name="twitter:image" content="/assets/images/opengraph-youtube-ads.png" />
 
         {/* Canonical */}
         <link rel="canonical" href="https://mdmcads.com/youtube-ads" />

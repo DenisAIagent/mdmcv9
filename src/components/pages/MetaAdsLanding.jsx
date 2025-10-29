@@ -202,7 +202,7 @@ const MetaAdsLanding = ({ openSimulator }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Meta Ads pour Artistes | MDMC Music Ads" />
         <meta name="twitter:description" content="Simule ta promotion Meta et touche les fans qui comptent vraiment. MDMC optimise tes campagnes Facebook & Instagram Ads pour artistes avec des résultats prouvés." />
-        <meta name="twitter:image" content="https://mdmcads.com/og-meta-ads.jpg" />
+        <meta name="twitter:image" content="/assets/images/opengraph-meta-ads.png" />
 
         {/* Canonical */}
         <link rel="canonical" href="https://mdmcads.com/meta-ads" />
