@@ -540,5 +540,116 @@ export default {
   "youtube_ads": {
     "title": "YouTube Ads pour Artistes | Promotion Musicale - MDMC",
     "description": "Campagnes YouTube Ads expertes pour musiciens. Promotion de clips, teasers et contenu musical avec ciblage précis et ROI optimisé."
+  },
+
+  "release_planner": {
+    "title": "Spotify Release Planner",
+    "subtitle": "Optimisez votre sortie avec l'IA prédictive",
+    "close": "×",
+    "faq_toggle": "FAQ",
+    "steps": {
+      "project": "Projet",
+      "period": "Période",
+      "contact": "Contact",
+      "analysis": "Analyse"
+    },
+    "step1": {
+      "title": "Votre Projet Musical",
+      "subtitle": "Décrivez les caractéristiques de votre sortie.",
+      "release_type": "Type de sortie",
+      "single": "Single",
+      "ep": "EP",
+      "album": "Album",
+      "genre": "Genre musical principal",
+      "genre_placeholder": "Sélectionnez votre genre",
+      "budget": "Budget promotionnel",
+      "budget_options": {
+        "0": "0€",
+        "500": "< 500€",
+        "1500": "500-1500€",
+        "3000": "1500€+"
+      },
+      "territories": "Territoires visés",
+      "territories_help": "Maintenez Ctrl (Cmd sur Mac) pour sélectionner plusieurs territoires.",
+      "next": "Suivant"
+    },
+    "step2": {
+      "title": "Période de Sortie",
+      "subtitle": "Quand souhaitez-vous sortir votre projet ?",
+      "month": "Mois de sortie souhaité",
+      "month_placeholder": "Sélectionnez le mois",
+      "next": "Suivant",
+      "previous": "Précédent"
+    },
+    "step3": {
+      "title": "Vos Coordonnées",
+      "subtitle": "Pour recevoir votre analyse personnalisée.",
+      "artist_name": "Nom d'artiste",
+      "artist_placeholder": "Votre nom d'artiste",
+      "email": "Email",
+      "email_placeholder": "votre@email.com",
+      "newsletter": "Recevoir nos conseils marketing musical",
+      "analyze": "Analyser mon projet",
+      "previous": "Précédent"
+    },
+    "step4": {
+      "title": "Analyse en cours...",
+      "analyzing": "Nous analysons votre projet musical et générons vos recommandations personnalisées.",
+      "wait": "Veuillez patienter quelques secondes."
+    },
+    "results": {
+      "title": "Votre Stratégie Spotify Personnalisée",
+      "score": "Score de Potentiel",
+      "score_suffix": "/100",
+      "recommendations": "Recommandations",
+      "calendar": "Réserver un appel stratégique",
+      "calendar_subtitle": "Discutons de votre projet en détail",
+      "new_analysis": "Nouvelle analyse"
+    },
+    "months": {
+      "january": "Janvier",
+      "february": "Février",
+      "march": "Mars",
+      "april": "Avril",
+      "may": "Mai",
+      "june": "Juin",
+      "july": "Juillet",
+      "august": "Août",
+      "september": "Septembre",
+      "october": "Octobre",
+      "november": "Novembre",
+      "december": "Décembre"
+    },
+    "genres": {
+      "pop": "Pop",
+      "rock": "Rock",
+      "hip-hop": "Hip-Hop/Rap",
+      "electronic": "Électronique",
+      "r&b": "R&B/Soul",
+      "country": "Country",
+      "jazz": "Jazz",
+      "classical": "Classique",
+      "reggae": "Reggae",
+      "folk": "Folk",
+      "indie": "Indie",
+      "metal": "Metal",
+      "punk": "Punk",
+      "blues": "Blues",
+      "latin": "Latin",
+      "world": "World Music",
+      "other": "Autre"
+    },
+    "territories_list": {
+      "FR": "France",
+      "BE": "Belgique",
+      "CH": "Suisse",
+      "CA": "Canada",
+      "US": "États-Unis",
+      "GB": "Royaume-Uni",
+      "DE": "Allemagne",
+      "ES": "Espagne",
+      "IT": "Italie",
+      "WORLD": "Monde entier"
+    }
   }
 }

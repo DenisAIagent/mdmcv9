@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../../assets/styles/spotify-release-planner.css';
 
 const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium = 'website', utmCampaign = 'release_planner', utmContent = '' }) => {
+  const { t } = useTranslation();
   const addUtmToUrl = (url) => {
     try {
       const urlObj = new URL(url);
@@ -41,9 +43,9 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
 
   const populateMonthOptions = () => {
     const now = new Date();
-    const monthNames = [
-      "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+    const monthKeys = [
+      "january", "february", "march", "april", "may", "june",
+      "july", "august", "september", "october", "november", "december"
     ];
 
     const months = [];
@@ -53,7 +55,7 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
       const year = date.getFullYear();
       months.push({
         value: `${year}-${month}-15`,
-        label: `${monthNames[date.getMonth()]} ${year}`
+        label: `${t(`release_planner.months.${monthKeys[date.getMonth()]}`)} ${year}`
       });
     }
 
@@ -85,12 +87,12 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
 
   const submitAnalysis = async () => {
     if (!formData.email || !formData.email.includes('@')) {
-      alert('Veuillez entrer un email valide.');
+      alert(t('release_planner.step3.email_placeholder'));
       return;
     }
 
     if (!formData.genre) {
-      alert('Veuillez sélectionner un genre musical.');
+      alert(t('release_planner.step1.genre_placeholder'));
       return;
     }
 
@@ -147,14 +149,14 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
   return (
     <div className="spotify-planner-overlay" onClick={onClose}>
       <div className="spotify-planner-container" onClick={(e) => e.stopPropagation()}>
-        <button className="spotify-planner-close" onClick={onClose}>×</button>
+        <button className="spotify-planner-close" onClick={onClose}>{t('release_planner.close')}</button>
 
         <div className="spotify-planner-header">
-          <h2>Spotify Release Planner</h2>
-          <p>Optimisez votre sortie avec l'IA prédictive</p>
+          <h2>{t('release_planner.title')}</h2>
+          <p>{t('release_planner.subtitle')}</p>
           <div style={{ marginTop: '0.5rem' }}>
             <button className="btn-secondary" onClick={() => setShowFaq(true)} aria-haspopup="dialog">
-              FAQ
+              {t('release_planner.faq_toggle')}
             </button>
           </div>
         </div>
@@ -163,38 +165,38 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
           <div className="progress-line" style={{ width: `${progressPercent}%` }}></div>
           <div className={`progress-step ${currentStep >= 1 ? 'active' : ''}`}>
             <div>1</div>
-            <div>Projet</div>
+            <div>{t('release_planner.steps.project')}</div>
           </div>
           <div className={`progress-step ${currentStep >= 2 ? 'active' : ''}`}>
             <div>2</div>
-            <div>Période</div>
+            <div>{t('release_planner.steps.period')}</div>
           </div>
           <div className={`progress-step ${currentStep >= 3 ? 'active' : ''}`}>
             <div>3</div>
-            <div>Contact</div>
+            <div>{t('release_planner.steps.contact')}</div>
           </div>
           <div className={`progress-step ${currentStep >= 4 ? 'active' : ''}`}>
             <div>4</div>
-            <div>Analyse</div>
+            <div>{t('release_planner.steps.analysis')}</div>
           </div>
         </div>
 
         {isLoading ? (
           <div className="loading-container">
             <div className="loading-spinner"></div>
-            <p className="loading-text">Analyse IA en cours...</p>
-            <p className="loading-subtext">Analyse de millions de sorties musicales pour optimiser votre stratégie</p>
+            <p className="loading-text">{t('release_planner.step4.title')}</p>
+            <p className="loading-subtext">{t('release_planner.step4.analyzing')}</p>
           </div>
         ) : (
           <>
             {/* Étape 1: Projet */}
             {currentStep === 1 && (
               <div className="form-section">
-                <h3>Votre Projet Musical</h3>
-                <p className="subtitle">Décrivez les caractéristiques de votre sortie.</p>
+                <h3>{t('release_planner.step1.title')}</h3>
+                <p className="subtitle">{t('release_planner.step1.subtitle')}</p>
 
                 <div className="form-group">
-                  <label>Type de sortie</label>
+                  <label>{t('release_planner.step1.release_type')}</label>
                   <div className="radio-grid">
                     {['single', 'ep', 'album'].map(type => (
                       <label key={type} className={`radio-container ${formData.releaseType === type ? 'selected' : ''}`}>
@@ -205,16 +207,16 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
                           checked={formData.releaseType === type}
                           onChange={handleInputChange}
                         />
-                        <span>{type === 'single' ? 'Single' : type === 'ep' ? 'EP' : 'Album'}</span>
+                        <span>{t(`release_planner.step1.${type}`)}</span>
                       </label>
                     ))}
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="genre">Genre musical principal</label>
+                  <label htmlFor="genre">{t('release_planner.step1.genre')}</label>
                   <select id="genre" name="genre" value={formData.genre} onChange={handleInputChange}>
-                    <option value="">Sélectionnez votre genre</option>
+                    <option value="">{t('release_planner.step1.genre_placeholder')}</option>
                     <optgroup label="Urbain">
                       <option value="rap">Rap/Hip-Hop</option>
                       <option value="trap">Trap</option>
