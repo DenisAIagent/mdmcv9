@@ -433,6 +433,10 @@ export default {
     "title": "Spotify Ads pour Artistes | Boostez vos Streams - MDMC",
     "description": "Découvrez comment nos campagnes Spotify Ads (Audio & Vidéo) peuvent propulser votre musique. Ciblage précis, ROI garanti et streams authentiques.",
     "hero": {
+      "title": "Spotify Ads pour Artistes",
+      "subtitle": "Alcance seus fãs onde eles estão",
+      "description": "Promova sua música diretamente no Spotify com campanhas publicitárias direcionadas que geram streams e descoberta de novos fãs.",
+      "cta": "Iniciar campanha Spotify",
       "badge": "🎵 Campagnes Spotify Ads Premium",
       "title_line1": "Push. Play.",
       "title_line2": "Stream Up.",
@@ -440,6 +444,11 @@ export default {
       "promise_sub": "devant des millions d'auditeurs Spotify",
       "cta_primary": "Release Planner Spotify",
       "cta_secondary": "Exemples de résultats",
+      "trust_points": {
+        "certified": "Parceiro certificado Spotify Ad Studio",
+        "experience": "5+ anos de experiência em publicidade musical",
+        "results": "Milhões de streams gerados para nossos clientes"
+      },
       "trust_items": {
         "audio_ads": "Audio Ads optimisées",
         "targeting": "Ciblage par genre",

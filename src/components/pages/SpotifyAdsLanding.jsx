@@ -442,40 +442,41 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             {/* Left: Main Content */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="badge-text">🎵 {t('spotify_ads.hero.trust_points.certified')}</span>
+                <span className="badge-text">{t('spotify_ads.hero.badge')}</span>
               </div>
 
               <h1 className="hero-title-creative">
-                <span className="title-line-1">{t('spotify_ads.hero.title')}</span>
-                <span className="title-line-2">{t('spotify_ads.hero.subtitle')}</span>
+                <span className="title-line-1">{t('spotify_ads.hero.title_line1')}</span>
+                <span className="title-line-2">{t('spotify_ads.hero.title_line2')}</span>
               </h1>
 
               <div className="hero-promise-creative">
-                <p className="promise-main">{t('spotify_ads.hero.description')}</p>
+                <p className="promise-main">{t('spotify_ads.hero.promise_main')}</p>
+                <p className="promise-sub">{t('spotify_ads.hero.promise_sub')}</p>
               </div>
 
               <div className="hero-cta-buttons">
                 <button onClick={() => setShowReleasePlanner(true)} className="cta-primary-hero">
-                  {t('spotify_ads.release_planner.title')}
+                  {t('spotify_ads.hero.cta_primary')}
                   <span className="cta-arrow">→</span>
                 </button>
                 <button className="cta-secondary-hero">
-                  {t('spotify_ads.cta_section.secondary_cta')}
+                  {t('spotify_ads.hero.cta_secondary')}
                 </button>
               </div>
 
               <div className="hero-trust-line">
                 <div className="trust-item">
                   <span className="trust-icon">✓</span>
-                  <span>{t('spotify_ads.hero.trust_points.experience')}</span>
+                  <span>{t('spotify_ads.hero.trust_items.audio_ads')}</span>
                 </div>
                 <div className="trust-item">
                   <span className="trust-icon">✓</span>
-                  <span>{t('spotify_ads.value_prop.points.targeting.title')}</span>
+                  <span>{t('spotify_ads.hero.trust_items.targeting')}</span>
                 </div>
                 <div className="trust-item">
                   <span className="trust-icon">✓</span>
-                  <span>{t('spotify_ads.value_prop.points.attribution.title')}</span>
+                  <span>{t('spotify_ads.hero.trust_items.roi')}</span>
                 </div>
               </div>
             </div>
@@ -484,17 +485,17 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             <div className="hero-right">
               <div className="hero-form-creative">
                 <div className="form-header">
-                  <h3>{t('spotify_ads.release_planner.form.title')}</h3>
-                  <p>{t('spotify_ads.cta_section.secondary_cta')}</p>
+                  <h3>{t('spotify_ads.form.title')}</h3>
+                  <p>{t('spotify_ads.form.subtitle')}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="lead-form-creative">
                   <div className="input-group">
-                    <label>{t('spotify_ads.release_planner.form.artist_name.label')}</label>
+                    <label>{t('spotify_ads.form.artist_label')}</label>
                     <input
                       type="text"
                       name="name"
-                      placeholder={t('spotify_ads.release_planner.form.artist_name.placeholder')}
+                      placeholder={t('spotify_ads.form.artist_placeholder')}
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -502,11 +503,11 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
                   </div>
 
                   <div className="input-group">
-                    <label>{t('spotify_ads.release_planner.form.email.label')}</label>
+                    <label>{t('spotify_ads.form.email_label')}</label>
                     <input
                       type="email"
                       name="email"
-                      placeholder={t('spotify_ads.release_planner.form.email.placeholder')}
+                      placeholder={t('spotify_ads.form.email_placeholder')}
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -514,30 +515,30 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
                   </div>
 
                   <div className="input-group">
-                    <label>Lien Spotify (optionnel)</label>
+                    <label>{t('spotify_ads.form.spotify_label')}</label>
                     <input
                       type="url"
                       name="videoUrl"
-                      placeholder="https://open.spotify.com/artist/..."
+                      placeholder={t('spotify_ads.form.spotify_placeholder')}
                       value={formData.videoUrl}
                       onChange={handleInputChange}
                     />
                   </div>
 
                 <button type="button" onClick={handleCalendlyBooking} className="form-submit-btn" disabled={isSubmitting} aria-busy={isSubmitting}>
-                  <span className="btn-text">{isSubmitting ? t('spotify_ads.release_planner.form.submitting') : t('spotify_ads.hero.cta')}</span>
+                  <span className="btn-text">{isSubmitting ? 'Envoi…' : t('spotify_ads.form.submit')}</span>
                 </button>
                 </form>
 
                 <div className="form-benefits">
                   <div className="benefit-item">
-                    <span>{t('spotify_ads.release_planner.features.competition.title')}</span>
+                    <span>{t('spotify_ads.form.benefits.audit')}</span>
                   </div>
                   <div className="benefit-item">
-                    <span>{t('spotify_ads.release_planner.features.strategy.title')}</span>
+                    <span>{t('spotify_ads.form.benefits.strategy')}</span>
                   </div>
                   <div className="benefit-item">
-                    <span>{t('spotify_ads.release_planner.features.timing.title')}</span>
+                    <span>{t('spotify_ads.form.benefits.plan')}</span>
                   </div>
                 </div>
               </div>
