@@ -31,7 +31,7 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
   });
 
   const CONFIG = {
-    webhookUrl: 'https://primary-production-7acf.up.railway.app/webhook/music-release-planner',
+    webhookUrl: 'https://mdmcmusicads.app.n8n.cloud/webhook/music-release-planner',
     calendlyUrl: 'https://calendly.com/mdmc-yt/meeting'
   };
 
