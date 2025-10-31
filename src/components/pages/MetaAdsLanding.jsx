@@ -197,14 +197,19 @@ const MetaAdsLanding = ({ openSimulator }) => {
         <meta property="og:title" content="Meta Ads pour Artistes | Facebook & Instagram Ads - MDMC" />
         <meta property="og:description" content="Boostez votre musique sur Facebook et Instagram. Nos campagnes Meta Ads ciblent les fans de votre genre musical pour plus de followers, d'engagement et de streams." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.mdmcmusicads.com/meta-ads" />
+        <meta property="og:url" content="https://www.mdmcmusicads.com/meta-ads/" />
         <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-meta-ads.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Campagnes Meta Ads Facebook Instagram pour artistes - MDMC Music Ads" />
+        <meta property="og:updated_time" content={String(Math.floor(Date.now()/1000))} />
         <meta property="og:site_name" content="MDMC Music Ads" />
+        <meta property="og:locale" content="fr_FR" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Meta Ads pour Artistes | Facebook & Instagram Ads - MDMC" />
-        <meta name="twitter:description" content="Boostez votre musique sur Facebook et Instagram. Nos campagnes Meta Ads ciblent les fans de votre genre musical pour plus de followers, d'engagement et de streams." />
+        <meta name="twitter:title" content="Meta Ads pour Artistes - MDMC" />
+        <meta name="twitter:description" content="Campagnes Facebook et Instagram optimisées pour artistes musicaux" />
         <meta name="twitter:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-meta-ads.png" />
 
         {/* Canonical */}

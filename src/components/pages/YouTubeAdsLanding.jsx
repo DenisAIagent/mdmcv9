@@ -197,14 +197,19 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
         <meta property="og:title" content="YouTube Ads pour Artistes | Vues Réelles & Abonnés Qualifiés - MDMC" />
         <meta property="og:description" content="Propulsez votre clip avec nos campagnes YouTube Ads. Touchez une audience qualifiée, obtenez des vues réelles et des abonnés engagés. Stratégie sur-mesure pour artistes." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.mdmcmusicads.com/youtube-ads" />
+        <meta property="og:url" content="https://www.mdmcmusicads.com/youtube-ads/" />
         <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-youtube-ads.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Campagnes YouTube Ads pour artistes musicaux - MDMC Music Ads" />
+        <meta property="og:updated_time" content={String(Math.floor(Date.now()/1000))} />
         <meta property="og:site_name" content="MDMC Music Ads" />
+        <meta property="og:locale" content="fr_FR" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="YouTube Ads pour Artistes | Vues Réelles & Abonnés Qualifiés - MDMC" />
-        <meta name="twitter:description" content="Propulsez votre clip avec nos campagnes YouTube Ads. Touchez une audience qualifiée, obtenez des vues réelles et des abonnés engagés. Stratégie sur-mesure pour artistes." />
+        <meta name="twitter:title" content="YouTube Ads pour Artistes - MDMC" />
+        <meta name="twitter:description" content="Campagnes YouTube optimisées pour vues réelles et abonnés qualifiés" />
         <meta name="twitter:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-youtube-ads.png" />
 
         {/* Canonical */}

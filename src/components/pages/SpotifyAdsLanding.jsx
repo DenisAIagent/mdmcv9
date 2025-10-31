@@ -380,21 +380,21 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
         <title>{t('spotify_ads.hero.title')} | {t('spotify_ads.hero.subtitle')} - MDMC</title>
         <meta name="description" content={t('spotify_ads.hero.description')} />
         <meta name="keywords" content="spotify ads, publicité spotify, audio ads, campagne spotify, streaming, promotion musicale, artiste indépendant, booster streams spotify" />
-        <meta property="og:title" content={`${t('spotify_ads.hero.title')} | ${t('spotify_ads.hero.subtitle')} - MDMC`} />
-        <meta property="og:description" content={t('spotify_ads.hero.description')} />
+        <meta property="og:title" content="Spotify Ads pour Artistes | Boostez vos Streams - MDMC" />
+        <meta property="og:description" content="Promova sua música diretamente no Spotify com campanhas publicitárias direcionadas que geram streams e descoberta de novos fãs." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mdmcmusicads.com/spotify-ads/" />
         <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Campagnes Spotify Ads pour artistes - MDMC" />
+        <meta property="og:image:alt" content="Campagnes Spotify Ads pour artistes - MDMC Music Ads" />
         <meta property="og:updated_time" content={String(Math.floor(Date.now()/1000))} />
         <meta property="og:site_name" content="MDMC Music Ads" />
         <meta property="og:locale" content="fr_FR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Spotify Ads pour Artistes - MDMC" />
-        <meta name="twitter:description" content="Ciblage musical précis, Audio Ads, Video Takeover. Parlons-en." />
-        <meta name="twitter:image" content="/assets/images/opengraph-spotifyads.png" />
+        <meta name="twitter:description" content="Boostez vos streams avec nos campagnes Spotify Ads optimisées pour artistes" />
+        <meta name="twitter:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
         <link rel="canonical" href="https://www.mdmcmusicads.com/spotify-ads/" />
         <script type="application/ld+json">{`
           ${JSON.stringify({
