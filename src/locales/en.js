@@ -540,7 +540,71 @@ export default {
 
   "youtube_ads": {
     "title": "YouTube Ads for Artists | Music Promotion - MDMC",
-    "description": "Expert YouTube Ads campaigns for musicians. Promotion of music videos, teasers and musical content with precise targeting and optimized ROI."
+    "description": "Expert YouTube Ads campaigns for musicians. Promotion of music videos, teasers and musical content with precise targeting and optimized ROI.",
+    "hero": {
+      "badge": "MDMC Music Ads",
+      "title_line1": "YouTube Ads",
+      "title_line2": "for Artists",
+      "promise_main": "Put your music video in front of your audience.",
+      "promise_sub": "Not in front of just anyone.",
+      "cta_primary": "Simulate my YouTube campaign",
+      "cta_secondary": "Launch my YouTube promo",
+      "trust_items": {
+        "no_fake": "No fake views purchase",
+        "real_fans": "Real fans only",
+        "roi": "Guaranteed ROI"
+      }
+    },
+    "form": {
+      "title": "Free YouTube Ads Estimate",
+      "subtitle": "Get your optimal budget in 30 seconds",
+      "artist_label": "Artist name",
+      "artist_placeholder": "Ex: MC Flow",
+      "email_label": "Email",
+      "email_placeholder": "your@email.com",
+      "genre_label": "Musical genre",
+      "genre_placeholder": "Select your genre",
+      "submit": "Simulate my campaign"
+    },
+    "services": [
+      {
+        "title": "Video Ads Campaigns",
+        "description": "Promotion of your music videos with precise targeting of music lovers in your genre"
+      },
+      {
+        "title": "Pre-Roll Advertising",
+        "description": "Ads before videos to maximize the discoverability of your music"
+      },
+      {
+        "title": "YouTube Shorts Ads",
+        "description": "Promotion on YouTube's viral format to reach Gen Z and new fans"
+      },
+      {
+        "title": "YouTube Remarketing",
+        "description": "Smart retargeting to convert viewers into loyal subscribers"
+      }
+    ],
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "How much does a YouTube Ads campaign cost for musicians?",
+          "answer": "YouTube Ads budgets start from €300. We recommend a minimum of €600 over 30 days to optimize performance and generate qualified views for your musical genre."
+        },
+        {
+          "question": "Will my YouTube views be authentic?",
+          "answer": "Absolutely. We only target real viewers interested in your musical style. No artificial views. Our campaigns generate organic views that count for YouTube SEO."
+        },
+        {
+          "question": "Should my music video be optimized for YouTube?",
+          "answer": "Not necessarily. We optimize your visuals, titles, descriptions and targeting to maximize impact on YouTube. Your creativity + our YouTube expertise = guaranteed results."
+        },
+        {
+          "question": "How long to see the first results?",
+          "answer": "First views arrive in 24-48h. Significant results (subscribers, engagement, shares) generally manifest within 7-14 days depending on your budget and targeting."
+        }
+      ]
+    }
   },
 
   "release_planner": {

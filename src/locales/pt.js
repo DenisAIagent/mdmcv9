@@ -659,7 +659,71 @@ export default {
 
   "youtube_ads": {
     "title": "YouTube Ads para Música",
-    "description": "Promova seus videoclipes, álbuns e conteúdo musical no YouTube. Alcance milhões de visualizações com campanhas otimizadas para artistas."
+    "description": "Promova seus videoclipes, álbuns e conteúdo musical no YouTube. Alcance milhões de visualizações com campanhas otimizadas para artistas.",
+    "hero": {
+      "badge": "MDMC Music Ads",
+      "title_line1": "YouTube Ads",
+      "title_line2": "para Artistas",
+      "promise_main": "Coloque seu videoclipe na frente do seu público.",
+      "promise_sub": "Não na frente de qualquer um.",
+      "cta_primary": "Simular minha campanha YouTube",
+      "cta_secondary": "Lançar minha promo YouTube",
+      "trust_items": {
+        "no_fake": "Sem compra de visualizações",
+        "real_fans": "Apenas fãs reais",
+        "roi": "ROI garantido"
+      }
+    },
+    "form": {
+      "title": "Estimativa Gratuita YouTube Ads",
+      "subtitle": "Obtenha seu orçamento ideal em 30 segundos",
+      "artist_label": "Nome do artista",
+      "artist_placeholder": "Ex: MC Flow",
+      "email_label": "Email",
+      "email_placeholder": "seu@email.com",
+      "genre_label": "Gênero musical",
+      "genre_placeholder": "Selecione seu gênero",
+      "submit": "Simular minha campanha"
+    },
+    "services": [
+      {
+        "title": "Campanhas Video Ads",
+        "description": "Promoção dos seus videoclipes musicais com segmentação precisa de amantes da música do seu gênero"
+      },
+      {
+        "title": "Publicidade Pre-Roll",
+        "description": "Anúncios antes dos vídeos para maximizar a descoberta da sua música"
+      },
+      {
+        "title": "YouTube Shorts Ads",
+        "description": "Promoção no formato viral do YouTube para alcançar a Geração Z e novos fãs"
+      },
+      {
+        "title": "Remarketing YouTube",
+        "description": "Redirecionamento inteligente para converter espectadores em assinantes fiéis"
+      }
+    ],
+    "faq": {
+      "title": "Perguntas frequentes",
+      "items": [
+        {
+          "question": "Quanto custa uma campanha YouTube Ads para músicos?",
+          "answer": "Os orçamentos de YouTube Ads começam a partir de €300. Recomendamos um mínimo de €600 durante 30 dias para otimizar o desempenho e gerar visualizações qualificadas do seu gênero musical."
+        },
+        {
+          "question": "Minhas visualizações do YouTube serão autênticas?",
+          "answer": "Absolutamente. Direcionamos apenas espectadores reais interessados no seu estilo musical. Sem visualizações artificiais. Nossas campanhas geram visualizações orgânicas que contam para o SEO do YouTube."
+        },
+        {
+          "question": "Meu videoclipe deve ser otimizado para YouTube?",
+          "answer": "Não necessariamente. Otimizamos seus visuais, títulos, descrições e segmentações para maximizar o impacto no YouTube. Sua criatividade + nossa expertise YouTube = resultados garantidos."
+        },
+        {
+          "question": "Quanto tempo para ver os primeiros resultados?",
+          "answer": "As primeiras visualizações chegam em 24-48h. Resultados significativos (assinantes, engagement, compartilhamentos) geralmente se manifestam em 7-14 dias dependendo do seu orçamento e segmentação."
+        }
+      ]
+    }
   },
 
   "release_planner": {

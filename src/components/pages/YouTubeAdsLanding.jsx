@@ -148,43 +148,9 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
     }));
   };
 
-  const faqItems = [
-    {
-      question: "Combien investir pour la sortie d'un clip ?",
-      answer: "Le budget optimal dépend de votre genre, audience cible et objectifs. Notre simulateur vous donne une estimation personnalisée en 30 secondes. En général, comptez 500€-2000€ pour un lancement efficace."
-    },
-    {
-      question: "Est-ce que j'aurai des abonnés réels ?",
-      answer: "Absolument. Nous ciblons uniquement des fans authentiques de votre genre musical. Aucun bot, aucune vue artificielle. Nos campagnes génèrent un engagement organique durable."
-    },
-    {
-      question: "Est-ce que la vidéo doit être déjà optimisée ?",
-      answer: "Pas nécessairement. Nous optimisons titre, description, miniature et métadonnées pour maximiser les performances. Votre créativité + notre expertise technique = succès garanti."
-    },
-    {
-      question: "Combien de temps pour voir les premiers résultats ?",
-      answer: "Les premières vues arrivent en 24-48h. Les résultats significatifs (abonnés, engagement) se manifestent généralement sous 7-14 jours selon votre budget et ciblage."
-    }
-  ];
+  const faqItems = t('youtube_ads.faq.items', { returnObjects: true });
 
-  const services = [
-    {
-      title: "Campagnes TrueView",
-      description: "Formats skippables optimisés pour la découverte musicale et l'engagement longue durée"
-    },
-    {
-      title: "YouTube Shorts Ads",
-      description: "Promotion sur le format viral de YouTube pour maximiser la portée organique"
-    },
-    {
-      title: "In-Feed Music Ads",
-      description: "Ciblage précis dans les recommandations et résultats de recherche musicale"
-    },
-    {
-      title: "Remarketing Avancé",
-      description: "Reconversion des visiteurs pour booster streams et abonnements"
-    }
-  ];
+  const services = t('youtube_ads.services', { returnObjects: true });
 
   return (
     <>
@@ -264,42 +230,42 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
             {/* Left: Main Content */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="badge-text">MDMC Music Ads</span>
+                <span className="badge-text">{t('youtube_ads.hero.badge')}</span>
               </div>
 
               <h1 className="hero-title-creative">
-                <span className="title-line-1">YouTube Ads</span>
-                <span className="title-line-2">pour Artistes</span>
+                <span className="title-line-1">{t('youtube_ads.hero.title_line1')}</span>
+                <span className="title-line-2">{t('youtube_ads.hero.title_line2')}</span>
               </h1>
 
               <div className="hero-promise-creative">
                 <div className="promise-main">
-                  Place ton clip devant ton public.
+                  {t('youtube_ads.hero.promise_main')}
                 </div>
                 <div className="promise-sub">
-                  Pas devant n'importe qui.
+                  {t('youtube_ads.hero.promise_sub')}
                 </div>
               </div>
 
               <div className="hero-cta-buttons">
                 <button onClick={openSimulator} className="cta-primary-hero">
-                  Simuler ma campagne YouTube
+                  {t('youtube_ads.hero.cta_primary')}
                   <span className="cta-arrow">→</span>
                 </button>
                 <button className="cta-secondary-hero">
-                  Lancer ma promo YouTube
+                  {t('youtube_ads.hero.cta_secondary')}
                 </button>
               </div>
 
               <div className="hero-trust-line">
                 <div className="trust-item">
-                  <span>Aucun achat de vues</span>
+                  <span>{t('youtube_ads.hero.trust_items.no_fake')}</span>
                 </div>
                 <div className="trust-item">
-                  <span>Fans réels uniquement</span>
+                  <span>{t('youtube_ads.hero.trust_items.real_fans')}</span>
                 </div>
                 <div className="trust-item">
-                  <span>ROI garanti</span>
+                  <span>{t('youtube_ads.hero.trust_items.roi')}</span>
                 </div>
               </div>
             </div>
@@ -573,7 +539,7 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
       {/* FAQ */}
       <section className="faq-section">
         <div className="container">
-          <h2>Questions fréquentes</h2>
+          <h2>{t('youtube_ads.faq.title')}</h2>
           <div className="faq-grid">
             {faqItems.map((item, index) => (
               <div key={index} className="faq-item">
