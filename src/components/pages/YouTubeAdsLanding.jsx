@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import featurableService from '../../services/featurable.service';
@@ -7,6 +8,8 @@ import '../../assets/styles/youtube-ads-landing.css';
 import '../../assets/styles/reviews.css';
 
 const YouTubeAdsLanding = ({ openSimulator }) => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -186,8 +189,8 @@ const YouTubeAdsLanding = ({ openSimulator }) => {
   return (
     <>
       <Helmet>
-        <title>YouTube Ads pour Artistes | Vues Réelles & Abonnés Qualifiés - MDMC</title>
-        <meta name="description" content="Propulsez votre clip avec nos campagnes YouTube Ads. Touchez une audience qualifiée, obtenez des vues réelles et des abonnés engagés. Stratégie sur-mesure pour artistes." />
+        <title>{t('youtube_ads.title')} - MDMC</title>
+        <meta name="description" content={t('youtube_ads.description')} />
         <meta name="keywords" content="YouTube Ads artistes, promotion musicale YouTube, marketing musical, campagne YouTube musique, vues réelles youtube, abonnés qualifiés youtube, MDMC" />
 
         {/* Open Graph */}

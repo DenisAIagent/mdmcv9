@@ -376,5 +376,229 @@ export default {
     "accept": "Aceitar todos os cookies",
     "decline": "Recusar",
     "settings": "Configurações de cookies"
+  },
+
+  "spotify_ads": {
+    "hero": {
+      "title": "Spotify Ads para Artistas",
+      "subtitle": "Alcance seus fãs onde eles estão",
+      "description": "Promova sua música diretamente no Spotify com campanhas publicitárias direcionadas que geram streams e descoberta de novos fãs.",
+      "cta": "Iniciar campanha Spotify",
+      "trust_points": {
+        "certified": "Parceiro certificado Spotify Ad Studio",
+        "experience": "5+ anos de experiência em publicidade musical",
+        "results": "Milhões de streams gerados para nossos clientes"
+      }
+    },
+    "value_prop": {
+      "title": "Por que escolher Spotify Ads?",
+      "intro": "O Spotify é onde seus fãs descobrem e consomem música. Esteja presente onde eles estão.",
+      "points": {
+        "targeting": {
+          "title": "Segmentação Musical Precisa",
+          "description": "Alcance ouvintes com base em gêneros, artistas similares e hábitos de escuta."
+        },
+        "formats": {
+          "title": "Formatos Publicitários Nativos",
+          "description": "Audio ads, video ads e display ads integrados naturalmente na experiência Spotify."
+        },
+        "attribution": {
+          "title": "Rastreamento de Streams",
+          "description": "Meça o impacto direto de suas campanhas no número de streams e seguidores."
+        },
+        "scale": {
+          "title": "Alcance Global",
+          "description": "Acesse 489 milhões de usuários ativos mensais em 184 países."
+        }
+      }
+    },
+    "how_it_works": {
+      "title": "Como funcionam nossas campanhas Spotify",
+      "steps": {
+        "1": {
+          "title": "Análise de Público",
+          "description": "Identificamos seus ouvintes ideais com base em dados do Spotify e sua música."
+        },
+        "2": {
+          "title": "Criação de Campanha",
+          "description": "Desenvolvemos criativos áudio/vídeo otimizados para a plataforma Spotify."
+        },
+        "3": {
+          "title": "Lançamento e Otimização",
+          "description": "Monitoramos performance e otimizamos para maximizar streams e descoberta."
+        },
+        "4": {
+          "title": "Relatórios Detalhados",
+          "description": "Relatórios completos sobre streams, alcance e crescimento de audiência."
+        }
+      }
+    },
+    "formats": {
+      "title": "Formatos de Publicidade Spotify",
+      "audio": {
+        "title": "Audio Ads",
+        "description": "Spots de 15-30 segundos entre músicas nos planos gratuitos",
+        "best_for": "Ideal para: Consciência de marca e promoção de lançamentos"
+      },
+      "video": {
+        "title": "Video Ads",
+        "description": "Anúncios em vídeo de 15-30 segundos em momentos naturais",
+        "best_for": "Ideal para: Engajamento visual e storytelling"
+      },
+      "display": {
+        "title": "Display Ads",
+        "description": "Banners visuais na interface do aplicativo e desktop",
+        "best_for": "Ideal para: Reconhecimento visual e direcionamento de tráfego"
+      }
+    },
+    "pricing": {
+      "title": "Investimento em Spotify Ads",
+      "subtitle": "Transparência total em nossos preços",
+      "starter": {
+        "name": "Starter",
+        "price": "€1,500",
+        "period": "/mês",
+        "budget": "€1,000 ad spend",
+        "features": [
+          "Configuração de campanha",
+          "Criativos básicos incluídos",
+          "Segmentação por gênero e localização",
+          "Relatórios mensais",
+          "Suporte por email"
+        ],
+        "cta": "Começar"
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "€3,000",
+        "period": "/mês",
+        "budget": "€2,500 ad spend",
+        "featured": true,
+        "features": [
+          "Múltiplos formatos de anúncio",
+          "Criativos profissionais incluídos",
+          "Segmentação avançada",
+          "Otimização contínua",
+          "Relatórios semanais",
+          "Suporte prioritário"
+        ],
+        "cta": "Mais Popular"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Personalizado",
+        "period": "",
+        "budget": "€5,000+ ad spend",
+        "features": [
+          "Estratégia personalizada",
+          "Produção criativa dedicada",
+          "Account manager dedicado",
+          "Relatórios em tempo real",
+          "Integração com ferramentas externas",
+          "Suporte 24/7"
+        ],
+        "cta": "Contatar"
+      },
+      "note": "Todos os planos incluem configuração gratuita e análise inicial de audiência"
+    },
+    "release_planner": {
+      "title": "Planejador de Lançamento Musical",
+      "subtitle": "Maximize o impacto do seu próximo lançamento com nossa análise IA",
+      "description": "Nossa ferramenta analisa o mercado musical atual e fornece insights estratégicos para otimizar o timing e estratégia do seu lançamento.",
+      "form": {
+        "title": "Analise seu próximo lançamento",
+        "artist_name": {
+          "label": "Nome do Artista",
+          "placeholder": "Digite o nome do seu artista ou banda"
+        },
+        "track_title": {
+          "label": "Título da Música",
+          "placeholder": "Digite o título da sua música"
+        },
+        "genre": {
+          "label": "Gênero Musical",
+          "placeholder": "Ex: Pop, Rock, Hip-Hop, Eletrônica..."
+        },
+        "release_date": {
+          "label": "Data de Lançamento Prevista",
+          "placeholder": "Selecione uma data"
+        },
+        "email": {
+          "label": "Seu Email",
+          "placeholder": "seu@email.com"
+        },
+        "submit": "Analisar Lançamento",
+        "submitting": "Analisando..."
+      },
+      "features": {
+        "competition": {
+          "title": "Análise da Concorrência",
+          "description": "Identifique lançamentos concorrentes e encontre o momento ideal"
+        },
+        "trends": {
+          "title": "Tendências de Mercado",
+          "description": "Dados em tempo real sobre popularidade de gêneros e artistas"
+        },
+        "strategy": {
+          "title": "Estratégia Personalizada",
+          "description": "Recomendações específicas para seu gênero e público-alvo"
+        },
+        "timing": {
+          "title": "Otimização de Timing",
+          "description": "Melhor momento para lançar com base em dados históricos"
+        }
+      },
+      "results": {
+        "title": "Resultados da Análise",
+        "score": "Pontuação de Oportunidade",
+        "recommendations": "Recomendações Estratégicas",
+        "competition_level": "Nível de Concorrência",
+        "optimal_date": "Data Ótima de Lançamento",
+        "cta": "Receber Análise Completa"
+      }
+    },
+    "faq": {
+      "title": "Perguntas Frequentes - Spotify Ads",
+      "q1": {
+        "question": "Quanto custa publicidade no Spotify?",
+        "answer": "O investimento mínimo é de €250 por campanha, com nossos pacotes começando em €1,500/mês (incluindo €1,000 de ad spend). O custo varia conforme formato, público-alvo e duração da campanha."
+      },
+      "q2": {
+        "question": "Que tipos de anúncios posso criar no Spotify?",
+        "answer": "Oferecemos três formatos principais: Audio Ads (spots entre músicas), Video Ads (durante momentos naturais) e Display Ads (banners visuais). Cada formato tem suas vantagens específicas."
+      },
+      "q3": {
+        "question": "Como funciona a segmentação no Spotify?",
+        "answer": "Podemos segmentar por gênero musical, artistas similares, localização, idade, hábitos de escuta e muito mais. A segmentação é muito precisa graças aos dados ricos de comportamento musical."
+      },
+      "q4": {
+        "question": "Quanto tempo leva para ver resultados?",
+        "answer": "Resultados iniciais (impressões, reproduções) são visíveis em 24-48h. Para impacto significativo nos streams e seguidores, conte com 1-2 semanas de otimização."
+      },
+      "q5": {
+        "question": "Posso rastrear quantos streams vieram da campanha?",
+        "answer": "Sim! Fornecemos relatórios detalhados mostrando streams gerados, novos seguidores, alcance e outras métricas importantes diretamente atribuíveis à campanha."
+      },
+      "q6": {
+        "question": "Vocês criam os criativos ou preciso fornecer?",
+        "answer": "Criamos todos os criativos necessários (áudio, vídeo, display) incluídos em nossos pacotes. Também podemos trabalhar com materiais que você já possui."
+      }
+    },
+    "cta_section": {
+      "title": "Pronto para crescer no Spotify?",
+      "subtitle": "Junte-se a centenas de artistas que já impulsionaram sua carreira com nossas campanhas Spotify Ads",
+      "primary_cta": "Iniciar minha campanha",
+      "secondary_cta": "Agendar consultoria gratuita"
+    }
+  },
+
+  "meta_ads": {
+    "title": "Meta Ads para Artistas Musicais",
+    "description": "Campanhas Facebook e Instagram personalizadas para artistas e gravadoras. Aumente seus seguidores, streams e engajamento com publicidade direcionada."
+  },
+
+  "youtube_ads": {
+    "title": "YouTube Ads para Música",
+    "description": "Promova seus videoclipes, álbuns e conteúdo musical no YouTube. Alcance milhões de visualizações com campanhas otimizadas para artistas."
   }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import SpotifyReleasePlanner from '../tools/SpotifyReleasePlanner';
@@ -8,6 +9,8 @@ import '../../assets/styles/spotify-ads-landing.css';
 import '../../assets/styles/reviews.css';
 
 const SpotifyAdsLanding = ({ openSimulator }) => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -301,24 +304,28 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
   // FAQ spécifique Spotify
   const faqItems = [
     {
-      question: "Combien coûte une campagne Spotify Ads ?",
-      answer: "Les budgets Spotify Ads commencent à partir de 250€. Nous recommandons un minimum de 500€ sur 30 jours pour optimiser les performances et toucher suffisamment d'auditeurs qualifiés."
+      question: t('spotify_ads.faq.q1.question'),
+      answer: t('spotify_ads.faq.q1.answer')
     },
     {
-      question: "Quelle est la différence entre Audio Ads et Video Ads ?",
-      answer: "Les Audio Ads sont diffusées entre les morceaux sur Spotify gratuit (30 secondes max). Les Video Ads apparaissent en plein écran avec un impact visuel fort. Nous recommandons souvent de combiner les deux formats."
+      question: t('spotify_ads.faq.q2.question'),
+      answer: t('spotify_ads.faq.q2.answer')
     },
     {
-      question: "Peut-on cibler par genre musical sur Spotify ?",
-      answer: "Oui, Spotify offre un ciblage très précis par genres musicaux, artistes similaires, et même comportements d'écoute. C'est l'une des forces principales de la plateforme pour les artistes."
+      question: t('spotify_ads.faq.q3.question'),
+      answer: t('spotify_ads.faq.q3.answer')
     },
     {
-      question: "Combien de temps pour voir les premiers résultats ?",
-      answer: "Les premières données arrivent dès 24-48h. Les optimisations prennent effet après 7-10 jours. Nous recommandons 30 jours minimum pour une campagne complète et des résultats durables."
+      question: t('spotify_ads.faq.q4.question'),
+      answer: t('spotify_ads.faq.q4.answer')
     },
     {
-      question: "Les campagnes Spotify aident-elles le streaming organique ?",
-      answer: "Absolument. Spotify Ads peut booster significativement vos streams organiques en introduisant votre musique à de nouveaux auditeurs qui deviennent ensuite des fans réguliers."
+      question: t('spotify_ads.faq.q5.question'),
+      answer: t('spotify_ads.faq.q5.answer')
+    },
+    {
+      question: t('spotify_ads.faq.q6.question'),
+      answer: t('spotify_ads.faq.q6.answer')
     }
   ];
 
@@ -370,11 +377,11 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
   return (
     <>
       <Helmet>
-        <title>Spotify Ads pour Artistes | Boostez vos Streams - MDMC</title>
-        <meta name="description" content="Découvrez comment nos campagnes Spotify Ads (Audio & Vidéo) peuvent propulser votre musique. Ciblage précis, ROI garanti et streams authentiques pour artistes et labels." />
+        <title>{t('spotify_ads.hero.title')} | {t('spotify_ads.hero.subtitle')} - MDMC</title>
+        <meta name="description" content={t('spotify_ads.hero.description')} />
         <meta name="keywords" content="spotify ads, publicité spotify, audio ads, campagne spotify, streaming, promotion musicale, artiste indépendant, booster streams spotify" />
-        <meta property="og:title" content="Spotify Ads pour Artistes | Boostez vos Streams - MDMC" />
-        <meta property="og:description" content="Découvrez comment nos campagnes Spotify Ads (Audio & Vidéo) peuvent propulser votre musique. Ciblage précis, ROI garanti et streams authentiques pour artistes et labels." />
+        <meta property="og:title" content={`${t('spotify_ads.hero.title')} | ${t('spotify_ads.hero.subtitle')} - MDMC`} />
+        <meta property="og:description" content={t('spotify_ads.hero.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mdmcmusicads.com/spotify-ads/" />
         <meta property="og:image" content="https://www.mdmcmusicads.com/assets/images/opengraph-spotifyads.png" />
@@ -435,41 +442,40 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             {/* Left: Main Content */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="badge-text">🎵 Campagnes Spotify Ads Premium</span>
+                <span className="badge-text">🎵 {t('spotify_ads.hero.trust_points.certified')}</span>
               </div>
 
               <h1 className="hero-title-creative">
-                <span className="title-line-1">Push. Play.</span>
-                <span className="title-line-2">Stream Up.</span>
+                <span className="title-line-1">{t('spotify_ads.hero.title')}</span>
+                <span className="title-line-2">{t('spotify_ads.hero.subtitle')}</span>
               </h1>
 
               <div className="hero-promise-creative">
-                <p className="promise-main">Propulse tes morceaux</p>
-                <p className="promise-sub">devant des millions d'auditeurs Spotify</p>
+                <p className="promise-main">{t('spotify_ads.hero.description')}</p>
               </div>
 
               <div className="hero-cta-buttons">
                 <button onClick={() => setShowReleasePlanner(true)} className="cta-primary-hero">
-                  Release Planner Spotify
+                  {t('spotify_ads.release_planner.title')}
                   <span className="cta-arrow">→</span>
                 </button>
                 <button className="cta-secondary-hero">
-                  Exemples de résultats
+                  {t('spotify_ads.cta_section.secondary_cta')}
                 </button>
               </div>
 
               <div className="hero-trust-line">
                 <div className="trust-item">
                   <span className="trust-icon">✓</span>
-                  <span>Audio Ads optimisées</span>
+                  <span>{t('spotify_ads.hero.trust_points.experience')}</span>
                 </div>
                 <div className="trust-item">
                   <span className="trust-icon">✓</span>
-                  <span>Ciblage par genre</span>
+                  <span>{t('spotify_ads.value_prop.points.targeting.title')}</span>
                 </div>
                 <div className="trust-item">
                   <span className="trust-icon">✓</span>
-                  <span>ROI mesurable</span>
+                  <span>{t('spotify_ads.value_prop.points.attribution.title')}</span>
                 </div>
               </div>
             </div>
@@ -478,17 +484,17 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
             <div className="hero-right">
               <div className="hero-form-creative">
                 <div className="form-header">
-                  <h3>Consultation Spotify Ads Gratuite</h3>
-                  <p>Gratuit • 15 minutes • Stratégie personnalisée</p>
+                  <h3>{t('spotify_ads.release_planner.form.title')}</h3>
+                  <p>{t('spotify_ads.cta_section.secondary_cta')}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="lead-form-creative">
                   <div className="input-group">
-                    <label>Nom d'artiste</label>
+                    <label>{t('spotify_ads.release_planner.form.artist_name.label')}</label>
                     <input
                       type="text"
                       name="name"
-                      placeholder="Ex: MC Flow"
+                      placeholder={t('spotify_ads.release_planner.form.artist_name.placeholder')}
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -496,11 +502,11 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
                   </div>
 
                   <div className="input-group">
-                    <label>Email pro</label>
+                    <label>{t('spotify_ads.release_planner.form.email.label')}</label>
                     <input
                       type="email"
                       name="email"
-                      placeholder="ton@email.com"
+                      placeholder={t('spotify_ads.release_planner.form.email.placeholder')}
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -519,19 +525,19 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
                   </div>
 
                 <button type="button" onClick={handleCalendlyBooking} className="form-submit-btn" disabled={isSubmitting} aria-busy={isSubmitting}>
-                  <span className="btn-text">{isSubmitting ? 'Envoi…' : 'Réserver un appel'}</span>
+                  <span className="btn-text">{isSubmitting ? t('spotify_ads.release_planner.form.submitting') : t('spotify_ads.hero.cta')}</span>
                 </button>
                 </form>
 
                 <div className="form-benefits">
                   <div className="benefit-item">
-                    <span>Audit gratuit de votre profil Spotify</span>
+                    <span>{t('spotify_ads.release_planner.features.competition.title')}</span>
                   </div>
                   <div className="benefit-item">
-                    <span>Stratégie personnalisée Audio + Video Ads</span>
+                    <span>{t('spotify_ads.release_planner.features.strategy.title')}</span>
                   </div>
                   <div className="benefit-item">
-                    <span>Plan d'action et budget recommandé</span>
+                    <span>{t('spotify_ads.release_planner.features.timing.title')}</span>
                   </div>
                 </div>
               </div>
@@ -549,30 +555,30 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
       {/* Value Proposition */}
       <section className="value-proposition">
         <div className="container">
-          <h2>Maximise tes streams sur Spotify</h2>
+          <h2>{t('spotify_ads.value_prop.title')}</h2>
           <div className="value-grid">
             <div className="value-item">
-              <h3>Audio Ads Optimisées</h3>
-              <p>Publicités audio entre les morceaux pour toucher les auditeurs Spotify gratuit de ton genre</p>
+              <h3>{t('spotify_ads.formats.audio.title')}</h3>
+              <p>{t('spotify_ads.formats.audio.description')}</p>
             </div>
             <div className="value-item">
-              <h3>Ciblage Musical Précis</h3>
-              <p>Audiences qualifiées par genre, artistes similaires et habitudes d'écoute</p>
+              <h3>{t('spotify_ads.value_prop.points.targeting.title')}</h3>
+              <p>{t('spotify_ads.value_prop.points.targeting.description')}</p>
             </div>
             <div className="value-item">
-              <h3>Streams Authentiques</h3>
-              <p>Vrais auditeurs qui découvrent ta musique et deviennent des fans réguliers</p>
+              <h3>{t('spotify_ads.value_prop.points.attribution.title')}</h3>
+              <p>{t('spotify_ads.value_prop.points.attribution.description')}</p>
             </div>
           </div>
 
           <div className="strategy-types">
-            <h3>Formats publicitaires adaptés</h3>
+            <h3>{t('spotify_ads.formats.title')}</h3>
             <div className="strategy-list">
-              <div className="strategy">Audio Ads</div>
-              <div className="strategy">Video Takeover</div>
-              <div className="strategy">Sponsored Playlists</div>
+              <div className="strategy">{t('spotify_ads.formats.audio.title')}</div>
+              <div className="strategy">{t('spotify_ads.formats.video.title')}</div>
+              <div className="strategy">{t('spotify_ads.formats.display.title')}</div>
               <button onClick={() => setShowReleasePlanner(true)} className="strategy-cta">
-                Release Planner Spotify
+                {t('spotify_ads.release_planner.title')}
                 <span className="cta-arrow">→</span>
               </button>
             </div>
@@ -603,22 +609,22 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
       {/* How It Works */}
       <section className="how-it-works">
         <div className="container">
-          <h2>Comment ça marche sur Spotify</h2>
+          <h2>{t('spotify_ads.how_it_works.title')}</h2>
           <div className="steps-grid">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Analyse musicale + stratégie Spotify</h3>
-              <p>Étude approfondie de ton genre et définition du mix Audio Ads / Video Ads optimal</p>
+              <h3>{t('spotify_ads.how_it_works.steps.1.title')}</h3>
+              <p>{t('spotify_ads.how_it_works.steps.1.description')}</p>
             </div>
             <div className="step">
               <div className="step-number">2</div>
-              <h3>Setup Spotify Ad Studio + créatives</h3>
-              <p>Configuration compte publicitaire et création des créatives audio/video percutantes</p>
+              <h3>{t('spotify_ads.how_it_works.steps.2.title')}</h3>
+              <p>{t('spotify_ads.how_it_works.steps.2.description')}</p>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Lancement + optimisations quotidiennes</h3>
-              <p>Pilotage en temps réel et ajustements pour maximiser streams et découvrabilité</p>
+              <h3>{t('spotify_ads.how_it_works.steps.3.title')}</h3>
+              <p>{t('spotify_ads.how_it_works.steps.3.description')}</p>
             </div>
           </div>
         </div>
@@ -929,7 +935,7 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
       {/* FAQ */}
       <section className="faq-section">
         <div className="container">
-          <h2>Questions fréquentes</h2>
+          <h2>{t('spotify_ads.faq.title')}</h2>
           <div className="faq-grid">
             {faqItems.map((item, index) => (
               <div key={index} className={`faq-item ${openFaqIndex === index ? 'open' : ''}`}>
@@ -958,10 +964,10 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
       {/* Final CTA */}
       <section className="final-cta">
         <div className="container">
-          <h2>Push. Play. Stream Up.</h2>
-          <p>Propulse ta musique devant des millions d'auditeurs Spotify</p>
+          <h2>{t('spotify_ads.cta_section.title')}</h2>
+          <p>{t('spotify_ads.cta_section.subtitle')}</p>
           <button onClick={() => setShowReleasePlanner(true)} className="cta-primary large">
-            Release Planner Spotify
+            {t('spotify_ads.cta_section.primary_cta')}
           </button>
         </div>
       </section>

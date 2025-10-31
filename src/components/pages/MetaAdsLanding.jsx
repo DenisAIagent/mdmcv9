@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import featurableService from '../../services/featurable.service';
@@ -7,6 +8,8 @@ import '../../assets/styles/meta-ads-landing.css';
 import '../../assets/styles/reviews.css';
 
 const MetaAdsLanding = ({ openSimulator }) => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -186,8 +189,8 @@ const MetaAdsLanding = ({ openSimulator }) => {
   return (
     <>
       <Helmet>
-        <title>Meta Ads pour Artistes | Facebook & Instagram Ads - MDMC</title>
-        <meta name="description" content="Boostez votre musique sur Facebook et Instagram. Nos campagnes Meta Ads ciblent les fans de votre genre musical pour plus de followers, d'engagement et de streams." />
+        <title>{t('meta_ads.title')} - MDMC</title>
+        <meta name="description" content={t('meta_ads.description')} />
         <meta name="keywords" content="Meta Ads artistes, Facebook Ads musique, Instagram Ads musique, promotion musicale, marketing musical, campagne Meta musique, MDMC" />
 
         {/* Open Graph */}
@@ -261,16 +264,12 @@ const MetaAdsLanding = ({ openSimulator }) => {
               </div>
 
               <h1 className="hero-title-creative">
-                <span className="title-line-1">Meta Ads</span>
-                <span className="title-line-2">pour Artistes</span>
+                <span className="title-line-1">{t('meta_ads.title')}</span>
               </h1>
 
               <div className="hero-promise-creative">
                 <div className="promise-main">
-                  Place ta musique devant ton public.
-                </div>
-                <div className="promise-sub">
-                  Pas devant n'importe qui.
+                  {t('meta_ads.description')}
                 </div>
               </div>
 

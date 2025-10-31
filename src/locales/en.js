@@ -376,5 +376,110 @@ export default {
       "close": "Close",
       "open": "Open assistant"
     }
+  }, // End of admin section
+
+  // Specialized Ads Pages
+  "spotify_ads": {
+    "title": "Spotify Ads for Artists | Boost Your Streams - MDMC",
+    "description": "Discover how our Spotify Ads campaigns (Audio & Video) can propel your music. Precise targeting, guaranteed ROI and authentic streams.",
+    "hero": {
+      "badge": "🎵 Premium Spotify Ads Campaigns",
+      "title_line1": "Push. Play.",
+      "title_line2": "Stream Up.",
+      "promise_main": "Propel your tracks",
+      "promise_sub": "to millions of Spotify listeners",
+      "cta_primary": "Spotify Release Planner",
+      "cta_secondary": "See results examples",
+      "trust_items": {
+        "audio_ads": "Optimized Audio Ads",
+        "targeting": "Genre targeting",
+        "roi": "Measurable ROI"
+      }
+    },
+    "form": {
+      "title": "Free Spotify Ads Consultation",
+      "subtitle": "Free • 15 minutes • Personalized strategy",
+      "artist_label": "Artist name",
+      "artist_placeholder": "Ex: MC Flow",
+      "email_label": "Professional email",
+      "email_placeholder": "your@email.com",
+      "spotify_label": "Spotify link (optional)",
+      "spotify_placeholder": "https://open.spotify.com/artist/...",
+      "submit": "Book a call",
+      "benefits": {
+        "audit": "Free audit of your Spotify profile",
+        "strategy": "Personalized Audio + Video Ads strategy",
+        "plan": "Action plan and recommended budget"
+      }
+    },
+    "value_prop": {
+      "title": "Maximize your Spotify streams",
+      "items": {
+        "audio_ads": {
+          "title": "Optimized Audio Ads",
+          "description": "Audio advertisements between tracks to reach free Spotify listeners in your genre"
+        },
+        "targeting": {
+          "title": "Precise Musical Targeting",
+          "description": "Qualified audiences by genre, similar artists and listening habits"
+        },
+        "streams": {
+          "title": "Authentic Streams",
+          "description": "Real listeners who discover your music and become regular fans"
+        }
+      }
+    },
+    "how_it_works": {
+      "title": "How it works on Spotify",
+      "steps": {
+        "analysis": {
+          "title": "Musical analysis + Spotify strategy",
+          "description": "In-depth study of your genre and defining the optimal Audio Ads / Video Ads mix"
+        },
+        "setup": {
+          "title": "Spotify Ad Studio setup + creatives",
+          "description": "Ad account configuration and creation of impactful audio/video creatives"
+        },
+        "optimization": {
+          "title": "Launch + daily optimizations",
+          "description": "Real-time management and adjustments to maximize streams and discoverability"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "cost": {
+          "question": "How much does a Spotify Ads campaign cost?",
+          "answer": "Spotify Ads budgets start from €250. We recommend a minimum of €500 over 30 days to optimize performance and reach enough qualified listeners."
+        },
+        "formats": {
+          "question": "What's the difference between Audio Ads and Video Ads?",
+          "answer": "Audio Ads are played between tracks on free Spotify (30 seconds max). Video Ads appear full-screen with strong visual impact. We often recommend combining both formats."
+        },
+        "targeting": {
+          "question": "Can you target by musical genre on Spotify?",
+          "answer": "Yes, Spotify offers very precise targeting by musical genres, similar artists, and even listening behaviors. This is one of the platform's main strengths for artists."
+        },
+        "results": {
+          "question": "How long to see first results?",
+          "answer": "First data arrives within 24-48h. Optimizations take effect after 7-10 days. We recommend 30 days minimum for a complete campaign and lasting results."
+        },
+        "organic": {
+          "question": "Do Spotify campaigns help organic streaming?",
+          "answer": "Absolutely. Spotify Ads can significantly boost your organic streams by introducing your music to new listeners who then become regular fans."
+        }
+      }
+    }
+  },
+
+  "meta_ads": {
+    "title": "Meta Ads for Musicians | Facebook & Instagram - MDMC",
+    "description": "Specialized Meta Ads (Facebook/Instagram) strategies for artists. Awareness, engagement and conversion campaigns optimized for the music industry."
+  },
+
+  "youtube_ads": {
+    "title": "YouTube Ads for Artists | Music Promotion - MDMC",
+    "description": "Expert YouTube Ads campaigns for musicians. Promotion of music videos, teasers and musical content with precise targeting and optimized ROI."
   }
 }
