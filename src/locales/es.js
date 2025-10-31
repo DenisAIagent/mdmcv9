@@ -475,7 +475,67 @@ export default {
 
   "meta_ads": {
     "title": "Meta Ads para Músicos | Facebook e Instagram - MDMC",
-    "description": "Estrategias especializadas de Meta Ads (Facebook/Instagram) para artistas. Campañas de awareness, engagement y conversión optimizadas para la industria musical."
+    "description": "Estrategias especializadas de Meta Ads (Facebook/Instagram) para artistas. Campañas de awareness, engagement y conversión optimizadas para la industria musical.",
+    "hero": {
+      "badge": "MDMC Music Ads",
+      "cta_primary": "Simular mi campaña Meta",
+      "cta_secondary": "Lanzar mi promo Meta",
+      "trust_items": {
+        "no_fake": "Sin compra de vistas",
+        "real_fans": "Solo fans reales",
+        "roi": "ROI garantizado"
+      }
+    },
+    "form": {
+      "title": "Estimación Gratuita Meta Ads",
+      "subtitle": "Obtén tu presupuesto óptimo en 30 segundos",
+      "artist_label": "Nombre del artista",
+      "artist_placeholder": "Ej: MC Flow",
+      "email_label": "Email",
+      "email_placeholder": "tu@email.com",
+      "genre_label": "Género musical",
+      "genre_placeholder": "Selecciona tu género",
+      "submit": "Simular mi campaña"
+    },
+    "services": [
+      {
+        "title": "Campañas Facebook Ads",
+        "description": "Segmentación precisa de tu audiencia musical en Facebook con creativos optimizados para engagement y conversión"
+      },
+      {
+        "title": "Instagram Music Marketing",
+        "description": "Promoción nativa en Instagram con Stories, Reels y posts para maximizar tu visibilidad entre melómanos"
+      },
+      {
+        "title": "Publicidad de Video Meta",
+        "description": "Clips cortos optimizados para Facebook e Instagram, diseñados para generar streams y fidelizar fans"
+      },
+      {
+        "title": "Retargeting Musical",
+        "description": "Reorientación inteligente de tus oyentes existentes para transformar el interés en suscripción y compra"
+      }
+    ],
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Cuánto invertir para promocionar mi música en Meta?",
+          "answer": "El presupuesto óptimo depende de tu género, audiencia objetivo y objetivos. Nuestro simulador te da una estimación personalizada en 30 segundos. Lo mínimo recomendado es €500 durante 30 días para un lanzamiento efectivo en Facebook e Instagram."
+        },
+        {
+          "question": "¿Tendré seguidores reales en Instagram?",
+          "answer": "Absolutamente. Solo segmentamos fans auténticos de tu género musical en Facebook e Instagram. Sin bots, sin cuentas falsas. Nuestras campañas generan engagement orgánico duradero en ambas plataformas."
+        },
+        {
+          "question": "¿Mis contenidos deben estar optimizados para Meta?",
+          "answer": "No necesariamente. Nosotros optimizamos tus creativos, segmentaciones y formatos publicitarios para maximizar el rendimiento en Facebook e Instagram. Tu creatividad + nuestra expertise Meta = éxito garantizado."
+        },
+        {
+          "question": "¿Cuánto tiempo para ver los primeros resultados?",
+          "answer": "Las primeras interacciones llegan en 24-48h en Facebook e Instagram. Los resultados significativos (seguidores, streams, engagement) generalmente se manifiestan en 5-10 días según tu presupuesto y segmentación Meta."
+        }
+      ]
+    }
   },
 
   "youtube_ads": {

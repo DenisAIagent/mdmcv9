@@ -148,43 +148,9 @@ const MetaAdsLanding = ({ openSimulator }) => {
     }));
   };
 
-  const faqItems = [
-    {
-      question: "Combien investir pour promouvoir ma musique sur Meta ?",
-      answer: "Le budget optimal dépend de votre genre, audience cible et objectifs. Notre simulateur vous donne une estimation personnalisée en 30 secondes. Le minimum recommandé est de 500€ sur une période de 30 jours pour un lancement efficace sur Facebook et Instagram."
-    },
-    {
-      question: "Est-ce que j'aurai des followers réels sur Instagram ?",
-      answer: "Absolument. Nous ciblons uniquement des fans authentiques de votre genre musical sur Facebook et Instagram. Aucun bot, aucun faux compte. Nos campagnes génèrent un engagement organique durable sur les deux plateformes."
-    },
-    {
-      question: "Mes contenus doivent-ils être optimisés pour Meta ?",
-      answer: "Pas nécessairement. Nous optimisons vos créatives, ciblages, et formats publicitaires pour maximiser les performances sur Facebook et Instagram. Votre créativité + notre expertise Meta = succès garanti."
-    },
-    {
-      question: "Combien de temps pour voir les premiers résultats ?",
-      answer: "Les premières interactions arrivent en 24-48h sur Facebook et Instagram. Les résultats significatifs (followers, streams, engagement) se manifestent généralement sous 5-10 jours selon votre budget et ciblage Meta."
-    }
-  ];
+  const faqItems = t('meta_ads.faq.items', { returnObjects: true });
 
-  const services = [
-    {
-      title: "Campagnes Facebook Ads",
-      description: "Formats optimisés pour la découverte musicale dans le feed Facebook"
-    },
-    {
-      title: "Instagram Reels Ads",
-      description: "Promotion sur le format viral d'Instagram pour maximiser la portée organique"
-    },
-    {
-      title: "Stories & Feed Ads",
-      description: "Ciblage précis dans les stories Instagram et feed Facebook"
-    },
-    {
-      title: "Remarketing Meta",
-      description: "Reconversion via pixel Facebook pour booster streams et abonnements"
-    }
-  ];
+  const services = t('meta_ads.services', { returnObjects: true });
 
   return (
     <>
@@ -265,7 +231,7 @@ const MetaAdsLanding = ({ openSimulator }) => {
             {/* Left: Main Content */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="badge-text">MDMC Music Ads</span>
+                <span className="badge-text">{t('meta_ads.hero.badge')}</span>
               </div>
 
               <h1 className="hero-title-creative">
@@ -280,23 +246,23 @@ const MetaAdsLanding = ({ openSimulator }) => {
 
               <div className="hero-cta-buttons">
                 <button onClick={openSimulator} className="cta-primary-hero">
-                  Simuler ma campagne Meta
+                  {t('meta_ads.hero.cta_primary')}
                   <span className="cta-arrow">→</span>
                 </button>
                 <button className="cta-secondary-hero">
-                  Lancer ma promo Meta
+                  {t('meta_ads.hero.cta_secondary')}
                 </button>
               </div>
 
               <div className="hero-trust-line">
                 <div className="trust-item">
-                  <span>Aucun achat de vues</span>
+                  <span>{t('meta_ads.hero.trust_items.no_fake')}</span>
                 </div>
                 <div className="trust-item">
-                  <span>Fans réels uniquement</span>
+                  <span>{t('meta_ads.hero.trust_items.real_fans')}</span>
                 </div>
                 <div className="trust-item">
-                  <span>ROI garanti</span>
+                  <span>{t('meta_ads.hero.trust_items.roi')}</span>
                 </div>
               </div>
             </div>
@@ -678,7 +644,7 @@ const MetaAdsLanding = ({ openSimulator }) => {
       {/* FAQ */}
       <section className="faq-section">
         <div className="container">
-          <h2>Questions fréquentes</h2>
+          <h2>{t('meta_ads.faq.title')}</h2>
           <div className="faq-grid">
             {faqItems.map((item, index) => (
               <div key={index} className="faq-item">
