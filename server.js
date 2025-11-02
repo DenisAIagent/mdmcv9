@@ -59,7 +59,8 @@ app.use(helmet({
         "https://maps.googleapis.com", // Google Maps
         "https://featurable.com", // API partenaire
         "https://generativelanguage.googleapis.com", // Google Gemini API
-        "https://admin-n8n.mdmcmusicads.com" // Webhook simulator
+        "https://admin-n8n.mdmcmusicads.com", // Webhook simulator
+        "https://mdmcmusicads.app.n8n.cloud" // Webhook release planner
       ],
       fontSrc: [
         "'self'",
