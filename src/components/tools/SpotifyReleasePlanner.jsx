@@ -34,6 +34,7 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
 
   const CONFIG = {
     webhookUrl: 'https://mdmcmusicads.app.n8n.cloud/webhook/music-release-planner',
+    contactWebhookUrl: 'https://mdmcmusicads.app.n8n.cloud/webhook/9207e170-55a7-44df-a36b-c780b2a282ef',
     calendlyUrl: 'https://calendly.com/mdmc-yt/meeting'
   };
 
@@ -119,20 +120,65 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
 
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 90000); // 90 secondes au lieu de 60
+      const timeoutId = setTimeout(() => controller.abort(), 90000); // 90 secondes
 
-      const response = await fetch(CONFIG.webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload),
-        signal: controller.signal,
-        mode: 'cors' // Ajout explicite du mode CORS
-      });
+      // Payload pour l'enregistrement de contact
+      const contactPayload = {
+        email: formData.email,
+        artistName: formData.artistName || 'Artiste Inconnu',
+        genre: formData.genre,
+        newsletter: formData.newsletter,
+        source: 'release_planner'
+      };
+
+      // Appel des deux webhooks en parallèle
+      const [analysisResponse, contactResponse] = await Promise.allSettled([
+        // Webhook principal pour l'analyse
+        fetch(CONFIG.webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+          mode: 'cors'
+        }),
+        // Webhook pour enregistrer le contact
+        fetch(CONFIG.contactWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(contactPayload),
+          signal: controller.signal,
+          mode: 'cors'
+        })
+      ]);
 
       clearTimeout(timeoutId);
+
+      // Log des résultats des webhooks
+      if (analysisResponse.status === 'fulfilled' && analysisResponse.value.ok) {
+        console.log('✅ Webhook analyse réussi');
+      } else {
+        console.warn('❌ Webhook analyse échoué');
+      }
+
+      if (contactResponse.status === 'fulfilled' && contactResponse.value.ok) {
+        console.log('✅ Contact enregistré avec succès');
+      } else {
+        console.warn('❌ Enregistrement contact échoué');
+      }
+
+      // Utiliser la réponse de l'analyse (même si contact échoue, on continue)
+      let response = null;
+      if (analysisResponse.status === 'fulfilled' && analysisResponse.value.ok) {
+        response = analysisResponse.value;
+      } else {
+        throw new Error('Webhook d\'analyse échoué');
+      }
 
       // Log pour debug
       console.log('Response status:', response.status);
@@ -213,7 +259,7 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
         console.log('Timeout ou CORS, affichage de résultats par défaut');
         setResults({
           success: true,
-          competition: 'Modéré',
+          competition: 'Modérée',
           score: 75,
           competitors: {
             total: 12,
