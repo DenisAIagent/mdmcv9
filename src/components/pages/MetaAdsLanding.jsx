@@ -110,6 +110,16 @@ const MetaAdsLanding = ({ openSimulator }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Google Ads conversion tracking - Meta Ads lead
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17648973422/MPzVCNCNrbkbEO7s199B',
+        'value': 50.0,
+        'currency': 'EUR'
+      });
+    }
+
     if (openSimulator) {
       openSimulator();
     }
@@ -271,17 +281,17 @@ const MetaAdsLanding = ({ openSimulator }) => {
             <div className="hero-right">
               <div className="hero-form-creative">
                 <div className="form-header">
-                  <h3>Estime ton potentiel Meta</h3>
-                  <p>Gratuit • 30 secondes • Projection chiffrée</p>
+                  <h3>{t('meta_ads.form.title')}</h3>
+                  <p>{t('meta_ads.form.subtitle')}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="lead-form-creative">
                   <div className="input-group">
-                    <label>Nom d'artiste</label>
+                    <label>{t('meta_ads.form.artist_name_label')}</label>
                     <input
                       type="text"
                       name="name"
-                      placeholder="Ex: MC Flow"
+                      placeholder={t('meta_ads.form.artist_name_placeholder')}
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -289,11 +299,11 @@ const MetaAdsLanding = ({ openSimulator }) => {
                   </div>
 
                   <div className="input-group">
-                    <label>Email pro</label>
+                    <label>{t('meta_ads.form.email_label')}</label>
                     <input
                       type="email"
                       name="email"
-                      placeholder="ton@email.com"
+                      placeholder={t('meta_ads.form.email_placeholder')}
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -301,31 +311,31 @@ const MetaAdsLanding = ({ openSimulator }) => {
                   </div>
 
                   <div className="input-group">
-                    <label>Lien vidéo (optionnel)</label>
+                    <label>{t('meta_ads.form.video_label')}</label>
                     <input
                       type="url"
                       name="videoUrl"
-                      placeholder="https://instagram.com/reel/... ou https://youtube.com/watch?v=..."
+                      placeholder={t('meta_ads.form.video_placeholder')}
                       value={formData.videoUrl}
                       onChange={handleInputChange}
                     />
                   </div>
 
                   <button type="submit" className="form-submit-btn">
-                    <span className="btn-text">Simuler maintenant</span>
-                    <span className="btn-loading">Analyse en cours...</span>
+                    <span className="btn-text">{t('meta_ads.form.submit_button')}</span>
+                    <span className="btn-loading">{t('meta_ads.form.loading_text')}</span>
                   </button>
                 </form>
 
                 <div className="form-benefits">
                   <div className="benefit-item">
-                    <span>Estimation budget personnalisée</span>
+                    <span>{t('meta_ads.form.benefits.budget')}</span>
                   </div>
                   <div className="benefit-item">
-                    <span>Projection vues & abonnés</span>
+                    <span>{t('meta_ads.form.benefits.projection')}</span>
                   </div>
                   <div className="benefit-item">
-                    <span>Stratégie ciblage optimale</span>
+                    <span>{t('meta_ads.form.benefits.strategy')}</span>
                   </div>
                 </div>
               </div>
