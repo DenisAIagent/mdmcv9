@@ -152,7 +152,7 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
             // Données par défaut si pas de JSON
             data = {
               success: true,
-              competition: 'Modéré',
+              competition: 'Modérée',
               score: 75,
               competitors: {
                 total: 12,
@@ -178,7 +178,7 @@ const SpotifyReleasePlanner = ({ onClose, utmSource = 'spotify_ads', utmMedium =
           console.log('Pas de JSON dans la réponse, utilisation de données par défaut');
           data = {
             success: true,
-            competition: 'Modéré',
+            competition: 'Modérée',
             score: 75,
             competitors: {
               total: 12,
@@ -804,10 +804,11 @@ const ResultsView = ({ results, formData, onNewAnalysis, onClose, openCalendly }
               {[
                 {
                   day: 'J-45',
-                  title: 'Pré-production',
+                  title: 'Test audiences et créatives',
                   className: 'pre-production',
                   actions: [
-                    'Finaliser la production musicale',
+                    'Test audiences et créatives publicitaires',
+                    `Budget de test : ${Math.floor((results.recommendedBudget || 750) * 0.2)}€ (20% du budget)`,
                     `Concurrents détectés : ${totalCompetitors} artistes`,
                     `Sources analysées : ${Object.keys(results.analysis?.sourceBreakdown || {}).join(', ')}`
                   ],
@@ -815,10 +816,10 @@ const ResultsView = ({ results, formData, onNewAnalysis, onClose, openCalendly }
                 },
                 {
                   day: 'J-30',
-                  title: 'Lancement promotion',
+                  title: 'Teasing sur les réseaux sociaux',
                   className: 'promotion',
                   actions: [
-                    `Budget recommandé : ${results.recommendedBudget}€`,
+                    `Budget recommandé : ${results.recommendedBudget || 750}€`,
                     `Potentiel de streams : ${results.expectedStreams}`,
                     `Niveau de risque : ${results.optimalDate?.riskLevel}`
                   ],
@@ -830,8 +831,10 @@ const ResultsView = ({ results, formData, onNewAnalysis, onClose, openCalendly }
                   className: 'release',
                   actions: [
                     `Date optimale : ${results.optimalDate?.date}`,
+                    `Utilisation de 80% du budget restant`,
                     `Niveau de concurrence : ${results.competition}`,
-                    `Score d'opportunité : ${results.score}/100`
+                    `Score d'opportunité : ${results.score}/100`,
+                    `Poursuite campagne sur 30 jours minimum`
                   ],
                   delay: '0.3s'
                 }
