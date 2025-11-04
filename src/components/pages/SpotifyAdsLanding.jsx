@@ -642,13 +642,13 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
               <div
                 className="example-image clickable"
                 onClick={() => openModal(
-                  "/assets/images/opengraph-spotifyads.png",
+                  "/assets/images/sites/spotify-desktop.png",
                   "Campagne Spotify Desktop - Audio + Display Ads",
                   "Interface desktop avec publicités display et audio ads optimisées pour la découverte musicale"
                 )}
               >
                 <img
-                  src="/assets/images/opengraph-spotifyads.png"
+                  src="/assets/images/sites/spotify-desktop.png"
                   alt="Exemple de publicité Spotify for Artists version desktop"
                   loading="lazy"
                   width="320"
@@ -672,13 +672,13 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
               <div
                 className="example-image clickable"
                 onClick={() => openModal(
-                  "/assets/images/Stream.webp",
+                  "/assets/images/sites/spotify-mobile.png",
                   "Campagne Spotify Mobile - Video Takeover",
                   "Expérience mobile immersive avec video takeover et intégration native dans l'app Spotify"
                 )}
               >
                 <img
-                  src="/assets/images/Stream.webp"
+                  src="/assets/images/sites/spotify-mobile.png"
                   alt="Exemple de publicité Spotify for Artists version mobile"
                   loading="lazy"
                   width="320"
@@ -702,13 +702,13 @@ const SpotifyAdsLanding = ({ openSimulator }) => {
               <div
                 className="example-image clickable"
                 onClick={() => openModal(
-                  "/assets/images/fans-loyalty.webp",
+                  "/assets/images/sites/spotify-smartlink.png",
                   "Smartlink by MDMC Music Ads - Service Exclusif",
                   "Smartlink propriétaire permettant un tracking avancé et une flexibilité complète sur vos campagnes Spotify"
                 )}
               >
                 <img
-                  src="/assets/images/fans-loyalty.webp"
+                  src="/assets/images/sites/spotify-smartlink.png"
                   alt="Smartlink MDMC Music Ads - Tracking avancé et flexibilité complète"
                   loading="lazy"
                   width="320"
