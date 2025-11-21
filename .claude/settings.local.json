@@ -28,9 +28,13 @@
       "Bash(magick:*)",
       "Bash(sort:*)",
       "Bash(identify:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "disabledMcpjsonServers": [
+    "n8n-mcp"
+  ]
 }

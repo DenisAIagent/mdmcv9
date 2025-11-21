@@ -27,10 +27,10 @@ export default {
     "simulator": "Simulateur"
   },
   "hero": {
-    "title": "MDMC Music Ads<br/>Agence Marketing Musical YouTube & Meta Ads",
+    "title": "MDMC Music Ads<br/>Agence Marketing Musical <span class=\"youtube-text\">YouTube</span> & <span class=\"spotify-text\">Spotify Ads</span>",
     "subtitle": "Push. Play. Blow up.",
     "slogan": "Push. Play. Blow up.",
-    "description": "Expertise en YouTube Ads, Meta Ads, TikTok Ads et stratégie de contenu pour artistes et labels.",
+    "description": "Expertise en YouTube Ads, Spotify Ads, TikTok Ads et stratégie de contenu pour artistes et labels.",
     "cta": "Démarrer le simulateur",
     "stats": {
       "campaigns": "Campagnes réalisées",
@@ -380,7 +380,7 @@ export default {
     "landing_page": { // Gardez cette structure imbriquée si elle fonctionne pour cette page
       "title": "Générateur de Landing Pages",
       "description": "Créez et gérez vos landing pages dédiées à vos campagnes.",
-       // ... nombreuses clés spécifiques ...
+      // ... nombreuses clés spécifiques ...
       "your_pages": "Vos Landing Pages",
       "create_new": "Créer une nouvelle page",
       "no_pages": "Vous n'avez pas encore créé de landing page.",
@@ -409,18 +409,18 @@ export default {
       "test_connection_button": "Tester la Connexion WP",
       "marketing_integrations_title": "Intégrations Marketing (Globales)",
       "save_settings_button": "Enregistrer les Paramètres"
-       // --- Assurez-vous que les clés manquantes vues sur la capture 2 sont ici ---
-       // Exemple (adapter les clés réelles utilisées dans AuthenticationSettings.jsx):
-       // "authentication_settings_description": "Gérez la connexion à WordPress...",
-       // "wordpress_test_success": "Connexion réussie !",
-       // "wordpress_test_failure": "Échec de la connexion.",
+      // --- Assurez-vous que les clés manquantes vues sur la capture 2 sont ici ---
+      // Exemple (adapter les clés réelles utilisées dans AuthenticationSettings.jsx):
+      // "authentication_settings_description": "Gérez la connexion à WordPress...",
+      // "wordpress_test_success": "Connexion réussie !",
+      // "wordpress_test_failure": "Échec de la connexion.",
     },
 
     // Clés pour le Chatbot Admin
     "chatbot": { // Gardez cette structure imbriquée si elle fonctionne pour cette page
       "title": "Assistant MDMC",
       "welcome_message": "Bonjour ! Je suis votre assistant MDMC. Comment puis-je vous aider aujourd'hui ?",
-       // ... autres clés chatbot ...
+      // ... autres clés chatbot ...
       "input_placeholder": "Posez votre question ici...",
       "send": "Envoyer",
       "close": "Fermer",
